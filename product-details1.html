@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forever Aloe Vera Gel™</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #f9f9f9;
+        }
+
+        .main-header {
+            background: #14a99f;
+            padding: 20px;
+        }
+
+        .navbar {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .navbar img {
+            width: 100px;
+        }
+
+        .cart-info {
+            position: relative;
+        }
+
+        .cart-info img {
+            width: 30px;
+            height: 30px;
+        }
+
+        .cart-info span {
+            position: absolute;
+            top: -5px;
+            left: 15px;
+            background-color: #ff523b;
+            color: #fff;
+            font-size: 14px;
+            padding: 0 5px;
+            border-radius: 50%;
+        }
+
+        /* Main Content Area */
+        .single-product {
+            max-width: 1200px;
+            margin: 30px auto;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .row {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+        }
+
+        .col-2 img {
+            max-width: 100%;
+            padding: 20px;
+        }
+
+        .col-2 h1 {
+            font-size: 2rem;
+            margin: 20px 0;
+        }
+
+        .col-2 h4 {
+            color: #ff523b;
+            font-size: 1.8rem;
+            margin: 10px 0;
+        }
+
+        .btn {
+            background-color: #5ee689;
+            padding: 10px 30px;
+            border-radius: 30px;
+            color: white;
+            text-decoration: none;
+            display: inline-block;
+            margin: 15px 0;
+            transition: background-color 0.3s;
+        }
+
+        .btn:hover {
+            background-color: #2d302e;
+        }
+
+        select, input[type="number"] {
+            padding: 10px;
+            margin: 10px 0;
+            font-size: 1rem;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        h3 {
+            font-size: 1.5rem;
+            margin: 20px 0 10px;
+        }
+
+        ul {
+            list-style-type: none;
+            padding-left: 0;
+            margin-bottom: 20px;
+        }
+
+        ul li {
+            margin-bottom: 8px;
+        }
+
+        .related-products {
+            padding: 20px 0;
+            text-align: center;
+        }
+
+        .related-products h2 {
+            font-size: 2rem;
+        }
+
+        .related-products p {
+            color: #2a2d2b;
+            font-size: 1rem;
+        }
+
+        .overlay {
+            height: 100%;
+            width: 0;
+            position: fixed;
+            top: 0;
+            left: 0;
+            background-color: rgba(0, 0, 0, 0.9);
+            overflow-x: hidden;
+            transition: 0.5s;
+            padding-top: 60px;
+        }
+
+        .overlay-content a {
+            padding: 8px;
+            text-decoration: none;
+            font-size: 25px;
+            color: #fff;
+            display: block;
+            transition: 0.3s;
+        }
+
+        .overlay-content a:hover {
+            color: #42e385;
+        }
+
+        .closebtn {
+            position: absolute;
+            top: 0;
+            right: 25px;
+            font-size: 36px;
+            margin-left: 50px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="main-header">
+        <div id="myNav" class="overlay">
+            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+            <div class="overlay-content">
+                <a href="index.html" class="back-to-home">Home</a>
+                <a href="About.html">About</a>
+               
+            </div>
+        </div>
+        <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; Forever</span>
+
+        <div class="cart-info">
+            <a href="cart.html">
+                <img src="shopping_bag_cart-512.webp" alt="Cart">
+                <span id="cartCount">0</span>
+            </a>
+        </div>
+    </header>
+
+    <!-- Single Product Section -->
+    <div class="single-product">
+        <div class="row">
+            <div class="col-2">
+                <img src="forever_aloe_vera_gel_pd_category_256_X_256_1718788814648 (1).jpg" width="100%" class="small-img">
+                <div class="small-img-row">
+                    <div class="small-img-col">
+                        <img src="forever_aloe_vera_gel_pd_category_256_X_256_1718788814648 (1).jpg" width="50%" class="small-img">
+                    </div>
+                </div>
+            </div>
+            <div class="col-2">
+                <h1>Forever Aloe Vera Gel™</h1>
+                <h4>357,22 SEK</h4>
+                
+                <!-- Quantity and Add to Cart -->
+                <input type="number" id="quantity" value="1" min="1">
+                <a href="#" class="btn" onclick="addToCart('Forever Aloe Vera Gel™', 357.22, 'forever_aloe_vera_gel_pd_category_256_X_256_1718788814648 (1).jpg')">Add To Cart</a>
+                
+                <!-- Product Description and Details -->
+                <h3>Product Description</h3>
+                <p>Our natural Aloe vera supplement comprises the finest inner gel of hand-picked Aloe vera of the highest quality, harvested at the perfect ripeness. Also contains vitamin C.</p>
+                
+                <h3>Key Ingredients:</h3>
+                <ul>
+                    <li>99.7% inner gel of Aloe vera</li>
+                    <li>Vitamin C</li>
+                </ul>
+
+                <h3>How to Use:</h3>
+                <p>Shake before use. Take 3 portions of 40 ml daily, mixed with 240 ml water or juice. Store in the fridge after opening.</p>
+                
+                <h3>Additional Benefits:</h3>
+                <p>Contains Vitamin C, which contributes to the reduction of tiredness and fatigue, and to the normal function of the immune system.</p>
+            </div>
+        </div>
+    </div>
+    <footer>
+        <div class="footer-content">
+          <ul class="social-links">
+            <li><a href="https://www.tiktok.com/@foreverlin4?_t=ZN-8tZsEnEhD42&_r=1" target="_blank"><i class="fab fa-tiktok"></i> TikTok</a></li>
+            <li><a href="https://www.instagram.com/foreverlivingfa.se" target="_blank"><i class="fab fa-instagram"></i> Instagram</a></li>
+            <li><a href="mailto:Fathiya110@hotmail.com"><i class="fas fa-envelope"></i> Email</a></li>
+            <li><a href="https://www.snapchat.com/add/fathiya4796" target="_blank"><i class="fab fa-snapchat"></i> Snapchat</a></li>
+          </ul>
+          <div class="contact-info">
+            <p>Phone: <a href="tel:+46765653753">0765653753</a></p>
+            <p>Email: <a href="mailto:Fathiya110@hotmail.com">Fathiya110@hotmail.com</a></p>
+          </div>
+        </div>
+      </footer>
+    <script>
+        let cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+        // Open and Close Menu
+        function openNav() {
+            document.getElementById("myNav").style.width = "100%";
+        }
+
+        function closeNav() {
+            document.getElementById("myNav").style.width = "0%";
+        }
+
+        // Add item to cart
+        function addToCart(name, price, image) {
+            const quantity = document.getElementById('quantity').value;
+            const existingProduct = cart.find(item => item.name === name);
+
+            if (existingProduct) {
+                existingProduct.quantity += parseInt(quantity);
+            } else {
+                cart.push({ name, price, image, quantity: parseInt(quantity) });
+            }
+
+            localStorage.setItem('cart', JSON.stringify(cart));
+            updateCartInfo();
+        }
+
+        // Update cart display
+        function updateCartInfo() {
+            const cartCountElement = document.getElementById('cartCount');
+            const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
+            cartCountElement.textContent = totalItems;
+        }
+
+        // Update cart info on page load
+        document.addEventListener('DOMContentLoaded', updateCartInfo);
+    </script>
+</body>
+</html>

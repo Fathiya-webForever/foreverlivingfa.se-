@@ -1,0 +1,1075 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Neutral E-Commerce Store</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="main-header">
+        <div id="myNav" class="overlay">
+            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+            <div class="overlay-content">
+                <a href="index.html" class="back-to-home">Home</a>
+                <a href="About.html">About</a>
+                <a href="https://foreverliving.com/swe/sv-se/home" target="_blank">Forever Living</a>
+            </div>
+        </div>
+        <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; Forever</span>
+        <div class="search-bar">
+            <input type="text" id="search-input" placeholder="Search...">
+            <button onclick="performSearch()">Search</button>
+        </div>
+        <div class="cart-info">
+            <a href="cart.html">
+                <img src="shopping_bag_cart-512.webp" alt="Cart" width="30" height="30">
+                <span id="cartCount">0</span>
+            </a>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <div class="hero-image">
+        <div class="hero-text">
+            <h1 style="font-size:50px">Forever</h1>
+            <p>High-Quality Products for a Better You</p>
+            <button>Shop Now</button>
+        </div>
+    </div>
+    <div class="container">
+        <!-- Sidebar -->
+        <div class="sidebar">
+            <h2>Categories</h2>
+            <ul>
+                <li><a href="#" onclick="filterProducts('bestsellers')">Bestsellers</a></li>
+                <li><a href="#" onclick="filterProducts('drinks')">Drinks</a></li>
+                <li><a href="#" onclick="filterProducts('bee-products')">Bee Products</a></li>
+                <li><a href="#" onclick="filterProducts('nutritional')">Nutritional</a></li>
+                <li><a href="#" onclick="filterProducts('weight-management')">Weight Management</a></li>
+                <li><a href="#" onclick="filterProducts('skin-care')">Skin Care</a></li>
+                <li><a href="#" onclick="filterProducts('personal-care')">Personal Care</a></li>
+                <li><a href="#" onclick="filterProducts('fine-fragrances')">Fine Fragrances</a></li>
+                <li><a href="#" onclick="filterProducts('combo-paks')">Combo Paks</a></li>
+            </ul>
+        </div>
+        <!-- Main Content -->
+        <div class="main-content"id="product-list">
+            <h2>Products</h2>
+            <div class="products">
+                <!-- Bestsellers Products -->
+                <div class="product bestsellers">
+                    <p>Aloe Cooling Lotion</p>
+                    <a href="product-details4.html"><img src="aloe_cooling_lotion__pd_category_256_X_256_1698656358067.jpg" alt="Aloe Cooling Lotion"></a>
+                    <p>Volume 118 ml</p>
+                    <p>198,51 SEK</p>
+                    <button onclick="addToCart('Aloe Cooling Lotion', 198.51, 'aloe_cooling_lotion__pd_category_256_X_256_1698656358067.jpg')">Add to Cart</button>
+                </div>
+                <div class="product bestsellers">
+                    <p>Aloe Ever Shield</p>
+                    <a href="product-details8.html"><img src="aloe_ever-shield__pd_category_256_X_256_1698657316052.jpg" alt="Aloe Ever Shield"></a>
+                    <p>92 g</p>
+                    <p>115,14 SEK</p>
+                    <button onclick="addToCart('Aloe Ever Shield', 115.14, 'aloe_ever-shield__pd_category_256_X_256_1698657316052.jpg')">Add to Cart</button>
+                </div>
+                <div class="product bestsellers">
+                    <p>Aloe Liquid Soap</p>
+                    <a href="product-details5.html"><img src="aloe_liquid_soap_pd_category_256_X_256_1698913612133.jpg" alt="Aloe Liquid Soap"></a>
+                    <p>473 ml</p>
+                    <p>256,03 SEK</p>
+                    <button onclick="addToCart('Aloe Liquid Soap', 256.03, 'aloe_liquid_soap_pd_category_256_X_256_1698913612133.jpg')">Add to Cart</button>
+                </div>
+                <div class="product bestsellers">
+                    <p>Aloe Propolis Creme</p>
+                    <a href="product-details2.html"><img src="aloe_propolis_creme_pd_category_256_X_256_1624022740456.jpg" alt="Aloe Propolis Creme"></a>
+                    <p>113 g</p>
+                    <p>317,60 SEK</p>
+                    <button onclick="addToCart('Aloe Propolis Creme', 317.60, 'aloe_propolis_creme_pd_category_256_X_256_1624022740456.jpg')">Add to Cart</button>
+                </div>
+                <div class="product bestsellers">
+                    <p>Aloe Vera Gelly</p>
+                    <a href="product-details3.html"><img src="aloe_vera_gelly_pd_category_256_X_256_1698046151509.jpg" alt="Aloe Vera Gelly"></a>
+                    <p>118 ml</p>
+                    <p>239,06 SEK</p>
+                    <button onclick="addToCart('Aloe Vera Gelly', 239.06, 'aloe_vera_gelly_pd_category_256_X_256_1698046151509.jpg')">Add to Cart</button>
+                </div>
+                <div class="product bestsellers">
+                    <p>ARGI +</p>
+                    <a href="product-details9.html"><img src="argi___pd_category_256_X_256_1624479615423.jpg" alt="ARGI +"></a>
+                    <p>300 g / 30 portions</p>
+                    <p>789,40 SEK</p>
+                    <button onclick="addToCart('ARGI +', 789.40, 'argi___pd_category_256_X_256_1624479615423.jpg')">Add to Cart</button>
+                </div>
+                <div class="product bestsellers">
+                    <p>Forever Aloe Lips -1 pc.</p>
+                    <a href="product-details6.html"><img src="forever_aloe_lips__-_1_st_pd_category_256_X_256_1668432241039.jpg" alt="Forever Aloe Lips"></a>
+                    <p>4,25 g</p>
+                    <p>55,85 SEK</p>
+                    <button onclick="addToCart('Forever Aloe Lips', 55.85, 'forever_aloe_lips__-_1_st_pd_category_256_X_256_1668432241039.jpg')">Add to Cart</button>
+                </div>
+                <div class="product bestsellers">
+                    <p>Forever Aloe Vera Gel</p>
+                    <a href="product-details1.html"><img src="forever_aloe_vera_gel_pd_category_256_X_256_1718788814648.jpg" alt="Forever Aloe Vera Gel"></a>
+                    <p>1 litre</p>
+                    <p>375,22 SEK</p>
+                    <button onclick="addToCart('Forever Aloe Vera Gel', 375.22, 'forever_aloe_vera_gel_pd_category_256_X_256_1718788814648.jpg')">Add to Cart</button>
+                </div>
+                <div class="product bestsellers">
+                    <p>Forever Bright Toothgel</p>
+                    <a href="product-details7.html"><img src="forever_bright__toothgel_pd_category_256_X_256_1670937510560.jpg" alt="Forever Bright Toothgel"></a>
+                    <p>130 g</p>
+                    <p>122,79 SEK</p>
+                    <button onclick="addToCart('Forever Bright Toothgel', 122.79, 'forever_bright__toothgel_pd_category_256_X_256_1670937510560.jpg')">Add to Cart</button>
+                </div>
+                <div class="product bestsellers">
+                    <p>Forever Marine Collagen</p>
+                    <a href="product-details.html"><img src="forever_marine_collagen__pd_category_256_X_256_1700462177504.jpg" alt="Forever Marine Collagen"></a>
+                    <p>941,80 SEK</p>
+                    <button onclick="addToCart('Forever Marine Collagen', 941.80, 'forever_marine_collagen__pd_category_256_X_256_1700462177504.jpg')">Add to Cart</button>
+                </div>
+                <!-- Drinks Products -->
+                <div class="product drinks">
+                    <p>Tri pack aloe vera gel</p>
+                    <a href="product-details13.html"><img src="tri-pack_aloe_vera_gel_pd_category_256_X_256_1718789812356.jpg" alt="Tri pack aloe vera gel"></a>
+                    <p>3 x 1 litre</p>
+                    <p> 1071,46 SEK</p>
+                    <button onclick="addToCart('Tri pack aloe vera gel', 1071.46, 'tri-pack_aloe_vera_gel_pd_category_256_X_256_1718789812356')">Add to Cart</button>
+                </div>
+                <div class="product drinks">
+                    <p>Tri pack berry nectar</p>
+                    <a href="product-details14.htm"><img src="tri-pack_berry_nectar_pd_category_256_X_256_1718783524139.jpg" alt="Tri pack berry nectar"></a>
+                    <p>3 x 1 litre</p>
+                    <p> 1071,46 SEK</p>
+                    <button onclick="addToCart('Tri pack berry nectar', 1071.46, 'tri-pack_berry_nectar_pd_category_256_X_256_1718783524139')">Add to Cart</button>
+                </div>
+                <div class="product drinks">
+                    <p>Tri pack forever mango</p>
+                    <a href="product-details12.html"><img src="tri-pack_forever_mango_pd_category_256_X_256_1718787014338.jpg" alt="Tri pack forever mango"></a>
+                    <p>3 x 1 litre</p>
+                    <p> 1071,46 SEK</p>
+                    <button onclick="addToCart('Tri pack forever mango', 1071.46, 'tri-pack_forever_mango_pd_category_256_X_256_1718787014338')">Add to Cart</button>
+                </div>
+                <div class="product drinks">
+                    <p>Tri pack peaches</p>
+                    <a href="product-details11.html"><img src="tri-pack_peaches_pd_category_256_X_256_1718788173009.jpg" alt="Tri pack peaches"></a>
+                    <p>3 x 1 litre</p>
+                    <p> 1071,46 SEK</p>
+                    <button onclick="addToCart('Tri pack peaches', 1071.46, 'tri-pack_peaches_pd_category_256_X_256_1718788173009')">Add to Cart</button>
+                </div>
+                <div class="product drinks">
+                    <p>Forever combo tri-pak</p>
+                    <a href="product-details10.html"><img src="forever_combo__tri-pak_pd_category_256_X_256_1720602538317.jpg" alt="Forever combo tri-pak"></a>
+                    <p>3 x 1 litre</p>
+                    <p> 1071,46 SEK</p>
+                    <button onclick="addToCart('Forever combo tri-pak', 1071.46, 'forever_combo__tri-pak_pd_category_256_X_256_1720602538317.jpg')">Add to Cart</button>
+                </div>
+                <div class="product drinks">
+                    <p>Forever aloe berry nectar</p>
+                    <a href="product-details15.htm"><img src="forever_aloe_berry_nectar_pd_category_256_X_256_1718118252628.png" alt="Forever aloe berry nectar"></a>
+                    <p>1 litre</p>
+                    <p> 357,22 SEK</p>
+                    <button onclick="addToCart('Forever aloe berry nectar', 357.22, 'forever_aloe_berry_nectar_pd_category_256_X_256_1718118252628')">Add to Cart</button>
+                </div>
+                <div class="product drinks">
+                    <p>Forever aloe peaches pd</p>
+                    <a href="product-details16.htm"><img src="forever_aloe_peaches_pd_category_256_X_256_1718787707097.jpg" alt="Forever aloe peaches pd"></a>
+                    <p>1 litre</p>
+                    <p> 357,22 SEK</p>
+                    <button onclick="addToCart('Forever aloe peaches pd', 357.22, 'forever_aloe_peaches_pd_category_256_X_256_1718787707097')">Add to Cart</button>
+                </div>
+                <div class="product drinks">
+                    <p>Forever aloe mango pd</p>
+                    <a href="product-details17.htm"><img src="forever_aloe_mango_pd_category_256_X_256_1718785124029.jpg" alt="Forever aloe mango pd"></a>
+                    <p>1 litre</p>
+                    <p> 357,22 SEK</p>
+                    <button onclick="addToCart('Forever aloe mango pd', 357.22, 'forever_aloe_mango_pd_category_256_X_256_1718785124029')">Add to Cart</button>
+                </div>
+                <div class="product drinks">
+                    <p>Forever aloe vera gel</p>
+                    <a href="product-details1.html"><img src="forever_aloe_vera_gel_pd_category_256_X_256_1718788814648 (1).jpg" alt="Forever aloe vera gel"></a>
+                    <p>1 litre</p>
+                    <p> 357,22 SEK</p>
+                    <button onclick="addToCart('Forever aloe vera gel', 357.22, 'forever_aloe_vera_gel_pd_category_256_X_256_1718788814648 (1).jpg')">Add to Cart</button>
+                </div>
+                <div class="product drinks">
+                    <p>Forever aloe vera gel mini tri-pak</p>
+                    <a href="product-details18.html"><img src="forever_aloe_vera_gel__mini_tri-pak_pd_category_256_X_256_1649267455453.jpg" alt="Forever aloe vera gel mini tri-pak"></a>
+                    <p>3 x 330 ml</p>
+                    <p> 357,11 SEK</p>
+                    <button onclick="addToCart('Forever aloe vera gel mini tri-pak', 357.11, 'forever_aloe_vera_gel__mini_tri-pak_pd_category_256_X_256_1649267455453.jpg')">Add to Cart</button>
+                </div>
+                <div class="product drinks">
+                    <p>Forever combo mini tri-pak</p>
+                    <a href="product-details19.html"><img src="forever_combo__mini_tri-pak_pd_category_256_X_256_1649268637219.jpg" alt="Forever combo mini tri-pak"></a>
+                    <p>3 x 330 ml</p>
+                    <p> 357,11 SEK</p>
+                    <button onclick="addToCart('Forever combo mini tri-pak', 357.11, 'forever_combo__mini_tri-pak_pd_category_256_X_256_1649268637219.jpg')">Add to Cart</button>
+                </div>
+                <div class="product drinks">
+                    <p>Forever Aloe Berry Nectar mini tri-pak</p>
+                    <a href="product-details20.html"><img src="Forever_Aloe_Berry_Nectar__mini_Tri-pak_pd_category_256_X_256_1704199863219.jpg" alt="Forever Aloe Berry Nectar mini tri-pak"></a>
+                    <p>3 x 330 ml</p>
+                    <p> 357,11 SEK</p>
+                    <button onclick="addToCart('Forever Aloe Berry Nectar mini tri-pak', 357.11, 'Forever_Aloe_Berry_Nectar__mini_Tri-pak_pd_category_256_X_256_1704199863219.jpg')">Add to Cart</button>
+                </div>
+                <div class="product drinks">
+                    <p>Forever Aloe peaches mini tri-pak</p>
+                    <a href="product-details21.html"><img src="forever_aloe_peaches__mini_tri-pak_pd_category_256_X_256_1649268432817.jpg" alt="Forever Aloe peaches mini tri-pak"></a>
+                    <p>3 x 330 ml</p>
+                    <p> 357,11 SEK</p>
+                    <button onclick="addToCart('Forever Aloe peaches mini tri-pak', 357.11, 'forever_aloe_peaches__mini_tri-pak_pd_category_256_X_256_1649268432817.jpg')">Add to Cart</button>
+                </div>
+                <div class="product drinks">
+                    <p>Forever Aloe Vera Gel 330 ml 12 pack</p>
+                    <a href="product-details22.html"><img src="Forever_Aloe_Vera_Gel__-_330_ml_12-Pack_pd_category_256_X_256_1700554926151.jpg" alt="Forever Aloe Vera Gel 330 ml 12 pack"></a>
+                    <p>12 x 330 ml</p>
+                    <p> 1 428,57 SEK</p>
+                    <button onclick="addToCart('Forever Aloe Vera Gel 330 ml 12 pack', 1428.57, 'Forever_Aloe_Vera_Gel__-_330_ml_12-Pack_pd_category_256_X_256_1700554926151.jpg')">Add to Cart</button>
+                </div>
+                <div class="product drinks">
+                    <p>Forever Aloe Berry Nectar 330 ml 12 pack</p>
+                    <a href="product-details23.html"><img src="Forever_Aloe_Berry_Nectar_-_330_ml_12-Pack_pd_category_256_X_256_1704200726696.jpg" alt="Forever Aloe Berry Nectar 330 ml 12 pack"></a>
+                    <p>12 x 330 ml</p>
+                    <p> 1 428,57 SEK</p>
+                    <button onclick="addToCart('Forever Aloe Berry Nectar 330 ml 12 pack', 1428.57, 'Forever_Aloe_Berry_Nectar_-_330_ml_12-Pack_pd_category_256_X_256_1704200726696')">Add to Cart</button>
+                </div>
+                <div class="product drinks">
+                    <p>Forever Aloe peaches 330 ml 12 pack</p>
+                    <a href="product-details24.html"><img src="forever_aloe_peaches_-_330_ml_12-stk_pd_category_256_X_256_1624464362073.jpg" alt="Forever Aloe peaches 330 ml 12 pack"></a>
+                    <p>12 x 330 ml</p>
+                    <p> 1 428,57 SEK</p>
+                    <button onclick="addToCart('Forever Aloe peaches 330 ml 12 pack', 1428.57, 'forever_aloe_peaches_-_330_ml_12-stk_pd_category_256_X_256_1624464362073')">Add to Cart</button>
+                </div>
+                <div class="product drinks">
+                    <p>FAB Forever Active Boost 12-PACK</p>
+                    <a href="product-details25.html"><img src="fab_energy_drink_12-pack_pd_category_256_X_256_1718108783133.png" alt="FAB Forever Active Boost 12-PACK"></a>
+                    <p>12 x 250 ml</p>
+                    <p> 519,68 SEK</p>
+                    <button onclick="addToCart('Fab energy drink 12 pack', 519.68, 'fab_energy_drink_12-pack_pd_category_256_X_256_1718108783133.png')">Add to Cart</button>
+                </div>
+                <div class="product drinks">
+                    <p>FAB X Forever Active Boost 12-PACK</p>
+                    <a href="product-details26.html"><img src="fabx_energy_drink_12-pack_pd_category_256_X_256_1718117033093.png" alt="FAB X Forever Active Boost 12-PACK"></a>
+                    <p>12 x 250 ml</p>
+                    <p> 519,68 SEK</p>
+                    <button onclick="addToCart('FAB X Forever Active Boost 12-PACK', 519.68, 'fabx_energy_drink_12-pack_pd_category_256_X_256_1718117033093.png')">Add to Cart</button>
+                </div>
+                <div class="product drinks">
+                    <p>Forever MÓR</p>
+                    <a href="product-details27.html"><img src="forever_m_r__pd_category_256_X_256_1712841354743.jpg" alt="Forever MÓR"></a>
+                    <p>10 capsules</p>
+                    <p> 136,86 SEK</p>
+                    <button onclick="addToCart('Forever MÓR', 136.86, 'forever_m_r__pd_category_256_X_256_1712841354743.jpg')">Add to Cart</button>
+                </div>
+                <div class="product drinks">
+                    <p>ARGI +</p>
+                    <a href="product-details9.html"><img src="argi___pd_category_256_X_256_1624479615423 (1).jpg" alt="ARGI +"></a>
+                    <p>300 g / 30 portions</p>
+                    <p>789,40 SEK</p>
+                    <button onclick="addToCart('ARGI +', 789.40, 'argi___pd_category_256_X_256_1624479615423 (1).jpg')">Add to Cart</button>
+                </div>
+                <div class="product drinks">
+                    <p>Forever Plant Protein</p>
+                    <a href="product-details28.html"><img src="forever_plant_protein__pd_category_256_X_256_1701065059655.jpg" alt="Forever Plant Protein"></a>
+                    <p>390 g (15 x 26 g)</p>
+                    <p></p>
+                    <button onclick="addToCart('Forever Plant Protein', 'forever_plant_protein__pd_category_256_X_256_1701065059655')"> Add to Cart</button>
+                </div>
+                <!-- bee-products -->
+                <div class="product bee-products">
+                    <p>Forever Bee Pollen</p>
+                    <a href="product-details29.html"><img src="Forever_Bee_Pollen__pd_category_256_X_256_1693552051861.jpg" alt="Forever Bee Pollen"></a>
+                    <p>100 tablets</p>
+                    <p> 219,56 SEK</p>
+                    <button onclick="addToCart('Forever Bee Pollen', 219.56, 'Forever_Bee_Pollen__pd_category_256_X_256_1693552051861.jpg')">Add to Cart</button>
+                </div>
+                <div class="product bee-products">
+                    <p>Forever Bee Propolis</p>
+                    <a href="product-details30.html"><img src="forever_bee_propolis__pd_category_256_X_256_1624009575037.jpg" alt="Forever Bee Propolis"></a>
+                    <p>60 tablets</p>
+                    <p> 459,13 SEK</p>
+                    <button onclick="addToCart('Forever Bee Propolis', 459.13, 'forever_bee_propolis__pd_category_256_X_256_1624009575037.jpg')">Add to Cart</button>
+                </div>
+                <div class="product bee-products">
+                    <p>Forever Royal Jelly</p>
+                    <a href="product-details31.html"><img src="forever_royal_jelly__pd_category_256_X_256_1624009681880.jpg" alt="Forever Royal Jelly"></a>
+                    <p>60 tablets</p>
+                    <p> 475,01 SEK</p>
+                    <button onclick="addToCart('Forever Royal Jelly', 479.01, 'forever_royal_jelly__pd_category_256_X_256_1624009681880.jpg')">Add to Cart</button>
+                </div>
+                <div class="product bee-products">
+                    <p>Aloe Propolis Creme</p>
+                    <a href="product-details2.html"><img src="aloe_propolis_creme_pd_category_256_X_256_1624022740456 (1).jpg" alt="Aloe Propolis Creme"></a>
+                    <p>113 g</p>
+                    <p>317,60 SEK</p>
+                    <button onclick="addToCart('Aloe Propolis Creme', 317.60, 'aloe_propolis_creme_pd_category_256_X_256_1624022740456 (1).jpg')">Add to Cart</button>
+                </div>
+                <div class="product bee-products">
+                    <p>Forever Bee Honey</p>
+                    <a href="product-details32.html"><img src="forever_bee_honey__pd_category_256_X_256_1624010726072.jpg" alt="Forever Bee Honey"></a>
+                    <p>500 g</p>
+                    <p>241,73 SEK</p>
+                    <button onclick="addToCart('Forever Bee Honey', 241.73, 'forever_bee_honey__pd_category_256_X_256_1624010726072.jpg')">Add to Cart</button>
+                </div>
+                 <!-- nutritional -->              
+                 <div class="product nutritional">
+                    <p>Forever Aloe Turm</p>
+                    <a href="product-details33.html"><img src="Forever_AloeTurm__pd_category_256_X_256_1718192565500.png" alt="Forever Aloe Turm"></a>
+                    <p>10 lozenges</p>
+                    <p> 74,94 SEK</p>
+                    <button onclick="addToCart('Forever Aloe Turm', 74.94, 'Forever_AloeTurm__pd_category_256_X_256_1718192565500.png')">Add to Cart</button>
+                </div>
+                <div class="product nutritional">
+                    <p>Forever Lycium plus</p>
+                    <a href="product-details34.html"><img src="forever_lycium_plus_pd_category_256_X_256_1714028990615.jpg" alt="Forever Lycium plus"></a>
+                    <p>100 tablets (72 g)</p>
+                    <p> 439,71 SEK</p>
+                    <button onclick="addToCart('Forever Lycium plus', 439.71, 'forever_lycium_plus_pd_category_256_X_256_1714028990615.jpg')">Add to Cart</button>
+                </div>
+                <div class="product nutritional">
+                    <p>Forever MÓR</p>
+                    <a href="product-details27.html"><img src="forever_m_r__pd_category_256_X_256_1712841354743.jpg" alt="Forever MÓR"></a>
+                    <p>10 capsules</p>
+                    <p> 136,86 SEK</p>
+                    <button onclick="addToCart('Forever MÓR', 136.86, 'forever_m_r__pd_category_256_X_256_1712841354743.jpg')">Add to Cart</button>
+                </div>
+                <div class="product nutritional">
+                    <p>Forever absorbent-d</p>
+                    <a href="product-details35.html"><img src="forever_absorbent-d__pd_category_256_X_256_1712649078212.jpg" alt="Forever absorbent-d"></a>
+                    <p>60 tablets</p>
+                    <p> 164,05 SEK</p>
+                    <button onclick="addToCart('Forever absorbent-d', 164.05, 'forever_absorbent-d__pd_category_256_X_256_1712649078212.jpg')">Add to Cart</button>
+                </div>
+                <div class="product nutritional">
+                    <p>Forever sensatiable</p>
+                    <a href="product-details36.html"><img src="forever_sensatiable__pd_category_256_X_256_1687969230952.jpg" alt="Forever sensatiable"></a>
+                    <p>64 tablets (111 g)</p>
+                    <p> 311,30 SEK</p>
+                    <button onclick="addToCart('Forever sensatiable', 164.05, 'forever_sensatiable__pd_category_256_X_256_1687969230952.jpg')">Add to Cart</button>
+                </div>
+                <div class="product nutritional">
+                    <p>Forever key 3</p>
+                    <a href="product-details37.html"><img src="forever_key_3_pd_category_256_X_256_1730908426893.jpg" alt="Forever key 3"></a>
+                    <p></p>
+                    <p> 1 079,46 SEK</p>
+                    <button onclick="addToCart('Forever key 3', 1079.46, 'forever_key_3_pd_category_256_X_256_1730908426893.jpg')">Add to Cart</button>
+                </div>
+                <div class="product nutritional">
+                    <p>Forever Immune Gummy</p>
+                    <a href="product-details38.html"><img src="forever_immune__gummy_pd_category_256_X_256_1681971081238.jpg" alt="Forever Immune Gummy"></a>
+                    <p>60 tablets</p>
+                    <p>438,79 SEK</p>
+                    <button onclick="addToCart('Forever Immune Gummy', 438.79, 'forever_immune__gummy_pd_category_256_X_256_1681971081238.jpg')">Add to Cart</button>
+                </div>
+                <div class="product nutritional">
+                    <p>Forever aloe turm 10-pack</p>
+                    <a href="product-details39.html"><img src="forever_aloe_turm_10-pack_pd_category_256_X_256_1722849823189.jpg" alt="Forever aloe turm 10-pack"></a>
+                    <p>100 lozenges</p>
+                    <p></p>
+                    <button onclick="addToCart('Forever aloe turm 10-pack', 'forever_aloe_turm_10-pack_pd_category_256_X_256_1722849823189.jpg')">Add to Cart</button>
+                </div>
+                <div class="product nutritional">
+                    <p>Forever Plant Protein</p>
+                    <a href="product-details28.html"><img src="forever_plant_protein__pd_category_256_X_256_1701065059655.jpg" alt="Forever Plant Protein"></a>
+                    <p>390 g (15 x 26 g)</p>
+                    <p></p>
+                    <button onclick="addToCart('Forever Plant Protein', 'forever_plant_protein__pd_category_256_X_256_1701065059655')"> Add to Cart</button>
+                </div>
+                <div class="product nutritional">
+                    <p>Forever artic sea</p>
+                    <a href="product-details40.html"><img src="forever_arctic_sea__pd_category_256_X_256_1727942723554.jpg" alt="Forever artic sea"></a>
+                    <p>120 capsules</p>
+                    <p>394,92 SEK</p>
+                    <button onclick="addToCart('Forever artic sea', 394.92, 'forever_arctic_sea__pd_category_256_X_256_1727942723554.jpg')">Add to Cart</button>
+                </div>
+                <div class="product nutritional">
+                    <p>Forever Daily</p>
+                    <a href="product-details41.html"><img src="forever_daily__pd_category_256_X_256_1698307366729.jpg" alt="Forever Daily"></a>
+                    <p>60 tablets</p>
+                    <p>249,84 SEK</p>
+                    <button onclick="addToCart('Forever Daily', 249.84, 'forever_daily__pd_category_256_X_256_1698307366729.jpg')">Add to Cart</button>
+                </div>
+                <div class="product nutritional">
+                    <p>ARGI +</p>
+                    <a href="product-details9.html"><img src="argi___pd_category_256_X_256_1624479615423 (1).jpg" alt="ARGI +"></a>
+                    <p>300 g / 30 portions</p>
+                    <p>789,40 SEK</p>
+                    <button onclick="addToCart('ARGI +', 789.40, 'argi___pd_category_256_X_256_1624479615423 (1).jpg')">Add to Cart</button>
+                </div>
+                <div class="product nutritional">
+                    <p>Forever active pro-b</p>
+                    <a href="product-details42.html"><img src="forever_active_pro-b__pd_category_256_X_256_1624464494657.jpg" alt="Forever active pro-b"></a>
+                    <p>30 capsules (10,2 g)</p>
+                    <p>434,46 SEK</p>
+                    <button onclick="addToCart('Forever active pro-b', 434.46, 'forever_active_pro-b__pd_category_256_X_256_1624464494657.jpg')">Add to Cart</button>
+                </div>
+                <div class="product nutritional">
+                    <p>forever ivision</p>
+                    <a href="product-details43.html"><img src="forever_ivision__pd_category_256_X_256_1700562345114.jpg" alt="forever ivision"></a>
+                    <p>60 capsules</p>
+                    <p>415,37 SEK</p>
+                    <button onclick="addToCart('forever ivision ', 415.37, 'forever_ivision__pd_category_256_X_256_1700562345114.jpg')">Add to Cart</button>
+                </div>
+                <div class="product nutritional">
+                    <p>forever marine collagen </p>
+                    <a href="product-details.html"><img src="forever_marine_collagen__pd_category_256_X_256_1700462177504.jpg" alt="forever marine collagen "> </a>
+                    <p>30 x 15 ml</p>
+                    <p>941,80 SEK</p>
+                    <button onclick="addToCart('forever marine collagen  ', 941.80, 'forever_marine_collagen__pd_category_256_X_256_1700462177504.jpg')">Add to Cart</button>
+                </div>
+                <div class="product nutritional">
+                    <p>forever Absorbent-C</p>
+                    <a href="product-details44.html"><img src="Forever_Absorbent-C__pd_category_256_X_256_1698911228868.jpg" alt="forever Absorbent-C"></a>
+                    <p>100 tablets</p>
+                    <p>252,82 SEK</p>
+                    <button onclick="addToCart('forever Absorbent-C ', 252.82, 'Forever_Absorbent-C__pd_category_256_X_256_1698911228868.jpg')">Add to Cart</button>
+                </div>
+                <div class="product nutritional">
+                    <p>Forever Garlic-Thyme</p>
+                    <a href="product-details45.html"><img src="Forever_Garlic-Thyme__pd_category_256_X_256_1693471195721.jpg" alt="Forever Garlic-Thyme"></a>
+                    <p>100 tablets</p>
+                    <p>261,83 SEK</p>
+                    <button onclick="addToCart('Forever Garlic-Thyme ', 261.83, 'Forever_Garlic-Thyme__pd_category_256_X_256_1693471195721.jpg')">Add to Cart</button>
+                </div>
+                <div class="product nutritional">
+                    <p>Forever Fields of Greens </p>
+                    <a href="product-details46.html"><img src="Forever_Fields_Of_Greens__pd_category_256_X_256_1693554578379.jpg" alt="Forever Fields of Greens"></a>
+                    <p>100 tablets</p>
+                    <p>261,83 SEK</p>
+                    <button onclick="addToCart('Forever Fields of Greens ', 261.83, 'Forever_Fields_Of_Greens__pd_category_256_X_256_1693554578379.jpg')">Add to Cart</button>
+                </div>
+                <div class="product nutritional">
+                    <p>Forever calcium</p>
+                    <a href="product-details47.html"><img src="forever_calcium__pd_category_256_X_256_1665487856321.jpg" alt="Forever calcium"></a>
+                    <p>90 tablets</p>
+                    <p>347,97 SEK</p>
+                    <button onclick="addToCart('Forever calcium', 347.97, 'forever_calcium__pd_category_256_X_256_1665487856321.jpg')">Add to Cart</button>
+                </div>
+                <div class="product nutritional">
+                    <p>Forever Kids</p>
+                    <a href="product-details48.html"><img src="Forever_Kids___pd_category_256_X_256_1703065641025.jpg" alt="Forever Kids"></a>
+                    <p>120 tablets</p>
+                    <p>156,51 SEK</p>
+                    <button onclick="addToCart('Forever Kids', 156.51, 'Forever_Kids___pd_category_256_X_256_1703065641025')">Add to Cart</button>
+                </div>
+                <div class="product nutritional">
+                    <p>Vitolize for men</p>
+                    <a href="product-details49.html"><img src="vitolize__for_men_pd_category_256_X_256_1624010844398.jpg" alt="Vitolize for men"></a>
+                    <p>60 capsules</p>
+                    <p>374,25 SEK</p>
+                    <button onclick="addToCart('Vitolize for men', 156.51, 'vitolize__for_men_pd_category_256_X_256_1624010844398')">Add to Cart</button>
+                </div>
+                <div class="product nutritional">
+                    <p>Vitolize for women</p>
+                    <a href="product-details50.html"><img src="vitolize__women_pd_category_256_X_256_1680692148526.jpg" alt="Vitolize for women"></a>
+                    <p>120 tablets</p>
+                    <p>394,92 SEK</p>
+                    <button onclick="addToCart('Vitolize for women', 394.92, 'vitolize__women_pd_category_256_X_256_1680692148526')">Add to Cart</button>
+                </div>
+                <div class="product nutritional">
+                    <p>Forever Fiber</p>
+                    <a href="product-details51.html"><img src="forever_fiber__pd_category_256_X_256_1680691850426.jpg" alt="Forever Fiber"></a>
+                    <p>30 portion packs</p>
+                    <p>280,81 SEK</p>
+                    <button onclick="addToCart('Forever Fiber', 280.81, 'forever_fiber__pd_category_256_X_256_1680691850426')">Add to Cart</button>
+                </div>
+                <div class="product nutritional">
+                    <p>Forever Move</p>
+                    <a href="product-details52.html"><img src="forever_move__pd_category_256_X_256_1624011295664.jpg" alt="Forever Move"></a>
+                    <p>90 capsules</p>
+                    <p>740,05 SEK</p>
+                    <button onclick="addToCart('Forever Move', 740.05, 'forever_move__pd_category_256_X_256_1624011295664.jpg')">Add to Cart</button>
+                </div>
+                <div class="product nutritional">
+                    <p>Infinite by Forever collagen complex</p>
+                    <a href="product-details53.html"><img src="infinite_by_forever__collagen_complex_pd_category_256_X_256_1698304915991.jpg" alt="Infinite by Forever collagen complex"></a>
+                    <p>60 tablets (29,5 g)</p>
+                    <p>612,90 SEK</p>
+                    <button onclick="addToCart('Infinite by Forever collagen complex', 612.90, 'infinite_by_forever__collagen_complex_pd_category_256_X_256_1698304915991')">Add to Cart</button>
+                </div>
+                <div class="product nutritional">
+                    <p>Forever Focus</p>
+                    <a href="product-details54.html"><img src="forever_focus__pd_category_256_X_256_1624020232978.jpg" alt="Forever Focus"></a>
+                    <p>120 capsules (64 g)</p>
+                    <p>990,81 SEK</p>
+                    <button onclick="addToCart('Forever Focus ', 990.81, 'forever_focus__pd_category_256_X_256_1624020232978')">Add to Cart</button>
+                </div>
+                <!-- weight-management -->   
+                <div class="product weight-management">
+                    <p>Aloe cooling Lotion</p>
+                    <a href="product-details4.html"><img src="aloe_cooling_lotion__pd_category_256_X_256_1698656358067 (1).jpg" alt="Aloe cooling Lotion"></a>
+                    <p>Volume 118 ml</p>
+                    <p>198,51 SEK</p>
+                    <button onclick="addToCart('Aloe cooling Lotion', 198.51, 'aloe_cooling_lotion__pd_category_256_X_256_1698656358067')">Add to Cart</button>
+                </div>
+                <div class="product weight-management">
+                    <p>DX4</p>
+                    <a href="product-details55.html"><img src="dx4_pd_category_256_X_256_1733395073589.jpg" alt="DX4"></a>
+                    <p></p>
+                    <p>1 646,20 SEK</p>
+                    <button onclick="addToCart('DX4', 1646.20, 'dx4_pd_category_256_X_256_1733395073589')">Add to Cart</button>
+                </div>
+                <div class="product weight-management">
+                    <p>Forever Plant Protein</p>
+                    <a href="product-details28.html"><img src="forever_plant_protein__pd_category_256_X_256_1701065059655.jpg" alt="Forever Plant Protein"></a>
+                    <p>390 g (15 x 26 g)</p>
+                    <p></p>
+                    <button onclick="addToCart('Forever Plant Protein', 'forever_plant_protein__pd_category_256_X_256_1701065059655')"> Add to Cart</button>
+                </div>
+                <div class="product weight-management">
+                    <p>Forever ultra vanilla</p>
+                    <a href="product-details56.html"><img src="forever_ultra__vanilla_pd_category_256_X_256_1627553467429.jpg" alt="Forever ultra vanilla"></a>
+                    <p>375 g / 15 portions</p>
+                    <p>312,79 SEK</p>
+                    <button onclick="addToCart('Forever ultra vanilla', 312.79, 'forever_ultra__vanilla_pd_category_256_X_256_1627553467429')">Add to Cart</button>
+                </div>
+                <div class="product weight-management">
+                    <p>ARGI +</p>
+                    <a href="product-details9.html"><img src="argi___pd_category_256_X_256_1624479615423 (1).jpg" alt="ARGI +"></a>
+                    <p>300 g / 30 portions</p>
+                    <p>789,40 SEK</p>
+                    <button onclick="addToCart('ARGI +', 789.40, 'argi___pd_category_256_X_256_1624479615423 (1).jpg')">Add to Cart</button>
+                </div>
+                <div class="product weight-management">
+                    <p>C9</p>
+                    <a href="product-details57.html"><img src="c9_pd_category_256_X_256_1698658523454.jpg" alt="C9"></a>
+                    <p></p>
+                    <p>1708,81 SEK</p>
+                    <button onclick="addToCart('C9', 1708.81, 'c9_pd_category_256_X_256_1698658523454')">SELECt</button>
+                </div>
+                <div class="product weight-management">
+                    <p>Vital5</p>
+                    <a href="product-details58.html"><img src="vital5__pd_category_256_X_256_1698658825278.jpg" alt="Vital5"></a>
+                    <p></p>
+                    <p>3 072,94 SEK</p>
+                    <button onclick="addToCart('Vital5', 3072.94, 'vital5__pd_category_256_X_256_1698658825278')">SELECt</button>
+                </div>
+                <div class="product weight-management">
+                    <p>Forever Threm</p>
+                    <a href="product-details59.html"><img src="forever_therm__pd_category_256_X_256_1624011221437.jpg" alt="Forever Threm"></a>
+                    <p>60 tablets</p>
+                    <p>433,08 SEK</p>
+                    <button onclick="addToCart('Forever Threm', 433.08, 'forever_therm__pd_category_256_X_256_1624011221437')">Add to Cart</button>
+                </div>
+                <div class="product weight-management">
+                    <p>Forever ultra chocolate</p>
+                    <a href="product-details60.html"><img src="forever_ultra__chocolate_pd_category_256_X_256_1698656552228.jpg" alt="Forever ultra chocolate"></a>
+                    <p>405 g / 15 portions</p>
+                    <p>312,79 SEK</p>
+                    <button onclick="addToCart('Forever ultra chocolate', 312.79, 'forever_ultra__chocolate_pd_category_256_X_256_1698656552228')">Add to Cart</button>
+                </div>
+                <div class="product weight-management">
+                    <p>Forever fastbreak</p>
+                    <a href="product-details61.html"><img src="fastbreak__pd_category_256_X_256_1624479697155.jpg" alt="Forever fastbreak"></a>
+                    <p>12 x 56 g</p>
+                    <p>662,59 SEK</p>
+                    <button onclick="addToCart('Forever fastbreak', 662.59, 'fastbreak__pd_category_256_X_256_1624479697155')">Add to Cart</button>
+                </div>
+                <div class="product weight-management">
+                    <p>Forever Move</p>
+                    <a href="product-details52.html"><img src="forever_move__pd_category_256_X_256_1624011295664 (1).jpg" alt="Forever Move"></a>
+                    <p>90 capsules</p>
+                    <p>740,05 SEK</p>
+                    <button onclick="addToCart('Forever Move', 740.05, 'forever_move__pd_category_256_X_256_1624011295664 (1).jpg')">Add to Cart</button>
+                </div>
+                <div class="product weight-management">
+                    <p>F15</p>
+                    <a href="product-details62.html"><img src="f15_pd_category_256_X_256_1698658436252.jpg" alt="F15"></a>
+                    <p></p>
+                    <p>1708,81 SEK</p>
+                    <button onclick="addToCart('F15', 1708.81, 'f15_pd_category_256_X_256_1698658436252')">SELECt</button>
+                </div>
+                 <!-- skin-care -->
+                 <div class="product skin-care">
+                    <p>Replenishing skin oil</p>
+                    <a href="product-details63.html"><img src="replenishing_skin_oil_pd_category_256_X_256_1720683470867.jpg" alt="Replenishing skin oil"></a>
+                    <p>30 ml</p>
+                    <p>388,75 SEK</p>
+                    <button onclick="addToCart('Replenishing skin oil', 388.75, 'replenishing_skin_oil_pd_category_256_X_256_1720683470867.jpg')">Add to Cart</button>
+                </div>
+                <div class="product skin-care">
+                    <p>aloe bio cellulose mask 3 pack</p>
+                    <a href="product-details64.html"><img src="aloe_bio-cellulose_mask_3-pack_pd_category_256_X_256_1709295241426.jpg" alt="aloe bio cellulose mask 3 pack"></a>
+                    <p>25 g/each (3-pack)</p>
+                    <p>420,24 SEK</p>
+                    <button onclick="addToCart('aloe bio cellulose mask 3 pack', 420.24, 'aloe_bio-cellulose_mask_3-pack_pd_category_256_X_256_1709295241426.jpg')">Add to Cart</button>
+                </div>
+                <div class="product skin-care">
+                    <p>deep moistruzing cream</p>
+                    <a href="product-details65.html"><img src="deep_moisturizing_cream_pd_category_256_X_256_1691744246721.jpg" alt="deep moistruzing cream"></a>
+                    <p>71 g</p>
+                    <p>440,00 SEK</p>
+                    <button onclick="addToCart('deep moistruzing cream', 440.00, 'deep_moisturizing_cream_pd_category_256_X_256_1691744246721')">Add to Cart</button>
+                </div>
+                <div class="product skin-care">
+                    <p>protecting day lotion Spf 20</p>
+                    <a href="product-details66.html"><img src="protecting_day_lotion_pd_category_256_X_256_1681724381799.jpg" alt="protecting day lotion Spf 20"></a>
+                    <p>60 ml</p>
+                    <p>483,10 SEK</p>
+                    <button onclick="addToCart('protecting day lotion Spf 20', 483.10, 'protecting_day_lotion_pd_category_256_X_256_1681724381799.jpg')">Add to Cart</button>
+                </div>
+                <div class="product skin-care">
+                    <p>smoothing exfoliator</p>
+                    <a href="product-details67.html"><img src="smoothing_exfoliator_pd_category_256_X_256_1728567581512.jpg" alt="smoothing exfoliator"></a>
+                    <p>60 ml</p>
+                    <p>240,98 SEK</p>
+                    <button onclick="addToCart('smoothing exfoliator', 240.98, 'smoothing_exfoliator_pd_category_256_X_256_1728567581512.jpg')">Add to Cart</button>
+                </div>
+                <div class="product skin-care">
+                    <p>forever aloe lips -1</p>
+                    <a href="product-details6.html"><img src="forever_aloe_lips__-_1_st_pd_category_256_X_256_1668432241039 (1).jpg" alt="forever aloe lips -1"></a>
+                    <p>4,25 g</p>
+                    <p>55,85 SEK</p>
+                    <button onclick="addToCart('forever aloe lips -1', 55.85, 'forever_aloe_lips__-_1_st_pd_category_256_X_256_1668432241039 (1).jpg')">Add to Cart</button>
+                </div>
+                <div class="product skin-care">
+                    <p>aloe propolis crem</p>
+                    <a href="product-details2.html"><img src="aloe_propolis_creme_pd_category_256_X_256_1624022740456 (1).jpg" alt="aloe propolis crem"></a>
+                    <p>113 g</p>
+                    <p>317,60 SEK</p>
+                    <button onclick="addToCart('aloe propolis crem', 317.60, 'aloe_propolis_creme_pd_category_256_X_256_1624022740456 (1).jpg')">Add to Cart</button>
+                </div>
+                <div class="product skin-care">
+                    <p>aloe vera gelly</p>
+                    <a href="product-details3.html"><img src="aloe_vera_gelly_pd_category_256_X_256_1698046151509 (1).jpg" alt="aloe vera gelly"></a>
+                    <p>118 ml</p>
+                    <p>239,06 SEK</p>
+                    <button onclick="addToCart('aloe vera gelly', 239.06, 'aloe_vera_gelly_pd_category_256_X_256_1698046151509 (1).jpg')">Add to Cart</button>
+                </div>
+                <div class="product skin-care">
+                    <p>sonya daily skincare system</p>
+                    <a href="product-details68.html"><img src="sonya__daily_skincare_system_pd_category_256_X_256_1698656666649.jpg" alt="sonya daily skincare system"></a>
+                    <p></p>
+                    <p>1 129,14 SEK</p>
+                    <button onclick="addToCart('sonya daily skincare system', 1129.14, 'sonya__daily_skincare_system_pd_category_256_X_256_1698656666649.jpg')">Add to Cart</button>
+                </div>
+                <div class="product skin-care">
+                    <p>hydrating serum</p>
+                    <a href="product-details69.html"><img src="hydrating_serum_pd_category_256_X_256_1701064971175.jpg" alt="hydrating serum"></a>
+                    <p>50 ml</p>
+                    <p>463,59 SEK</p>
+                    <button onclick="addToCart('hydrating serum', 463.59, 'hydrating_serum_pd_category_256_X_256_1701064971175.jpg')">Add to Cart</button>
+                </div>
+                <div class="product skin-care">
+                    <p>aloe body lotion</p>
+                    <a href="product-details70.html"><img src="aloe_body_lotion__pd_category_256_X_256_1698307782407.jpg" alt="aloe body lotion"></a>
+                    <p>236 ml</p>
+                    <p>301,29 SEK</p>
+                    <button onclick="addToCart('aloe body lotion', 301.29, 'aloe_body_lotion__pd_category_256_X_256_1698307782407.jpg')">Add to Cart</button>
+                </div>
+                <div class="product skin-care">
+                    <p>infinite by forever set</p>
+                    <a href="product-details71.html"><img src="infinite_by_forever__set_pd_category_256_X_256_1728567339451.jpg" alt="infinite by forever set"></a>
+                    <p></p>
+                    <p>2 245,13 SEK</p>
+                    <button onclick="addToCart('infinite by forever set', 2245.13, 'infinite_by_forever__set_pd_category_256_X_256_1728567339451.jpg')">Add to Cart</button>
+                </div>
+                <div class="product skin-care">
+                    <p>forever marine collagen</p>
+                    <a href="product-details.html"><img src="forever_marine_collagen__pd_category_256_X_256_1700462177504 (1).jpg" alt="forever marine collagen"></a>
+                    <p>30 x 15 ml</p>
+                    <p>941,80 SEK</p>
+                    <button onclick="addToCart('forever marine collagen', 2245.13, 'forever_marine_collagen__pd_category_256_X_256_1700462177504 (1).jpg')">Add to Cart</button>
+                </div>
+                <div class="product skin-care">
+                    <p>aloe first</p>
+                    <a href="product-details72.html"><img src="aloe_first__pd_category_256_X_256_1698046192244.jpg" alt="aloe first"></a>
+                    <p>473 ml</p>
+                    <p>317,60 SEK</p>
+                    <button onclick="addToCart('aloe first ', 317.60, 'aloe_first__pd_category_256_X_256_1698046192244.jpg')">Add to Cart</button>
+                </div>
+                <div class="product skin-care">
+                    <p>aloe moistruzing lotion</p>
+                    <a href="product-details73.html"><img src="aloe_moisturizing_lotion_pd_category_256_X_256_1698046659442.jpg" alt="aloe moistruzing lotion"></a>
+                    <p>118 ml</p>
+                    <p>239,06 SEK</p>
+                    <button onclick="addToCart('aloe moistruzing lotion', 239.06, 'aloe_moisturizing_lotion_pd_category_256_X_256_1698046659442.jpg')">Add to Cart</button>
+                </div>
+                <div class="product skin-care">
+                    <p>R3 factor</p>
+                    <a href="product-details74.html"><img src="r3_factor__pd_category_256_X_256_1693831262953.jpg" alt="R3 factor"></a>
+                    <p>56 g</p>
+                    <p>530,15 SEK</p>
+                    <button onclick="addToCart('R3 factor', 530.15, 'r3_factor__pd_category_256_X_256_1693831262953.jpg')">Add to Cart</button>
+                </div>
+                <div class="product skin-care">
+                    <p>gentlemans pride</p>
+                    <a href="product-details75.html"><img src="gentleman_s_pride___pd_category_256_X_256_1698046701649.jpg" alt="gentlemans pride"></a>
+                    <p>118 ml</p>
+                    <p>239,06 SEK</p>
+                    <button onclick="addToCart('gentlemans pride', 239.06, 'gentleman_s_pride___pd_category_256_X_256_1698046701649.jpg')">Add to Cart</button>
+                </div>
+                <div class="product skin-care">
+                    <p>forever aloe scrub </p>
+                    <a href="product-details76.html"><img src="forever_aloe_scrub__pd_category_256_X_256_1698046956478.jpg" alt="forever aloe scrub "></a>
+                    <p>99 g</p>
+                    <p>252,33 SEK</p>
+                    <button onclick="addToCart('forever aloe scrub ', 252.33, 'forever_aloe_scrub__pd_category_256_X_256_1698046956478.jpg')">Add to Cart</button>
+                </div>
+                <div class="product skin-care">
+                    <p>mask powder </p>
+                    <a href="product-details77.html"><img src="mask_powder_pd_category_256_X_256_1698048093947.jpg" alt="mask powder"></a>
+                    <p>29 g</p>
+                    <p>244,55 SEK</p>
+                    <button onclick="addToCart('mask powder', 244.55, 'mask_powder_pd_category_256_X_256_1698048093947.jpg')">Add to Cart</button>
+                </div>
+                <div class="product skin-care">
+                    <p>infinite by forever hydrating cleanser </p>
+                    <a href="product-details78.html"><img src="infinite_by_forever__hydrating_cleanser_pd_category_256_X_256_1698047002611.jpg" alt="infinite by forever hydrating cleanser"></a>
+                    <p>118 ml</p>
+                    <p>347,05 SEK</p>
+                    <button onclick="addToCart('infinite by forever hydrating cleanser', 347.05, 'infinite_by_forever__hydrating_cleanser_pd_category_256_X_256_1698047002611.jpg')">Add to Cart</button>
+                </div>
+                <div class="product skin-care">
+                    <p>infinite by forever firming serum </p>
+                    <a href="product-details79.html"><img src="infinite_by_forever__firming_serum_pd_category_256_X_256_1693829180543.jpg" alt="infinite by forever firming serum"></a>
+                    <p>30 ml</p>
+                    <p>687,23 SEK</p>
+                    <button onclick="addToCart('infinite by forever firming serum', 687.23, 'infinite_by_forever__firming_serum_pd_category_256_X_256_1693829180543.jpg')">Add to Cart</button>
+                </div>
+                <div class="product skin-care">
+                    <p>infinite by forever restoring Creme </p>
+                    <a href="product-details80.html"><img src="infinite_by_forever__restoring_cr_me_pd_category_256_X_256_1698047436546.jpg" alt="infinite by forever restoring Creme"></a>
+                    <p>48,2 g</p>
+                    <p>766,53 SEK</p>
+                    <button onclick="addToCart('infinite by forever restoring Creme', 766.53, 'infinite_by_forever__restoring_cr_me_pd_category_256_X_256_1698047436546.jpg')">Add to Cart</button>
+                </div>
+                <div class="product skin-care">
+                    <p>balancing toner  </p>
+                    <a href="product-details81.html"><img src="balancing_toner_pd_category_256_X_256_1698047588230.jpg" alt="balancing toner "></a>
+                    <p>130 ml</p>
+                    <p>287,39 SEK</p>
+                    <button onclick="addToCart('balancing toner ', 287.39, 'balancing_toner_pd_category_256_X_256_1698047588230.jpg')">Add to Cart</button>
+                </div>
+                <div class="product skin-care">
+                    <p>awakening eye cream</p>
+                    <a href="product-details82.html"><img src="awakening_eye_cream_pd_category_256_X_256_1698305591997.jpg" alt="awakening eye cream"></a>
+                    <p>17,5 ml</p>
+                    <p>240,98 SEK</p>
+                    <button onclick="addToCart('awakening eye cream ', 240.98, 'awakening_eye_cream_pd_category_256_X_256_1698305591997.jpg')">Add to Cart</button>
+                </div>
+                <div class="product skin-care">
+                    <p>sonya refreshing gel cleanser</p>
+                    <a href="product-details83.html"><img src="sonya__refreshing_gel_cleanser_pd_category_256_X_256_1698305984795.jpg" alt="sonya refreshing gel cleanser"></a>
+                    <p>118 ml</p>
+                    <p>311,10 SEK</p>
+                    <button onclick="addToCart('sonya refreshing gel cleanser', 311.10, 'sonya__refreshing_gel_cleanser_pd_category_256_X_256_1698305984795.jpg')">Add to Cart</button>
+                </div>
+                <div class="product skin-care">
+                    <p>sonya illuminating gel</p>
+                    <a href="product-details84.html"><img src="sonya__illuminating_gel_pd_category_256_X_256_1698047733626.jpg" alt="sonya illuminating gel"></a>
+                    <p>28,3 g</p>
+                    <p>294,65 SEK</p>
+                    <button onclick="addToCart('sonya illuminating gel', 294.65, 'sonya__illuminating_gel_pd_category_256_X_256_1698047733626.jpg')">Add to Cart</button>
+                </div>
+                <div class="product skin-care">
+                    <p>sonya refining gel mask</p>
+                    <a href="product-details85.html"><img src="sonya__refining_gel_mask_pd_category_256_X_256_1698047917922.jpg" alt="sonya refining gel mask"></a>
+                    <p>59 ml</p>
+                    <p>311,10 SEK</p>
+                    <button onclick="addToCart('sonya refining gel mask', 311.10, 'sonya__refining_gel_mask_pd_category_256_X_256_1698047917922.jpg')">Add to Cart</button>
+                </div>
+                <div class="product skin-care">
+                    <p>sonya soothing gel moistruzer</p>
+                    <a href="product-details86.html"><img src="sonya__soothing_gel_moisturizer_pd_category_256_X_256_1698306220924.jpg" alt="sonya soothing gel moistruzer"></a>
+                    <p>59 ml</p>
+                    <p>341,06 SEK</p>
+                    <button onclick="addToCart('sonya soothing gel moistruzer', 341.06, 'sonya__soothing_gel_moisturizer_pd_category_256_X_256_1698306220924.jpg')">Add to Cart</button>
+                </div>
+                <div class="product skin-care">
+                    <p>aloe activator</p>
+                    <a href="product-details87.html"><img src="aloe_activator_pd_category_256_X_256_1625484249846.jpg" alt="aloe activator"></a>
+                    <p>130 ml</p>
+                    <p>175,70 SEK</p>
+                    <button onclick="addToCart('aloe activator', 175.70, 'aloe_activator_pd_category_256_X_256_1625484249846.jpg')">Add to Cart</button>
+                </div>
+                <div class="product skin-care">
+                    <p>aloe sunscreen</p>
+                    <a href="product-details88.html"><img src="aloe_sunscreen_pd_category_256_X_256_1698306552162.jpg" alt="aloe sunscreen"></a>
+                    <p>118 ml</p>
+                    <p>274,76 SEK</p>
+                    <button onclick="addToCart('aloe sunscreen', 274.76, 'aloe_sunscreen_pd_category_256_X_256_1698306552162.jpg')">Add to Cart</button>
+                </div>
+                <div class="product skin-care">
+                    <p>aloe body wash</p>
+                    <a href="product-details89.html"><img src="aloe_body_wash__pd_category_256_X_256_1698307142165.jpg" alt="aloe body wash"></a>
+                    <p>236 ml</p>
+                    <p>297,96 SEK</p>
+                    <button onclick="addToCart('aloe body wash', 297.96, 'aloe_body_wash__pd_category_256_X_256_1698307142165.jpg')">Add to Cart</button>
+                </div>
+                <div class="product skin-care">
+                    <p>forever aloe lips</p>
+                    <a href="product-details90.html"><img src="forever_aloe_lips__pd_category_256_X_256_1668432087757.jpg" alt="forever aloe lips"></a>
+                    <p>4,25 g x 12</p>
+                    <p>669,38 SEK</p>
+                    <button onclick="addToCart('forever aloe lips ', 669.38, 'forever_aloe_lips__pd_category_256_X_256_1668432087757.jpg')">Add to Cart</button>
+                </div>
+                   <!-- personal-care -->                  
+                   <div class="product personal-care">
+                    <p>aloe body lotion</p>
+                    <a href="product-details70.html"><img src="aloe_body_lotion__pd_category_256_X_256_1698307782407.jpg" alt="aloe body lotion"></a>
+                    <p>236 ml</p>
+                    <p>301,29 SEK</p>
+                    <button onclick="addToCart('aloe body lotion', 301.29, 'aloe_body_lotion__pd_category_256_X_256_1698307782407.jpg')">Add to Cart</button>
+                </div>
+                <div class="product personal-care">
+                    <p>forever malosi fine Fragrances</p>
+                    <a href="product-details91.html"><img src="forever_malosi_fine_fragrance_pd_category_256_X_256_1701167840536.jpg" alt="forever malosi fine Fragrances"></a>
+                    <p>30 ml</p>
+                    <p>443,45 SEK</p>
+                    <button onclick="addToCart('forever malosi fine Fragrances', 443.45, 'forever_malosi_fine_fragrance_pd_category_256_X_256_1701167840536.jpg')">Add to Cart</button>
+                </div>
+                <div class="product personal-care">
+                    <p>forever alofa fina Fragrances</p>
+                    <a href="product-details92.html"><img src="forever_alofa_fine_fragrance_pd_category_256_X_256_1701167782756.jpg" alt="forever alofa fina Fragrances"></a>
+                    <p>30 ml</p>
+                    <p>443,45 SEK</p>
+                    <button onclick="addToCart('forever alofa fina Fragrances', 443.45, 'forever_alofa_fine_fragrance_pd_category_256_X_256_1701167782756.jpg')">Add to Cart</button>
+                </div>
+                <div class="product personal-care">
+                    <p>Nourishing hair oil</p>
+                    <a href="product-details93.html"><img src="nourishing_hair_oil_pd_category_256_X_256_1728566032393.jpg" alt="Nourishing hair oil"></a>
+                    <p>30 ml</p>
+                    <p>367,20 SEK</p>
+                    <button onclick="addToCart('Nourishing hair oil', 367.20, 'nourishing_hair_oil_pd_category_256_X_256_1728566032393.jpg')">Add to Cart</button>
+                </div>
+                <div class="product personal-care">
+                    <p>aloe cooling lotion</p>
+                    <a href="product-details4.html"><img src="aloe_cooling_lotion__pd_category_256_X_256_1698656358067 (2).jpg" alt="aloe cooling lotion"></a>
+                    <p>Volume 118 ml</p>
+                    <p>198,51 SEK</p>
+                    <button onclick="addToCart('aloe cooling lotion', 198.51, 'aloe_cooling_lotion__pd_category_256_X_256_1698656358067 (2).jpg')">Add to Cart</button>
+                </div>
+                <div class="product personal-care">
+                    <p>forever bright toothgel</p>
+                    <a href="product-details7.html"><img src="forever_bright__toothgel_pd_category_256_X_256_1670937510560 (1).jpg" alt="forever bright toothgel"></a>
+                    <p>130 g</p>
+                    <p>122,79 SEK</p>
+                    <button onclick="addToCart('forever bright toothgel', 122.79, 'forever_bright__toothgel_pd_category_256_X_256_1670937510560 (1).jpg')">Add to Cart</button>
+                </div>
+                <div class="product personal-care">
+                    <p>aloe ever shield</p>
+                    <a href="product-details8.html"><img src="aloe_ever-shield__pd_category_256_X_256_1698657316052 (1).jpg" alt="aloe ever shield"></a>
+                    <p>92 g</p>
+                    <p>115,14 SEK</p>
+                    <button onclick="addToCart('aloe ever shield', 115.14, 'aloe_ever-shield__pd_category_256_X_256_1698657316052 (1).jpg')">Add to Cart</button>
+                </div>
+                <div class="product personal-care">
+                    <p>aloe avocado face body soap</p>
+                    <a href="product-details94.html"><img src="aloe_avocado_face___body_soap_pd_category_256_X_256_1695983547466.jpg" alt="aloe avocado face body soap"></a>
+                    <p>142 g</p>
+                    <p>78,41 SEK</p>
+                    <button onclick="addToCart('aloe avocado face body soap', 78.41, 'aloe_avocado_face___body_soap_pd_category_256_X_256_1695983547466.jpg')">Add to Cart</button>
+                </div>
+                <div class="product personal-care">
+                    <p>aloe jojoba shampoo</p>
+                    <a href="product-details95.html"><img src="aloe-jojoba_shampoo_pd_category_256_X_256_1698306927400.jpg" alt="aloe jojoba shampoo"></a>
+                    <p>296 ml</p>
+                    <p>288,15 SEK</p>
+                    <button onclick="addToCart('aloe jojoba shampoo', 288.15, 'aloe-jojoba_shampoo_pd_category_256_X_256_1698306927400.jpg')">Add to Cart</button>
+                </div>
+                <div class="product personal-care">
+                    <p>aloe jojoba conditioner</p>
+                    <a href="product-details96.html"><img src="aloe-jojoba_conditioner_pd_category_256_X_256_1698307604807.jpg" alt="aloe jojoba conditioner"></a>
+                    <p>296 ml</p>
+                    <p>308,04 SEK</p>
+                    <button onclick="addToCart('aloe jojoba conditioner', 308.04, 'aloe-jojoba_conditioner_pd_category_256_X_256_1698307604807.jpg')">Add to Cart</button>
+                </div>
+                <div class="product personal-care">
+                    <p>gentlemans pride</p>
+                    <a href="product-details75.html"><img src="gentleman_s_pride___pd_category_256_X_256_1698046701649 (1).jpg" alt="gentlemans pride"></a>
+                    <p>118 ml</p>
+                    <p>239,06 SEK</p>
+                    <button onclick="addToCart('gentlemans pride', 239.06, 'gentleman_s_pride___pd_category_256_X_256_1698046701649 (1).jpg')">Add to Cart</button>
+                </div>
+                <div class="product personal-care">
+                    <p>forever hand sanitizer</p>
+                    <a href="product-details97.html"><img src="forever_hand_sanitizer__pd_category_256_X_256_1625479553708.jpg" alt="forever hand sanitizer"></a>
+                    <p>59 ml</p>
+                    <p>49,48 SEK</p>
+                    <button onclick="addToCart('forever hand sanitizer', 239.06, 'forever_hand_sanitizer__pd_category_256_X_256_1625479553708.jpg')">Add to Cart</button>
+                </div>
+                <div class="product personal-care">
+                    <p>aloe liquid soap</p>
+                    <a href="product-details5.html"><img src="aloe_liquid_soap_pd_category_256_X_256_1698913612133 (1).jpg" alt="aloe liquid soap"></a>
+                    <p>473 ml</p>
+                    <p>256,03 SEK</p>
+                    <button onclick="addToCart('aloe liquid soap', 256.03, 'aloe_liquid_soap_pd_category_256_X_256_1698913612133 (1).jpg')">Add to Cart</button>
+                </div>
+                <div class="product personal-care">
+                    <p>aloe body wash</p>
+                    <a href="product-details89.html"><img src="aloe_body_wash__pd_category_256_X_256_1698307142165 (1).jpg" alt="aloe body wash"></a>
+                    <p>236 ml</p>
+                    <p>297,96 SEK</p>
+                    <button onclick="addToCart('aloe body wash', 297.96, 'aloe_body_wash__pd_category_256_X_256_1698307142165 (1).jpg')">Add to Cart</button>
+                </div>
+                <!-- fine-fragrances -->              
+                <div class="product fine-fragrances">
+                    <p>forever alofa fina Fragrances</p>
+                    <a href="product-details92.html"><img src="forever_alofa_fine_fragrance_pd_category_256_X_256_1701167782756.jpg" alt="forever alofa fina Fragrances"></a>
+                    <p>30 ml</p>
+                    <p>443,45 SEK</p>
+                    <button onclick="addToCart('forever alofa fina Fragrances', 443.45, 'forever_alofa_fine_fragrance_pd_category_256_X_256_1701167782756.jpg')">Add to Cart</button>
+                </div>
+                <div class="product fine-fragrances">
+                    <p>forever malosi fine Fragrances</p>
+                    <a href="product-details91.html"><img src="forever_malosi_fine_fragrance_pd_category_256_X_256_1701167840536.jpg" alt="forever malosi fine"></a>
+                    <p>30 ml</p>
+                    <p>443,45 SEK</p>
+                    <button onclick="addToCart('forever malosi fine', 443.45, 'forever_malosi_fine_fragrance_pd_category_256_X_256_1701167840536.jpg')">Add to Cart</button>
+                </div>
+                 <!-- combo-paks -->
+                 <div class="product combo-paks">
+                    <p>DX4</p>
+                    <a href="product-details55.html"><img src="dx4_pd_category_256_X_256_1733395073589 (1).jpg" alt="DX4"></a>
+                    <p></p>
+                    <p>1 646,20 SEK</p>
+                    <button onclick="addToCart('DX4', 1646.20, 'dx4_pd_category_256_X_256_1733395073589 (1).jpg')">Add to Cart</button>
+                </div>
+                <div class="product combo-paks">
+                    <p>sonya daily skincare system</p>
+                    <a href="product-details68.html"><img src="sonya__daily_skincare_system_pd_category_256_X_256_1698656666649 (1).jpg" alt="sonya daily skincare system"></a>
+                    <p></p>
+                    <p>1 129,14 SEK</p>
+                    <button onclick="addToCart('sonya daily skincare system ',1129.14, 'sonya__daily_skincare_system_pd_category_256_X_256_1698656666649 (1).jpg')">Add to Cart</button>
+                </div>
+                <div class="product combo-paks">
+                    <p>infiniteby forever set </p>
+                    <a href="product-details98.html"><img src="infinite_by_forever__set_pd_category_256_X_256_1728567339451 (1).jpg" alt="infiniteby forever set "></a>
+                    <p></p>
+                    <p>2 245,13 SEK</p>
+                    <button onclick="addToCart('infiniteby forever set ',2245.13, 'infinite_by_forever__set_pd_category_256_X_256_1728567339451 (1).jpg')">Add to Cart</button>
+                </div>
+                <div class="product combo-paks">
+                    <p>C9 </p>
+                    <a href="product-details57.html"><img src="c9_pd_category_256_X_256_1698658523454 (1).jpg" alt="C9"></a>
+                    <p></p>
+                    <p>1 708,81 SEK</p>
+                    <button onclick="addToCart('C9 ',1708.81, 'c9_pd_category_256_X_256_1698658523454 (1).jpg')">Add to Cart</button>
+                </div>
+                <div class="product combo-paks">
+                    <p>vital5</p>
+                    <a href="product-details58.html"><img src="vital5__pd_category_256_X_256_1698658825278 (1).jpg" alt="vital5"></a>
+                    <p></p>
+                    <p>3 072,94 SEK</p>
+                    <button onclick="addToCart('vital5',3072.94, 'vital5__pd_category_256_X_256_1698658825278 (1).jpg')">Add to Cart</button>
+                </div>
+                <div class="product combo-paks">
+                    <p>gelargi tripack</p>
+                    <a href="product-details99.html"><img src="gelargi_tripack__pd_category_256_X_256_1698658965294.jpg" alt="gelargi tripack"></a>
+                    <p>3x330 ml, 3x10g</p>
+                    <p>453,88 SEK</p>
+                    <button onclick="addToCart('gelargi tripack',453.88, 'gelargi_tripack__pd_category_256_X_256_1698658965294.jpg')">Add to Cart</button>
+                </div>
+                <div class="product combo-paks">
+                    <p>F15</p>
+                    <a href="product-details62.html"><img src="f15_pd_category_256_X_256_1698658436252 (1).jpg" alt="F15"></a>
+                    <p></p>
+                    <p>1 708,81 SEK</p>
+                    <button onclick="addToCart('F15 ',1708.81, 'f15_pd_category_256_X_256_1698658436252 (1).jpg')">Add to Cart</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Add a link to the Buy Money page -->
+
+    <footer>
+        <div class="footer-content">
+          <ul class="social-links">
+            <li><a href="https://www.tiktok.com/@foreverlin4?_t=ZN-8tZsEnEhD42&_r=1" target="_blank"><i class="fab fa-tiktok"></i> TikTok</a></li>
+            <li><a href="https://www.instagram.com/foreverlivingfa.se" target="_blank"><i class="fab fa-instagram"></i> Instagram</a></li>
+            <li><a href="mailto:Fathiya110@hotmail.com"><i class="fas fa-envelope"></i> Email</a></li>
+            <li><a href="https://www.snapchat.com/add/fathiya4796" target="_blank"><i class="fab fa-snapchat"></i> Snapchat</a></li>
+          </ul>
+          <div class="contact-info">
+            <p>Phone: <a href="tel:+46765653753">0765653753</a></p>
+            <p>Email: <a href="mailto:Fathiya110@hotmail.com">Fathiya110@hotmail.com</a></p>
+          </div>
+        </div>
+      </footer>
+      <script>
+        // Initialize cart from localStorage or as an empty array
+        let cart = JSON.parse(localStorage.getItem('cart')) || [];
+    
+        // Function to open the overlay navigation menu
+        function openNav() {
+            document.getElementById("myNav").style.width = "100%";
+        }
+    
+        // Function to close the overlay navigation menu
+        function closeNav() {
+            document.getElementById("myNav").style.width = "0%";
+        }
+    
+        // Function to perform search on products
+        function performSearch() {
+            const query = document.getElementById("search-input").value.toLowerCase();
+            const products = document.querySelectorAll('.product');
+    
+            products.forEach(product => {
+                const isMatch = product.textContent.toLowerCase().includes(query);
+                product.style.display = isMatch ? 'block' : 'none';
+            });
+        }
+    
+        // Function to filter products by category
+        function filterProducts(category) {
+            const allProducts = document.querySelectorAll('.product');
+            const filteredProducts = document.querySelectorAll(`.${category}`);
+    
+            // Hide all products
+            allProducts.forEach(product => product.style.display = 'none');
+    
+            // Show products in the selected category
+            filteredProducts.forEach(product => product.style.display = 'block');
+        }
+    
+        // Function to add a product to the cart
+        function addToCart(productName, productPrice, productImage) {
+            const existingProduct = cart.find(item => item.name === productName);
+    
+            if (existingProduct) {
+                // If the product already exists in the cart, increase its quantity
+                existingProduct.quantity += 1;
+            } else {
+                // Add a new product to the cart
+                cart.push({ name: productName, price: productPrice, image: productImage, quantity: 1 });
+            }
+    
+            // Save cart to localStorage
+            localStorage.setItem('cart', JSON.stringify(cart));
+    
+            // Update cart display
+            updateCartDisplay();
+        }
+    
+        // Function to update the cart info display
+        function updateCartDisplay() {
+            const cart = JSON.parse(localStorage.getItem('cart')) || [];
+            const cartCountElem = document.getElementById('cartCount');
+            const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
+            cartCountElem.textContent = totalItems;
+        }
+    
+        // Function to view cart contents (optional, can be removed if not used)
+        function viewCart() {
+            if (cart.length === 0) {
+                alert("Your cart is empty.");
+                return;
+            }
+    
+            let cartDetails = "Your Cart:\n";
+            cart.forEach(item => {
+                cartDetails += `${item.name} - $${item.price} x ${item.quantity}\n`;
+            });
+    
+            alert(cartDetails);
+        }
+    
+        // Update cart info on page load
+        document.addEventListener('DOMContentLoaded', updateCartDisplay);
+    </script>
+    
+</body>
+</html>

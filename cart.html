@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Neutral E-Commerce Store</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="main-header">
+        <div id="myNav" class="overlay">
+            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+            <div class="overlay-content">
+                <a href="index.html" class="back-to-home">Home</a>
+                <a href="About.html">About</a>
+            </div>
+        </div>
+        <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; Forever</span>
+        <!-- Cart Info -->
+        <div class="cart-info">
+            <a href="cart.html">
+                <img src="shopping_bag_cart-512.webp" alt="Cart" width="30" height="30">
+                <span id="cartCount">0</span>
+            </a>
+        </div>
+    </header>
+
+    <!-- Cart Section -->
+    <div class="small-container cart-page">
+        <h2>Your Cart</h2>
+        <table id="cartTable">
+            <thead>
+                <tr>
+                    <th>Product</th>
+                    <th>Image</th>
+                    <th>Quantity</th>
+                    <th>Price</th>
+                    <th>Remove</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Cart items will be dynamically added here -->
+            </tbody>
+        </table>
+        <div class="cart-total">
+            <p><strong>Total:</strong> $<span id="total">0.00</span></p>
+        </div>
+        <button class="checkout-btn" onclick="checkout()">Checkout</button>
+    </div>
+
+    <script>
+        // Initialize cart from localStorage or set to empty array if not available
+        let cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+        // Function to update the cart display
+        function updateCart() {
+            const tableBody = document.querySelector('#cartTable tbody');
+            const totalElem = document.getElementById('total');
+
+            // Clear previous cart display
+            tableBody.innerHTML = '';
+
+            let total = 0;
+
+            // Loop through cart items and display them
+            cart.forEach((item, index) => {
+                const itemTotal = item.price * item.quantity;
+                total += itemTotal;
+
+                const row = document.createElement('tr');
+                row.innerHTML = `
+                    <td>${item.name}</td>
+                    <td><img src="${item.image}" alt="${item.name}" width="50"></td>
+                    <td>
+                        <input type="number" value="${item.quantity}" min="1" onchange="changeQuantity(${index}, this.value)">
+                    </td>
+                    <td>$${item.price.toFixed(2)}</td>
+                    <td><button onclick="removeItem(${index})">Remove</button></td>
+                `;
+                tableBody.appendChild(row);
+            });
+
+            // Update total
+            totalElem.textContent = total.toFixed(2);
+
+            // Update cart count
+            const cartCountElem = document.getElementById('cartCount');
+            cartCountElem.textContent = cart.reduce((sum, item) => sum + item.quantity, 0);
+        }
+
+        // Function to handle quantity change
+        function changeQuantity(index, value) {
+            cart[index].quantity = parseInt(value);
+            if (cart[index].quantity <= 0) {
+                removeItem(index);
+            } else {
+                localStorage.setItem('cart', JSON.stringify(cart));
+                updateCart();
+            }
+        }
+
+        // Function to handle item removal
+        function removeItem(index) {
+            cart.splice(index, 1);
+            localStorage.setItem('cart', JSON.stringify(cart));
+            updateCart();
+        }
+
+        // Function to handle checkout
+        function checkout() {
+            if (cart.length === 0) {
+                alert('Your cart is empty.');
+                return;
+            }
+            window.location.href = 'checkout.html';  // Redirect to checkout page
+        }
+
+        // Open/Close overlay navigation
+        function openNav() {
+            document.getElementById("myNav").style.width = "100%";
+        }
+
+        function closeNav() {
+            document.getElementById("myNav").style.width = "0%";
+        }
+
+        // Update cart display when the page loads
+        document.addEventListener('DOMContentLoaded', updateCart);
+    </script>
+</body>
+</html>

@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aloe Propolis Creme</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #f9f9f9;
+        }
+
+        .main-header {
+            background: #14a99f;
+            padding: 20px;
+        }
+
+        .navbar {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .navbar img {
+            width: 100px;
+        }
+
+        .cart-info {
+            position: relative;
+        }
+
+        .cart-info img {
+            width: 30px;
+            height: 30px;
+        }
+
+        .cart-info span {
+            position: absolute;
+            top: -5px;
+            left: 15px;
+            background-color: #ff523b;
+            color: #fff;
+            font-size: 14px;
+            padding: 0 5px;
+            border-radius: 50%;
+        }
+
+        /* Main Content Area */
+        .single-product {
+            max-width: 1200px;
+            margin: 30px auto;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .row {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+        }
+
+        .col-2 img {
+            max-width: 100%;
+            padding: 20px;
+        }
+
+        .col-2 h1 {
+            font-size: 2rem;
+            margin: 20px 0;
+        }
+
+        .col-2 h4 {
+            color: #ff523b;
+            font-size: 1.8rem;
+            margin: 10px 0;
+        }
+
+        .btn {
+            background-color: #5ee689;
+            padding: 10px 30px;
+            border-radius: 30px;
+            color: white;
+            text-decoration: none;
+            display: inline-block;
+            margin: 15px 0;
+            transition: background-color 0.3s;
+        }
+
+        .btn:hover {
+            background-color: #2d302e;
+        }
+
+        select, input[type="number"] {
+            padding: 10px;
+            margin: 10px 0;
+            font-size: 1rem;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        h3 {
+            font-size: 1.5rem;
+            margin: 20px 0 10px;
+        }
+
+        ul {
+            list-style-type: none;
+            padding-left: 0;
+            margin-bottom: 20px;
+        }
+
+        ul li {
+            margin-bottom: 8px;
+        }
+    </style>
+</head>
+<body>
+     <!-- Header -->
+     <header class="main-header">
+        <div id="myNav" class="overlay">
+            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+            <div class="overlay-content">
+                <a href="index.html" class="back-to-home">Home</a>
+                <a href="About.html">About</a>
+                
+            </div>
+        </div>
+        <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; Forever</span>
+
+        <div class="cart-info">
+            <a href="cart.html">
+                <img src="shopping_bag_cart-512.webp" alt="Cart">
+                <span id="cartCount">0</span>
+            </a>
+        </div>
+    </header>
+
+    <!-- Single Product Section -->
+    <div class="single-product">
+        <div class="row">
+            <div class="col-2">
+                <img src="f15_pd_category_256_X_256_1698658436252.jpg" width="100%" class="small-img">
+                <div class="small-img-col">
+                    <img src="f15_pd_category_256_X_256_1698658436252.jpg" width="50%" class="small-img">
+                </div>
+            </div>
+            <div class="col-2">
+                <h1>F15 Beginner Vanilla</h1>
+                <h4>1,708.81 SEK</h4>
+                
+                <!-- Quantity and Add to Cart -->
+                <input type="number" id="quantity" value="1" min="1">
+                <a href="#" class="btn" onclick="addToCart('F15 Beginner Vanilla', 1708.81, 'f15_beginner_vanilla.jpg')">Add To Cart</a>
+                
+                <!-- Product Description and Details -->
+                <h3>Product Description</h3>
+                <p>F15 Beginner is the first stage in the Forever F.I.T.™ program, designed to help you transition into a healthier lifestyle. This pack includes a combination of Forever products and a clear, structured diet and exercise plan. It's perfect for anyone who is just starting their fitness journey and looking for guidance on nutrition and exercise.</p>
+            
+                <h3>Who is it for?</h3>
+                <p>F15 Beginner is ideal for adults who are new to exercise or planning to start their fitness journey. If you need help with setting up a workout routine, managing your diet, and making lasting lifestyle changes, this is the right programme for you. It’s a great choice if you want to make fitness a part of your everyday life.</p>
+            
+                <h3>How it works</h3>
+                <p>The F15 Beginner pack includes everything you need to get started: a 15-day diet and training programme, a step-by-step guide, and carefully selected Forever products. The programme is divided into two stages (15 days each). You'll gradually build your fitness level and improve your eating habits, with support to keep you motivated and on track.</p>
+                
+                <h3>The pack contains:</h3>
+                <ul>
+                    <li>Forever Ultra™ Vanilla (1 x 15 portions)</li>
+                    <li>Forever Therm™ (1 x 60 tablets)</li>
+                    <li>Forever Fiber™ (1 x 30 portions)</li>
+                    <li>Forever Aloe Vera Gel™ (2 x 1 litre)</li>
+                    <li>Manual for the diet and training programme</li>
+                </ul>
+            
+                <h3>Part of Forever F.I.T.™</h3>
+                <p>F15 Beginner is the first step in the Forever F.I.T.™ programme, a holistic approach to health and fitness. Check out the other stages in the series for more advanced options!</p>
+            
+                <h3>Dietary Supplements in the Pack:</h3>
+            
+                <h4>Forever Ultra™ Vanilla</h4>
+                <p>Helps you control your calorie intake. Forever Ultra™ is a meal replacement made with high-value soy protein, vitamins, and minerals. It’s designed to fill you up while controlling your calories, making it ideal for weight management.</p>
+            
+                <h4>Forever Therm™</h4>
+                <p>Helps with energy levels and metabolism. It contains vitamins such as C, B2, B6, B12, and pantothenic acid to support energy metabolism and fight tiredness.</p>
+            
+                <h4>Forever Fiber™</h4>
+                <p>Provides the fiber you need in your diet without adding extra calories. Fiber is an essential part of any healthy diet.</p>
+            
+                <h4>Forever Aloe Vera Gel™</h4>
+                <p>This is a pure, natural Aloe vera drink made from hand-picked Aloe vera gel. It’s a great way to kick-start your day and is loved by millions worldwide.</p>
+            
+                <h3>Usage Instructions</h3>
+                <h4>Forever Ultra™ Vanilla</h4>
+                <p>Mix one level scoop of the powder (about 23g) with 300 ml of skimmed milk or water. You can drink it as a meal replacement or as a protein supplement 1–2 times per day.</p>
+            
+                <h4>Forever Therm™</h4>
+                <p>Take 2 tablets daily, either both in the morning or one in the morning and one with lunch. Contains caffeine (87 mg per daily dose).</p>
+            
+                <h3>Important Information:</h3>
+                <ul>
+                    <li>Do not exceed the recommended daily dose for supplements.</li>
+                    <li>These products are not intended to replace a varied, balanced diet and healthy lifestyle.</li>
+                    <li>If you're pregnant, breastfeeding, or on medication, consult with a doctor before using these supplements.</li>
+                    <li>Always stay hydrated while using the F15 programme.</li>
+                </ul>
+            
+                <h3>Made in the USA</h3>
+            
+                <h3>Ingredients List:</h3>
+                <p>For detailed ingredient lists, please check the individual product pages for Forever Ultra™, Forever Therm™, Forever Fiber™, and Forever Aloe Vera Gel™.</p>
+            </div>                                                                                                     
+        </div>
+    </div>
+    <footer>
+        <div class="footer-content">
+          <ul class="social-links">
+            <li><a href="https://www.tiktok.com/@foreverlin4?_t=ZN-8tZsEnEhD42&_r=1" target="_blank"><i class="fab fa-tiktok"></i> TikTok</a></li>
+            <li><a href="https://www.instagram.com/foreverlivingfa.se" target="_blank"><i class="fab fa-instagram"></i> Instagram</a></li>
+            <li><a href="mailto:Fathiya110@hotmail.com"><i class="fas fa-envelope"></i> Email</a></li>
+            <li><a href="https://www.snapchat.com/add/fathiya4796" target="_blank"><i class="fab fa-snapchat"></i> Snapchat</a></li>
+          </ul>
+          <div class="contact-info">
+            <p>Phone: <a href="tel:+46765653753">0765653753</a></p>
+            <p>Email: <a href="mailto:Fathiya110@hotmail.com">Fathiya110@hotmail.com</a></p>
+          </div>
+        </div>
+      </footer>
+    <script>
+        let cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+        // Open and Close Menu
+        function openNav() {
+            document.getElementById("myNav").style.width = "100%";
+        }
+
+        function closeNav() {
+            document.getElementById("myNav").style.width = "0%";
+        }
+
+        // Add item to cart
+        function addToCart(name, price, image) {
+            const quantity = document.getElementById('quantity').value;
+            const existingProduct = cart.find(item => item.name === name);
+
+            if (existingProduct) {
+                existingProduct.quantity += parseInt(quantity);
+            } else {
+                cart.push({ name, price, image, quantity: parseInt(quantity) });
+            }
+
+            localStorage.setItem('cart', JSON.stringify(cart));
+            updateCartInfo();
+        }
+
+        // Update cart display
+        function updateCartInfo() {
+            const cartCountElement = document.getElementById('cartCount');
+            const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
+            cartCountElement.textContent = totalItems;
+        }
+
+        // Update cart info on page load
+        document.addEventListener('DOMContentLoaded', updateCartInfo);
+    </script>
+</body>
+</html>

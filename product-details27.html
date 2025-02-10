@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aloe Propolis Creme</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #f9f9f9;
+        }
+
+        .main-header {
+            background: #14a99f;
+            padding: 20px;
+        }
+
+        .navbar {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .navbar img {
+            width: 100px;
+        }
+
+        .cart-info {
+            position: relative;
+        }
+
+        .cart-info img {
+            width: 30px;
+            height: 30px;
+        }
+
+        .cart-info span {
+            position: absolute;
+            top: -5px;
+            left: 15px;
+            background-color: #ff523b;
+            color: #fff;
+            font-size: 14px;
+            padding: 0 5px;
+            border-radius: 50%;
+        }
+
+        /* Main Content Area */
+        .single-product {
+            max-width: 1200px;
+            margin: 30px auto;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .row {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+        }
+
+        .col-2 img {
+            max-width: 100%;
+            padding: 20px;
+        }
+
+        .col-2 h1 {
+            font-size: 2rem;
+            margin: 20px 0;
+        }
+
+        .col-2 h4 {
+            color: #ff523b;
+            font-size: 1.8rem;
+            margin: 10px 0;
+        }
+
+        .btn {
+            background-color: #5ee689;
+            padding: 10px 30px;
+            border-radius: 30px;
+            color: white;
+            text-decoration: none;
+            display: inline-block;
+            margin: 15px 0;
+            transition: background-color 0.3s;
+        }
+
+        .btn:hover {
+            background-color: #2d302e;
+        }
+
+        select, input[type="number"] {
+            padding: 10px;
+            margin: 10px 0;
+            font-size: 1rem;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        h3 {
+            font-size: 1.5rem;
+            margin: 20px 0 10px;
+        }
+
+        ul {
+            list-style-type: none;
+            padding-left: 0;
+            margin-bottom: 20px;
+        }
+
+        ul li {
+            margin-bottom: 8px;
+        }
+    </style>
+</head>
+<body>
+     <!-- Header -->
+     <header class="main-header">
+        <div id="myNav" class="overlay">
+            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+            <div class="overlay-content">
+                <a href="index.html" class="back-to-home">Home</a>
+                <a href="About.html">About</a>
+              
+            </div>
+        </div>
+        <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; Forever</span>
+
+        <div class="cart-info">
+            <a href="cart.html">
+                <img src="shopping_bag_cart-512.webp" alt="Cart">
+                <span id="cartCount">0</span>
+            </a>
+        </div>
+    </header>
+
+    <!-- Single Product Section -->
+    <div class="single-product">
+        <div class="row">
+            <div class="col-2">
+                <img src="forever_m_r__pd_category_256_X_256_1712841354743.jpg" width="100%" class="small-img">
+                <div class="small-img-col">
+                    <img src="forever_m_r__pd_category_256_X_256_1712841354743.jpg" width="50%" class="small-img">
+                </div>
+            </div>
+            <div class="col-2">
+                <h1>Forever MÓR™</h1>
+                <h4>136,86 SEK</h4>
+                
+                <!-- Quantity and Add to Cart -->
+                <input type="number" id="quantity" value="1" min="1">
+                <a href="#" class="btn" onclick="addToCart('Forever MÓR™', 136.86, 'forever_mor.jpg')">Add To Cart</a>
+                
+                <!-- Product Description and Details -->
+                <h3>Product Description</h3>
+                <p>Forever MÓR is a limited edition functional coffee with vitamin B, taurine, and caffeine. Perfect for a refreshing start to your day, it combines the daily need for vitamin B with a rich coffee experience. Available in convenient capsules for use with Nespresso® machines, this coffee is ideal for adults who appreciate a boost to both their energy levels and wellness.</p>
+            
+                <h3>Who is it for?</h3>
+                <p>Forever MÓR is suitable for adults who want to start their day with an invigorating cup of coffee that also provides the benefits of essential vitamins. It’s perfect for coffee lovers who want the added boost of taurine and caffeine, with a rich undertone of chocolate from arabica and robusta beans.</p>
+            
+                <h3>Key Ingredients:</h3>
+                <ul>
+                    <li>Arabica and robusta coffee beans (Rainforest Alliance Certified)</li>
+                    <li>Taurine</li>
+                    <li>Caffeine</li>
+                    <li>Vitamin B3 (Niacin)</li>
+                    <li>Vitamin B5 (Pantothenic acid)</li>
+                    <li>Vitamin B6 (Pyridoxine)</li>
+                    <li>Vitamin B12 (Cyanocobalamin)</li>
+                </ul>
+            
+                <h3>How to Use:</h3>
+                <p>Simply use one capsule to make a 40 ml espresso. Compatible with Nespresso® machines. This product should not be used as a substitute for a varied, balanced diet and a healthy lifestyle.</p>
+            
+                <h3>Additional Benefits:</h3>
+                <p>Forever MÓR provides a functional blend of coffee and vitamins, with taurine and caffeine offering a natural energy boost. Vitamin B3, B5, B6, and B12 support the normal functioning of the nervous system, reduce fatigue, and contribute to normal skin and red blood cell formation.</p>
+            
+                <h3>Storage Instructions:</h3>
+                <p>Store in a cool, dry place. Packaged in a protective atmosphere to ensure freshness.</p>
+            
+                <h3>Nutritional Values (Per Capsule: 5.8g):</h3>
+                <ul>
+                    <li>Niacin (Vitamin B3): 4.2 mg (26% RI)</li>
+                    <li>Pantothenic acid (Vitamin B5): 1.3 mg (21% RI)</li>
+                    <li>Vitamin B6: 1.0 mg (73% RI)</li>
+                    <li>Vitamin B12: 1.1 µg (45% RI)</li>
+                    <li>Taurine: 0.2 g</li>
+                </ul>
+            </div>                                                   
+        </div>
+    </div>
+    <footer>
+        <div class="footer-content">
+          <ul class="social-links">
+            <li><a href="https://www.tiktok.com/@foreverlin4?_t=ZN-8tZsEnEhD42&_r=1" target="_blank"><i class="fab fa-tiktok"></i> TikTok</a></li>
+            <li><a href="https://www.instagram.com/foreverlivingfa.se" target="_blank"><i class="fab fa-instagram"></i> Instagram</a></li>
+            <li><a href="mailto:Fathiya110@hotmail.com"><i class="fas fa-envelope"></i> Email</a></li>
+            <li><a href="https://www.snapchat.com/add/fathiya4796" target="_blank"><i class="fab fa-snapchat"></i> Snapchat</a></li>
+          </ul>
+          <div class="contact-info">
+            <p>Phone: <a href="tel:+46765653753">0765653753</a></p>
+            <p>Email: <a href="mailto:Fathiya110@hotmail.com">Fathiya110@hotmail.com</a></p>
+          </div>
+        </div>
+      </footer>
+    <script>
+        let cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+        // Open and Close Menu
+        function openNav() {
+            document.getElementById("myNav").style.width = "100%";
+        }
+
+        function closeNav() {
+            document.getElementById("myNav").style.width = "0%";
+        }
+
+        // Add item to cart
+        function addToCart(name, price, image) {
+            const quantity = document.getElementById('quantity').value;
+            const existingProduct = cart.find(item => item.name === name);
+
+            if (existingProduct) {
+                existingProduct.quantity += parseInt(quantity);
+            } else {
+                cart.push({ name, price, image, quantity: parseInt(quantity) });
+            }
+
+            localStorage.setItem('cart', JSON.stringify(cart));
+            updateCartInfo();
+        }
+
+        // Update cart display
+        function updateCartInfo() {
+            const cartCountElement = document.getElementById('cartCount');
+            const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
+            cartCountElement.textContent = totalItems;
+        }
+
+        // Update cart info on page load
+        document.addEventListener('DOMContentLoaded', updateCartInfo);
+    </script>
+</body>
+</html>

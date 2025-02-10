@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aloe Propolis Creme</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #f9f9f9;
+        }
+
+        .main-header {
+            background: #14a99f;
+            padding: 20px;
+        }
+
+        .navbar {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .navbar img {
+            width: 100px;
+        }
+
+        .cart-info {
+            position: relative;
+        }
+
+        .cart-info img {
+            width: 30px;
+            height: 30px;
+        }
+
+        .cart-info span {
+            position: absolute;
+            top: -5px;
+            left: 15px;
+            background-color: #ff523b;
+            color: #fff;
+            font-size: 14px;
+            padding: 0 5px;
+            border-radius: 50%;
+        }
+
+        /* Main Content Area */
+        .single-product {
+            max-width: 1200px;
+            margin: 30px auto;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .row {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+        }
+
+        .col-2 img {
+            max-width: 100%;
+            padding: 20px;
+        }
+
+        .col-2 h1 {
+            font-size: 2rem;
+            margin: 20px 0;
+        }
+
+        .col-2 h4 {
+            color: #ff523b;
+            font-size: 1.8rem;
+            margin: 10px 0;
+        }
+
+        .btn {
+            background-color: #5ee689;
+            padding: 10px 30px;
+            border-radius: 30px;
+            color: white;
+            text-decoration: none;
+            display: inline-block;
+            margin: 15px 0;
+            transition: background-color 0.3s;
+        }
+
+        .btn:hover {
+            background-color: #2d302e;
+        }
+
+        select, input[type="number"] {
+            padding: 10px;
+            margin: 10px 0;
+            font-size: 1rem;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        h3 {
+            font-size: 1.5rem;
+            margin: 20px 0 10px;
+        }
+
+        ul {
+            list-style-type: none;
+            padding-left: 0;
+            margin-bottom: 20px;
+        }
+
+        ul li {
+            margin-bottom: 8px;
+        }
+    </style>
+</head>
+<body>
+     <!-- Header -->
+     <header class="main-header">
+        <div id="myNav" class="overlay">
+            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+            <div class="overlay-content">
+                <a href="index.html" class="back-to-home">Home</a>
+                <a href="About.html">About</a>
+              
+            </div>
+        </div>
+        <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; Forever</span>
+
+        <div class="cart-info">
+            <a href="cart.html">
+                <img src="shopping_bag_cart-512.webp" alt="Cart">
+                <span id="cartCount">0</span>
+            </a>
+        </div>
+    </header>
+
+    <!-- Single Product Section -->
+    <div class="single-product">
+        <div class="row">
+            <div class="col-2">
+                <img src="aloe_bio-cellulose_mask_3-pack_pd_category_256_X_256_1709295241426.jpg" width="100%" class="small-img">
+                <div class="small-img-col">
+                    <img src="aloe_bio-cellulose_mask_3-pack_pd_category_256_X_256_1709295241426.jpg" width="50%" class="small-img">
+                </div>
+            </div>
+            <div class="col-2">
+                <h1>Aloe Bio-Cellulose Mask 3-Pack</h1>
+                <h4>420.24 SEK</h4>
+                
+                <!-- Quantity and Add to Cart -->
+                <input type="number" id="quantity" value="1" min="1">
+                <a href="#" class="btn" onclick="addToCart('Aloe Bio-Cellulose Mask 3-Pack', 420.24, 'aloe_bio_cellulose_mask.jpg')">Add To Cart</a>
+                
+                <!-- Product Description and Details -->
+                <h3>Product Description</h3>
+                <p>The Aloe Bio-Cellulose Mask is an innovative, easy-to-use face mask that delivers intense hydration and anti-aging benefits to your skin. In just 20 minutes, your skin will feel refreshed, moisturized, and glowing. Made from bio-cellulose, a material known for retaining moisture, this mask ensures your skin gets the maximum benefit from the ingredients.</p>
+            
+                <h3>Who is it for?</h3>
+                <p>This face mask is suitable for all skin types and is perfect for those looking to revitalize dull and tired skin. It’s especially great for those who want a quick, effective skincare routine without the need for rinsing afterward. It is fragrance-free, vegan-friendly, and compostable, making it an excellent eco-conscious skincare option.</p>
+            
+                <h3>Key Benefits</h3>
+                <ul>
+                    <li>Intensively rehydrates the skin with anti-aging properties.</li>
+                    <li>Helps improve skin tone and adds a youthful glow.</li>
+                    <li>Contains skin-conditioning ingredients such as Aloe vera, jojoba seed oil, and sodium hyaluronate.</li>
+                    <li>Easy to use with no rinsing required—simply massage the serum into your skin.</li>
+                    <li>Suitable for all skin types and free from fragrance, making it ideal for sensitive skin.</li>
+                </ul>
+            
+                <h3>Ingredients</h3>
+                <p>The mask is enriched with a serum containing the finest Aloe vera, along with other hydrating and soothing ingredients like glycerin, sodium hyaluronate, olive oil fatty acids, and jojoba seed oil. These ingredients work together to deeply moisturize and rejuvenate your skin.</p>
+            
+                <h3>Usage Instructions</h3>
+                <ol>
+                    <li>Open the bag and unfold the mask.</li>
+                    <li>Remove the protective woven fabric on both sides of the mask.</li>
+                    <li>Place the mask on your face and gently press it to ensure a firm fit.</li>
+                    <li>Remove the second layer of fabric.</li>
+                    <li>Leave the mask on for about 20 minutes, then remove it and discard. No need to rinse—just massage any remaining serum into your face and neck for a youthful glow.</li>
+                </ol>
+            
+                <h3>Ingredients List</h3>
+                <p>Aqua, Propanediol, Glycerin, Aloe Barbadensis Leaf Juice, 1,2-Hexanediol, Hydroxyacetophenone, Glycosyl Trehalose, Mannitol, Hydrogenated Ethylhexyl Olivate, Hydrogenated Starch Hydrolysate, Xanthan Gum, Hydrolyzed Sclerotium Gum, Polyglyceryl-6 Stearate, Simmondsia Chinensis Seed Oil, Ammonium Glycyrrhizate, Limnanthes Alba Seed Oil, Hydrogenated Olive Oil Unsaponifiables, Sodium Hyaluronate, Potassium Sorbate, Polyglyceryl-6 Behenate, Caffeine, Citric Acid, Sodium Benzoate, Zinc Gluconate, Aesculus Hippocastanum Seed Extract, Camellia Sinensis Leaf Extract, Phenoxyethanol, Ascorbic Acid.</p>
+            
+                <h3>Important Information</h3>
+                <p>For external use only. Avoid contact with eyes. If irritation occurs, discontinue use. Keep out of reach of children. Store in a cool, dry place.</p>
+            
+                <h3>Made in the USA</h3>
+            </div>                                                                                                                         
+        </div>
+    </div>
+    <footer>
+        <div class="footer-content">
+          <ul class="social-links">
+            <li><a href="https://www.tiktok.com/@foreverlin4?_t=ZN-8tZsEnEhD42&_r=1" target="_blank"><i class="fab fa-tiktok"></i> TikTok</a></li>
+            <li><a href="https://www.instagram.com/foreverlivingfa.se" target="_blank"><i class="fab fa-instagram"></i> Instagram</a></li>
+            <li><a href="mailto:Fathiya110@hotmail.com"><i class="fas fa-envelope"></i> Email</a></li>
+            <li><a href="https://www.snapchat.com/add/fathiya4796" target="_blank"><i class="fab fa-snapchat"></i> Snapchat</a></li>
+          </ul>
+          <div class="contact-info">
+            <p>Phone: <a href="tel:+46765653753">0765653753</a></p>
+            <p>Email: <a href="mailto:Fathiya110@hotmail.com">Fathiya110@hotmail.com</a></p>
+          </div>
+        </div>
+      </footer>
+    <script>
+        let cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+        // Open and Close Menu
+        function openNav() {
+            document.getElementById("myNav").style.width = "100%";
+        }
+
+        function closeNav() {
+            document.getElementById("myNav").style.width = "0%";
+        }
+
+        // Add item to cart
+        function addToCart(name, price, image) {
+            const quantity = document.getElementById('quantity').value;
+            const existingProduct = cart.find(item => item.name === name);
+
+            if (existingProduct) {
+                existingProduct.quantity += parseInt(quantity);
+            } else {
+                cart.push({ name, price, image, quantity: parseInt(quantity) });
+            }
+
+            localStorage.setItem('cart', JSON.stringify(cart));
+            updateCartInfo();
+        }
+
+        // Update cart display
+        function updateCartInfo() {
+            const cartCountElement = document.getElementById('cartCount');
+            const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
+            cartCountElement.textContent = totalItems;
+        }
+
+        // Update cart info on page load
+        document.addEventListener('DOMContentLoaded', updateCartInfo);
+    </script>
+</body>
+</html>

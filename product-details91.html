@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aloe Propolis Creme</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #f9f9f9;
+        }
+
+        .main-header {
+            background: #14a99f;
+            padding: 20px;
+        }
+
+        .navbar {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .navbar img {
+            width: 100px;
+        }
+
+        .cart-info {
+            position: relative;
+        }
+
+        .cart-info img {
+            width: 30px;
+            height: 30px;
+        }
+
+        .cart-info span {
+            position: absolute;
+            top: -5px;
+            left: 15px;
+            background-color: #ff523b;
+            color: #fff;
+            font-size: 14px;
+            padding: 0 5px;
+            border-radius: 50%;
+        }
+
+        /* Main Content Area */
+        .single-product {
+            max-width: 1200px;
+            margin: 30px auto;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .row {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+        }
+
+        .col-2 img {
+            max-width: 100%;
+            padding: 20px;
+        }
+
+        .col-2 h1 {
+            font-size: 2rem;
+            margin: 20px 0;
+        }
+
+        .col-2 h4 {
+            color: #ff523b;
+            font-size: 1.8rem;
+            margin: 10px 0;
+        }
+
+        .btn {
+            background-color: #5ee689;
+            padding: 10px 30px;
+            border-radius: 30px;
+            color: white;
+            text-decoration: none;
+            display: inline-block;
+            margin: 15px 0;
+            transition: background-color 0.3s;
+        }
+
+        .btn:hover {
+            background-color: #2d302e;
+        }
+
+        select, input[type="number"] {
+            padding: 10px;
+            margin: 10px 0;
+            font-size: 1rem;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        h3 {
+            font-size: 1.5rem;
+            margin: 20px 0 10px;
+        }
+
+        ul {
+            list-style-type: none;
+            padding-left: 0;
+            margin-bottom: 20px;
+        }
+
+        ul li {
+            margin-bottom: 8px;
+        }
+    </style>
+</head>
+<body>
+     <!-- Header -->
+     <header class="main-header">
+        <div id="myNav" class="overlay">
+            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+            <div class="overlay-content">
+                <a href="index.html" class="back-to-home">Home</a>
+                <a href="About.html">About</a>
+               
+            </div>
+        </div>
+        <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; Forever</span>
+
+        <div class="cart-info">
+            <a href="cart.html">
+                <img src="shopping_bag_cart-512.webp" alt="Cart">
+                <span id="cartCount">0</span>
+            </a>
+        </div>
+    </header>
+
+    <!-- Single Product Section -->
+    <div class="single-product">
+        <div class="row">
+            <div class="col-2">
+                <img src="forever_malosi_fine_fragrance_pd_category_256_X_256_1701167840536.jpg" width="100%" class="small-img">
+                <div class="small-img-col">
+                    <img src="forever_malosi_fine_fragrance_pd_category_256_X_256_1701167840536.jpg" width="50%" class="small-img">
+                </div>
+            </div>
+            <div class="col-2">
+                <h1>Forever Malosi Fine Fragrance</h1>
+                <h4>443.45 SEK</h4>
+            
+                <!-- Quantity and Add to Cart -->
+                <input type="number" id="quantity" value="1" min="1">
+                <a href="#" class="btn" onclick="addToCart('Forever Malosi Fine Fragrance', 443.45, 'forever_malosi_fine_fragrance.jpg')">Add To Cart</a>
+            
+                <!-- Product Description -->
+                <h3>Product Description</h3>
+                <p>A spicy, long-lasting masculine fragrance with warm woody notes, inspired by the wonderful hospitality of Samoa. "Malosi" means Power in Samoan.</p>
+            
+                <h3>What You Get</h3>
+                <ul>
+                    <li>A powerful, masculine fragrance</li>
+                    <li>A spicy scent with exciting woody notes</li>
+                    <li>Vegan-friendly formula</li>
+                </ul>
+            
+                <h3>A Fine Male Fragrance</h3>
+                <p>Forever Malosi Fine Fragrance is an enticing blend of warm, spicy notes like bergamot and sandalwood, perfectly balanced with refreshing citrus and cypress aromas. Inspired by Samoa’s tropical beaches and clear waters, this fragrance embodies power and hospitality.</p>
+            
+                <h3>For Best Results</h3>
+                <p>Fragrances degrade when exposed to heat, light, or air. Store your fragrance in a cool, dry place—such as the fridge—for longevity. Applying a fragrance-free lotion beforehand helps the scent last longer.</p>
+            
+                <h3>Who is it for?</h3>
+                <p>Forever Malosi Fine Fragrance is perfect for anyone who wants an irresistibly masculine and sensual scent with spicy woody undertones.</p>
+            
+                <h3>Where Should I Apply the Fragrance?</h3>
+                <p>Spray on areas where the pulse is strong, such as behind the jaws, inside the elbows, on the wrists, or behind the knees. Every movement spreads the fragrance, creating an enticing presence. A classic method is to spray a cloud of fragrance in front of you and walk through it.</p>
+            
+                <h3>Also Try</h3>
+                <p>For her, try <strong>Forever Alofa Fine Fragrance</strong>.</p>
+            
+                <h3>Usage Instructions</h3>
+                <p>Spray on selected areas like behind the jaws, inside the elbows, on the wrists, or behind the knees for a long-lasting effect.</p>
+            
+                <h3>Ingredients</h3>
+                <p>Alcohol Denat., Parfum, Aqua, Limonene, Benzyl Benzoate, Linalool, Citronellol, Coumarin, Citral, Geraniol.</p>
+            
+                <h3>Made in the USA</h3>
+            </div>                                                                                                                                                                                                                                                                 
+        </div>
+    </div>
+    <footer>
+        <div class="footer-content">
+          <ul class="social-links">
+            <li><a href="https://www.tiktok.com/@foreverlin4?_t=ZN-8tZsEnEhD42&_r=1" target="_blank"><i class="fab fa-tiktok"></i> TikTok</a></li>
+            <li><a href="https://www.instagram.com/foreverlivingfa.se" target="_blank"><i class="fab fa-instagram"></i> Instagram</a></li>
+            <li><a href="mailto:Fathiya110@hotmail.com"><i class="fas fa-envelope"></i> Email</a></li>
+            <li><a href="https://www.snapchat.com/add/fathiya4796" target="_blank"><i class="fab fa-snapchat"></i> Snapchat</a></li>
+          </ul>
+          <div class="contact-info">
+            <p>Phone: <a href="tel:+46765653753">0765653753</a></p>
+            <p>Email: <a href="mailto:Fathiya110@hotmail.com">Fathiya110@hotmail.com</a></p>
+          </div>
+        </div>
+      </footer>
+    <script>
+        let cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+        // Open and Close Menu
+        function openNav() {
+            document.getElementById("myNav").style.width = "100%";
+        }
+
+        function closeNav() {
+            document.getElementById("myNav").style.width = "0%";
+        }
+
+        // Add item to cart
+        function addToCart(name, price, image) {
+            const quantity = document.getElementById('quantity').value;
+            const existingProduct = cart.find(item => item.name === name);
+
+            if (existingProduct) {
+                existingProduct.quantity += parseInt(quantity);
+            } else {
+                cart.push({ name, price, image, quantity: parseInt(quantity) });
+            }
+
+            localStorage.setItem('cart', JSON.stringify(cart));
+            updateCartInfo();
+        }
+
+        // Update cart display
+        function updateCartInfo() {
+            const cartCountElement = document.getElementById('cartCount');
+            const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
+            cartCountElement.textContent = totalItems;
+        }
+
+        // Update cart info on page load
+        document.addEventListener('DOMContentLoaded', updateCartInfo);
+    </script>
+</body>
+</html>

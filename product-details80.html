@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aloe Propolis Creme</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #f9f9f9;
+        }
+
+        .main-header {
+            background: #14a99f;
+            padding: 20px;
+        }
+
+        .navbar {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .navbar img {
+            width: 100px;
+        }
+
+        .cart-info {
+            position: relative;
+        }
+
+        .cart-info img {
+            width: 30px;
+            height: 30px;
+        }
+
+        .cart-info span {
+            position: absolute;
+            top: -5px;
+            left: 15px;
+            background-color: #ff523b;
+            color: #fff;
+            font-size: 14px;
+            padding: 0 5px;
+            border-radius: 50%;
+        }
+
+        /* Main Content Area */
+        .single-product {
+            max-width: 1200px;
+            margin: 30px auto;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .row {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+        }
+
+        .col-2 img {
+            max-width: 100%;
+            padding: 20px;
+        }
+
+        .col-2 h1 {
+            font-size: 2rem;
+            margin: 20px 0;
+        }
+
+        .col-2 h4 {
+            color: #ff523b;
+            font-size: 1.8rem;
+            margin: 10px 0;
+        }
+
+        .btn {
+            background-color: #5ee689;
+            padding: 10px 30px;
+            border-radius: 30px;
+            color: white;
+            text-decoration: none;
+            display: inline-block;
+            margin: 15px 0;
+            transition: background-color 0.3s;
+        }
+
+        .btn:hover {
+            background-color: #2d302e;
+        }
+
+        select, input[type="number"] {
+            padding: 10px;
+            margin: 10px 0;
+            font-size: 1rem;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        h3 {
+            font-size: 1.5rem;
+            margin: 20px 0 10px;
+        }
+
+        ul {
+            list-style-type: none;
+            padding-left: 0;
+            margin-bottom: 20px;
+        }
+
+        ul li {
+            margin-bottom: 8px;
+        }
+    </style>
+</head>
+<body>
+     <!-- Header -->
+     <header class="main-header">
+        <div id="myNav" class="overlay">
+            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+            <div class="overlay-content">
+                <a href="index.html" class="back-to-home">Home</a>
+                <a href="About.html">About</a>
+               
+            </div>
+        </div>
+        <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; Forever</span>
+
+        <div class="cart-info">
+            <a href="cart.html">
+                <img src="shopping_bag_cart-512.webp" alt="Cart">
+                <span id="cartCount">0</span>
+            </a>
+        </div>
+    </header>
+
+    <!-- Single Product Section -->
+    <div class="single-product">
+        <div class="row">
+            <div class="col-2">
+                <img src="infinite_by_forever__restoring_cr_me_pd_category_256_X_256_1698047436546.jpg" width="100%" class="small-img">
+                <div class="small-img-col">
+                    <img src="infinite_by_forever__restoring_cr_me_pd_category_256_X_256_1698047436546.jpg" width="50%" class="small-img">
+                </div>
+            </div>
+            <div class="col-2">
+                <h1>infinite by Forever™ Restoring Crème</h1>
+                <h4>766.53 SEK</h4>
+            
+                <!-- Quantity and Add to Cart -->
+                <input type="number" id="quantity" value="1" min="1">
+                <a href="#" class="btn" onclick="addToCart('infinite by Forever™ Restoring Crème', 766.53, 'restoring_creme.jpg')">Add To Cart</a>
+            
+                <!-- Product Description -->
+                <h3>Product Description</h3>
+                <p>Restoring Crème is a powerful anti-ageing face cream with over 15 skin-conditioning ingredients. Despite its rich formulation, it absorbs quickly, leaving the skin feeling light, fresh, and moisturized without being greasy. It's an excellent addition to your daily skincare routine.</p>
+            
+                <h3>Who is it for?</h3>
+                <p>Restoring Crème is suitable for all skin types and anyone who wants to combat premature skin ageing. Whether you're dealing with skin stress from your lifestyle or want to enhance your natural beauty, this crème will nourish and protect your skin.</p>
+            
+                <h3>The Best from Nature’s Pantry</h3>
+                <p>The star ingredient in Restoring Crème is Aloe Vera, known for its skin conditioning, softening, and moisturizing properties. It is complemented by powerful botanical extracts like:</p>
+                <ul>
+                    <li><strong>Centipeda Cunninghamii</strong> – Enhances the conditioning effects of Aloe Vera.</li>
+                    <li><strong>Jojoba</strong> – Softens, moisturizes, and soothes the skin.</li>
+                    <li><strong>Beta-glucan</strong> – A popular anti-ageing ingredient.</li>
+                    <li><strong>Vitamin C and E</strong> – Known for their skin conditioning and protective properties.</li>
+                    <li><strong>Vitamin B3</strong> – Helps even out skin tone and texture.</li>
+                    <li><strong>Squalane, Glycolipids, Linolenic Acid, and Linoleic Acid</strong> – Softening agents that allow the crème to glide easily on the skin.</li>
+                    <li><strong>Xylitol</strong> – Helps bind moisture to the skin for long-lasting hydration.</li>
+                    <li><strong>Pomegranate and White Tea</strong> – Firming and restorative ingredients that protect the skin from environmental stressors.</li>
+                </ul>
+            
+                <h3>Restores and Protects</h3>
+                <p>Restoring Crème combines these skin-loving ingredients to create a lightweight, non-greasy moisturizer that absorbs quickly. It is the perfect final step in your anti-ageing skincare routine, leaving your skin feeling refreshed, hydrated, and protected.</p>
+            
+                <h3>Dermatologically Tested</h3>
+                <p>infinite by Forever™ Restoring Crème has received an EXCELLENT rating in dermatological tests performed by Dermatest®.</p>
+            
+                <h3>Usage Instructions</h3>
+                <p>Apply Restoring Crème after cleansing (or after firming serum) to your face and neck in the morning and evening. Gently massage a generous amount of crème into your skin using upward, circular motions towards the hairline for optimal absorption.</p>
+            
+                <h3>Made in the USA</h3>
+            </div>                                                                                                                                                                                                             
+        </div>
+    </div>
+    <footer>
+        <div class="footer-content">
+          <ul class="social-links">
+            <li><a href="https://www.tiktok.com/@foreverlin4?_t=ZN-8tZsEnEhD42&_r=1" target="_blank"><i class="fab fa-tiktok"></i> TikTok</a></li>
+            <li><a href="https://www.instagram.com/foreverlivingfa.se" target="_blank"><i class="fab fa-instagram"></i> Instagram</a></li>
+            <li><a href="mailto:Fathiya110@hotmail.com"><i class="fas fa-envelope"></i> Email</a></li>
+            <li><a href="https://www.snapchat.com/add/fathiya4796" target="_blank"><i class="fab fa-snapchat"></i> Snapchat</a></li>
+          </ul>
+          <div class="contact-info">
+            <p>Phone: <a href="tel:+46765653753">0765653753</a></p>
+            <p>Email: <a href="mailto:Fathiya110@hotmail.com">Fathiya110@hotmail.com</a></p>
+          </div>
+        </div>
+      </footer>
+    <script>
+        let cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+        // Open and Close Menu
+        function openNav() {
+            document.getElementById("myNav").style.width = "100%";
+        }
+
+        function closeNav() {
+            document.getElementById("myNav").style.width = "0%";
+        }
+
+        // Add item to cart
+        function addToCart(name, price, image) {
+            const quantity = document.getElementById('quantity').value;
+            const existingProduct = cart.find(item => item.name === name);
+
+            if (existingProduct) {
+                existingProduct.quantity += parseInt(quantity);
+            } else {
+                cart.push({ name, price, image, quantity: parseInt(quantity) });
+            }
+
+            localStorage.setItem('cart', JSON.stringify(cart));
+            updateCartInfo();
+        }
+
+        // Update cart display
+        function updateCartInfo() {
+            const cartCountElement = document.getElementById('cartCount');
+            const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
+            cartCountElement.textContent = totalItems;
+        }
+
+        // Update cart info on page load
+        document.addEventListener('DOMContentLoaded', updateCartInfo);
+    </script>
+</body>
+</html>

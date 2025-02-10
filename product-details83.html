@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aloe Propolis Creme</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #f9f9f9;
+        }
+
+        .main-header {
+            background: #14a99f;
+            padding: 20px;
+        }
+
+        .navbar {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .navbar img {
+            width: 100px;
+        }
+
+        .cart-info {
+            position: relative;
+        }
+
+        .cart-info img {
+            width: 30px;
+            height: 30px;
+        }
+
+        .cart-info span {
+            position: absolute;
+            top: -5px;
+            left: 15px;
+            background-color: #ff523b;
+            color: #fff;
+            font-size: 14px;
+            padding: 0 5px;
+            border-radius: 50%;
+        }
+
+        /* Main Content Area */
+        .single-product {
+            max-width: 1200px;
+            margin: 30px auto;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .row {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+        }
+
+        .col-2 img {
+            max-width: 100%;
+            padding: 20px;
+        }
+
+        .col-2 h1 {
+            font-size: 2rem;
+            margin: 20px 0;
+        }
+
+        .col-2 h4 {
+            color: #ff523b;
+            font-size: 1.8rem;
+            margin: 10px 0;
+        }
+
+        .btn {
+            background-color: #5ee689;
+            padding: 10px 30px;
+            border-radius: 30px;
+            color: white;
+            text-decoration: none;
+            display: inline-block;
+            margin: 15px 0;
+            transition: background-color 0.3s;
+        }
+
+        .btn:hover {
+            background-color: #2d302e;
+        }
+
+        select, input[type="number"] {
+            padding: 10px;
+            margin: 10px 0;
+            font-size: 1rem;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        h3 {
+            font-size: 1.5rem;
+            margin: 20px 0 10px;
+        }
+
+        ul {
+            list-style-type: none;
+            padding-left: 0;
+            margin-bottom: 20px;
+        }
+
+        ul li {
+            margin-bottom: 8px;
+        }
+    </style>
+</head>
+<body>
+     <!-- Header -->
+     <header class="main-header">
+        <div id="myNav" class="overlay">
+            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+            <div class="overlay-content">
+                <a href="index.html" class="back-to-home">Home</a>
+                <a href="About.html">About</a>
+              
+            </div>
+        </div>
+        <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; Forever</span>
+
+        <div class="cart-info">
+            <a href="cart.html">
+                <img src="shopping_bag_cart-512.webp" alt="Cart">
+                <span id="cartCount">0</span>
+            </a>
+        </div>
+    </header>
+
+    <!-- Single Product Section -->
+    <div class="single-product">
+        <div class="row">
+            <div class="col-2">
+                <img src="sonya__refreshing_gel_cleanser_pd_category_256_X_256_1698305984795.jpg" width="100%" class="small-img">
+                <div class="small-img-col">
+                    <img src="sonya__refreshing_gel_cleanser_pd_category_256_X_256_1698305984795.jpg" width="50%" class="small-img">
+                </div>
+            </div>
+            <div class="col-2">
+                <h1>Sonya™ Refreshing Gel Cleanser</h1>
+                <h4>311.10 SEK</h4>
+            
+                <!-- Quantity and Add to Cart -->
+                <input type="number" id="quantity" value="1" min="1">
+                <a href="#" class="btn" onclick="addToCart('Sonya™ Refreshing Gel Cleanser', 311.10, 'sonya_refreshing_gel_cleanser.jpg')">Add To Cart</a>
+            
+                <!-- Product Description -->
+                <h3>Product Description</h3>
+                <p>Sonya™ Refreshing Gel Cleanser is the next generation of face cleansers. It is a gently foaming product that leaves a refreshing and invigorating feeling while cleansing effectively without drying out the skin. It’s perfect for those looking to refresh and condition their skin as part of their daily skincare routine.</p>
+            
+                <h3>Who is it for?</h3>
+                <p>This cleanser is suitable for all skin types, including combination skin, which can often feel both dry and greasy. If you don't identify with any particular skin condition, or if you consider your skin to be ‘normal,’ you might actually have combination skin, making this product a great option.</p>
+            
+                <h3>The Basis of Your Skincare Routine</h3>
+                <p>Daily cleansing, both morning and night, is essential for keeping your skin fresh. In the evening, it's especially important to cleanse away makeup, pollution, and sweat. A well-cleansed face allows your day and night creams to work more effectively, maximizing their benefits.</p>
+            
+                <h3>Clean, Smooth, and Revitalized – Without Feeling Tight</h3>
+                <p>Unlike many cleansers that can leave your skin feeling tight and uncomfortable, Sonya™ Refreshing Gel Cleanser provides a refreshing clean while maintaining moisture balance. The star ingredient, Aloe vera, is known for its skin-conditioning, moisturizing, and softening properties, making this cleanser an ideal choice for a smooth, hydrated finish.</p>
+            
+                <h3>Natural Cleansers</h3>
+                <p>This cleanser features a range of natural ingredients like coconut and gypsophila, as well as the addition of two lesser-known ingredients: Acacia concinna and Balanites aegyptiaca. Acacia concinna is an Asian variety of acacia traditionally used for mild, pH-balanced cleansing, while Balanites aegyptiaca, also known as the desert date or soap berry, contains naturally foaming saponins for effective yet gentle cleansing.</p>
+            
+                <h3>Takes Good Care of Your Skin</h3>
+                <p>Along with the natural cleansers, Sonya™ Refreshing Gel Cleanser contains several skin-conditioning ingredients such as baobab seed oil, which has become popular for its nourishing qualities. The baobab tree, also known as the "tree of life," has long been used for its skin-soothing properties. Additionally, coconut and apple-derived amino acids, caprylyl glycol, and vitamin C contribute to moisture retention, softening, and overall skin health.</p>
+            
+                <h3>Dermatologically Tested</h3>
+                <p>Sonya™ Refreshing Gel Cleanser received the rating EXCELLENT in dermatological tests performed by Dermatest®.</p>
+            
+                <h3>More Products in the Series</h3>
+                <p>The Sonya™ Daily Skincare System also includes: Sonya™ Illuminating Gel, Sonya™ Refining Gel Mask, and Sonya™ Soothing Gel Moisturizer. These products complement each other to create a complete skincare routine.</p>
+            
+                <h3>Usage Instructions</h3>
+                <p>Apply a generous amount of the cleanser to wet fingers and massage it into your skin. Rinse thoroughly for a fresh and invigorated feeling. For the best results, follow up with Sonya™ Illuminating Gel and Sonya™ Soothing Gel Moisturizer or Sonya™ Refining Gel Mask.</p>
+            
+                <h3>Made in the USA</h3>
+            </div>                                                                                                                                                                                                                             
+        </div>
+    </div>
+    <footer>
+        <div class="footer-content">
+          <ul class="social-links">
+            <li><a href="https://www.tiktok.com/@foreverlin4?_t=ZN-8tZsEnEhD42&_r=1" target="_blank"><i class="fab fa-tiktok"></i> TikTok</a></li>
+            <li><a href="https://www.instagram.com/foreverlivingfa.se" target="_blank"><i class="fab fa-instagram"></i> Instagram</a></li>
+            <li><a href="mailto:Fathiya110@hotmail.com"><i class="fas fa-envelope"></i> Email</a></li>
+            <li><a href="https://www.snapchat.com/add/fathiya4796" target="_blank"><i class="fab fa-snapchat"></i> Snapchat</a></li>
+          </ul>
+          <div class="contact-info">
+            <p>Phone: <a href="tel:+46765653753">0765653753</a></p>
+            <p>Email: <a href="mailto:Fathiya110@hotmail.com">Fathiya110@hotmail.com</a></p>
+          </div>
+        </div>
+      </footer>
+    <script>
+        let cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+        // Open and Close Menu
+        function openNav() {
+            document.getElementById("myNav").style.width = "100%";
+        }
+
+        function closeNav() {
+            document.getElementById("myNav").style.width = "0%";
+        }
+
+        // Add item to cart
+        function addToCart(name, price, image) {
+            const quantity = document.getElementById('quantity').value;
+            const existingProduct = cart.find(item => item.name === name);
+
+            if (existingProduct) {
+                existingProduct.quantity += parseInt(quantity);
+            } else {
+                cart.push({ name, price, image, quantity: parseInt(quantity) });
+            }
+
+            localStorage.setItem('cart', JSON.stringify(cart));
+            updateCartInfo();
+        }
+
+        // Update cart display
+        function updateCartInfo() {
+            const cartCountElement = document.getElementById('cartCount');
+            const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
+            cartCountElement.textContent = totalItems;
+        }
+
+        // Update cart info on page load
+        document.addEventListener('DOMContentLoaded', updateCartInfo);
+    </script>
+</body>
+</html>

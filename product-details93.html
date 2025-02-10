@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aloe Propolis Creme</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #f9f9f9;
+        }
+
+        .main-header {
+            background: #14a99f;
+            padding: 20px;
+        }
+
+        .navbar {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .navbar img {
+            width: 100px;
+        }
+
+        .cart-info {
+            position: relative;
+        }
+
+        .cart-info img {
+            width: 30px;
+            height: 30px;
+        }
+
+        .cart-info span {
+            position: absolute;
+            top: -5px;
+            left: 15px;
+            background-color: #ff523b;
+            color: #fff;
+            font-size: 14px;
+            padding: 0 5px;
+            border-radius: 50%;
+        }
+
+        /* Main Content Area */
+        .single-product {
+            max-width: 1200px;
+            margin: 30px auto;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .row {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+        }
+
+        .col-2 img {
+            max-width: 100%;
+            padding: 20px;
+        }
+
+        .col-2 h1 {
+            font-size: 2rem;
+            margin: 20px 0;
+        }
+
+        .col-2 h4 {
+            color: #ff523b;
+            font-size: 1.8rem;
+            margin: 10px 0;
+        }
+
+        .btn {
+            background-color: #5ee689;
+            padding: 10px 30px;
+            border-radius: 30px;
+            color: white;
+            text-decoration: none;
+            display: inline-block;
+            margin: 15px 0;
+            transition: background-color 0.3s;
+        }
+
+        .btn:hover {
+            background-color: #2d302e;
+        }
+
+        select, input[type="number"] {
+            padding: 10px;
+            margin: 10px 0;
+            font-size: 1rem;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        h3 {
+            font-size: 1.5rem;
+            margin: 20px 0 10px;
+        }
+
+        ul {
+            list-style-type: none;
+            padding-left: 0;
+            margin-bottom: 20px;
+        }
+
+        ul li {
+            margin-bottom: 8px;
+        }
+    </style>
+</head>
+<body>
+     <!-- Header -->
+     <header class="main-header">
+        <div id="myNav" class="overlay">
+            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+            <div class="overlay-content">
+                <a href="index.html" class="back-to-home">Home</a>
+                <a href="About.html">About</a>
+                
+            </div>
+        </div>
+        <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; Forever</span>
+
+        <div class="cart-info">
+            <a href="cart.html">
+                <img src="shopping_bag_cart-512.webp" alt="Cart">
+                <span id="cartCount">0</span>
+            </a>
+        </div>
+    </header>
+
+    <!-- Single Product Section -->
+    <div class="single-product">
+        <div class="row">
+            <div class="col-2">
+                <img src="nourishing_hair_oil_pd_category_256_X_256_1728566032393.jpg" width="100%" class="small-img">
+                <div class="small-img-col">
+                    <img src="nourishing_hair_oil_pd_category_256_X_256_1728566032393.jpg" width="50%" class="small-img">
+                </div>
+            </div>
+            <div class="col-2">
+                <h1>Nourishing Hair Oil</h1>
+                <h4>367.20 SEK</h4>
+            
+                <!-- Quantity and Add to Cart -->
+                <input type="number" id="quantity" value="1" min="1">
+                <a href="#" class="btn" onclick="addToCart('Nourishing Hair Oil', 367.20, 'nourishing_hair_oil.jpg')">Add To Cart</a>
+            
+                <!-- Product Description -->
+                <h3>Product Description</h3>
+                <p>A plant-based conditioning hair oil with Aloe vera and six botanical oils. Rehydrates, adds shine, and fights frizz and split ends. Completely silicon-free.</p>
+            
+                <h3>What You Get</h3>
+                <ul>
+                    <li>Rehydration, shine, and frizz control</li>
+                    <li>Six nourishing botanical oils</li>
+                    <li>Silicon-free formula</li>
+                    <li>Precise dosing with included pipette</li>
+                </ul>
+            
+                <h3>Botanical Oils for Nourished Hair</h3>
+                <p>
+                    This lightweight, silicon-free formula is powered by six botanical oils:
+                </p>
+                <ul>
+                    <li><strong>Abyssinian oil:</strong> Strengthens and protects hair from styling and environmental stress.</li>
+                    <li><strong>Jojoba oil:</strong> Adds shine and makes hair easier to brush.</li>
+                    <li><strong>Pataua oil:</strong> Rich in antioxidants to smooth and soothe hair.</li>
+                    <li><strong>Tsubaki oil:</strong> Extracted from the Japanese camellia plant, improves elasticity.</li>
+                    <li><strong>Pequi oil:</strong> A Brazilian treasure that adds shine and reduces frizz.</li>
+                    <li><strong>Safflower oil:</strong> Deeply hydrates and softens for healthy hair.</li>
+                </ul>
+            
+                <h3>Silky-Smooth Anti-Frizz Formula</h3>
+                <p>
+                    Forever’s Nourishing Hair Oil contains plant-based silicon alternatives that strengthen hair and protect it from damage. Beetroot extract gives your hair a silky-smooth feel and healthy shine. The lightweight formula absorbs quickly without weighing hair down or making it greasy. Works perfectly with Aloe-Jojoba Shampoo & Conditioner.
+                </p>
+            
+                <h3>Who is it for?</h3>
+                <p>Suitable for all hair types, this nourishing oil tames frizz and split ends while leaving hair healthy, shiny, and silky-smooth.</p>
+            
+                <h3>Dermatologically Tested</h3>
+                <p>Nourishing Hair Oil was awarded the seal <strong>EXCELLENT</strong> in dermatological testing conducted by Dermatest®.</p>
+            
+                <h3>How to Use</h3>
+                <p>Apply a few drops to your palm, rub hands together, and distribute evenly through damp hair, from the ends up to mid-length. Can also be used on dry hair after styling.</p>
+            
+                <h3>Ingredients</h3>
+                <p>
+                    C15-19 Alkane, Isoamyl Laurate, Caprylic/Capric Triglyceride, Crambe Abyssinica Seed Oil Phytosterol Esters, Simmondsia Chinensis (Jojoba) Seed Oil, Camellia Japonica Seed Oil, Parfum, Oenocarpus Bataua Fruit Oil, Caryocar Brasiliense Fruit Oil, Carthamus Tinctorius (Safflower) Seed Oil, Benzyl Benzoate, Tocopheryl Acetate, Aloe Barbadensis Leaf Extract, Beta Vulgaris (Beet) Root Extract, Hexyl Cinnamal, Linalool, Benzyl Salicylate, Citronellol, Tocopherol.
+                </p>
+            
+                <h3>Made in the USA</h3>
+            </div>                                                                                                                                                                                                                                                                           
+        </div>
+    </div>
+    <footer>
+        <div class="footer-content">
+          <ul class="social-links">
+            <li><a href="https://www.tiktok.com/@foreverlin4?_t=ZN-8tZsEnEhD42&_r=1" target="_blank"><i class="fab fa-tiktok"></i> TikTok</a></li>
+            <li><a href="https://www.instagram.com/foreverlivingfa.se" target="_blank"><i class="fab fa-instagram"></i> Instagram</a></li>
+            <li><a href="mailto:Fathiya110@hotmail.com"><i class="fas fa-envelope"></i> Email</a></li>
+            <li><a href="https://www.snapchat.com/add/fathiya4796" target="_blank"><i class="fab fa-snapchat"></i> Snapchat</a></li>
+          </ul>
+          <div class="contact-info">
+            <p>Phone: <a href="tel:+46765653753">0765653753</a></p>
+            <p>Email: <a href="mailto:Fathiya110@hotmail.com">Fathiya110@hotmail.com</a></p>
+          </div>
+        </div>
+      </footer>
+    <script>
+        let cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+        // Open and Close Menu
+        function openNav() {
+            document.getElementById("myNav").style.width = "100%";
+        }
+
+        function closeNav() {
+            document.getElementById("myNav").style.width = "0%";
+        }
+
+        // Add item to cart
+        function addToCart(name, price, image) {
+            const quantity = document.getElementById('quantity').value;
+            const existingProduct = cart.find(item => item.name === name);
+
+            if (existingProduct) {
+                existingProduct.quantity += parseInt(quantity);
+            } else {
+                cart.push({ name, price, image, quantity: parseInt(quantity) });
+            }
+
+            localStorage.setItem('cart', JSON.stringify(cart));
+            updateCartInfo();
+        }
+
+        // Update cart display
+        function updateCartInfo() {
+            const cartCountElement = document.getElementById('cartCount');
+            const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
+            cartCountElement.textContent = totalItems;
+        }
+
+        // Update cart info on page load
+        document.addEventListener('DOMContentLoaded', updateCartInfo);
+    </script>
+</body>
+</html>
