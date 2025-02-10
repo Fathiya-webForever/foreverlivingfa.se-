@@ -52,15 +52,31 @@
             display: none;
         }
     </style>
+    <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
     <script>
         let paymentApproved = false;
+
+        document.addEventListener("DOMContentLoaded", function() {
+            emailjs.init("kaM-0FsnD3p8f8ZK4"); // Replace with your EmailJS Public Key
+        });
 
         function handlePayment() {
             const paymentMethod = document.getElementById('paymentMethod').value;
             if (paymentMethod === 'Swish') {
                 alert("Redirecting to Swish...");
-                window.location.href = 'swish://paymentrequest?token=example_token';
+
+                // Placeholder URL - replace with real payment URL when integrated
+                let swishUrl = 'swish://paymentrequest?token=example_token';
+
+                // Test if URL is correct or if there's a fallback
+                if (swishUrl) {
+                    window.location.href = swishUrl;
+                } else {
+                    alert("Error: Invalid payment URL.");
+                }
+
                 setTimeout(() => {
+                    // Simulate successful payment after a delay
                     paymentApproved = true;
                     document.getElementById('paymentSuccess').style.display = 'block';
                     document.getElementById('submitButton').disabled = false;
@@ -82,8 +98,28 @@
                 return;
             }
 
-            alert("Order submitted successfully!");
-            // Här kan du lägga till en AJAX-förfrågan för att skicka beställningen till en server
+            // Prepare form data
+            const formData = {
+                firstName: document.getElementById('firstName').value,
+                lastName: document.getElementById('lastName').value,
+                email: document.getElementById('email').value,
+                phoneNumber: document.getElementById('phoneNumber').value,
+                address: document.getElementById('address').value,
+                postalCode: document.getElementById('postalCode').value,
+                country: document.getElementById('country').value,
+                comment: document.getElementById('comment').value,
+            };
+
+            // Send order details via EmailJS
+            emailjs.send("service_24wuls6", "template_d955gz6", formData, "kaM-0FsnD3p8f8ZK4")
+                .then(response => {
+                    alert('Your order has been placed successfully!');
+                    localStorage.removeItem('cart'); // Optional: Clear cart from localStorage
+                    window.location.href = 'index.html'; // Redirect to home page after submission
+                })
+                .catch(error => {
+                    alert('Failed to place your order. Please try again.');
+                });
         }
     </script>
 </head>
