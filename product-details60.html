@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aloe Propolis Creme</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #f9f9f9;
+        }
+
+        .main-header {
+            background: #14a99f;
+            padding: 20px;
+        }
+
+        .navbar {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .navbar img {
+            width: 100px;
+        }
+
+        .cart-info {
+            position: relative;
+        }
+
+        .cart-info img {
+            width: 30px;
+            height: 30px;
+        }
+
+        .cart-info span {
+            position: absolute;
+            top: -5px;
+            left: 15px;
+            background-color: #ff523b;
+            color: #fff;
+            font-size: 14px;
+            padding: 0 5px;
+            border-radius: 50%;
+        }
+
+        /* Main Content Area */
+        .single-product {
+            max-width: 1200px;
+            margin: 30px auto;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .row {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+        }
+
+        .col-2 img {
+            max-width: 100%;
+            padding: 20px;
+        }
+
+        .col-2 h1 {
+            font-size: 2rem;
+            margin: 20px 0;
+        }
+
+        .col-2 h4 {
+            color: #ff523b;
+            font-size: 1.8rem;
+            margin: 10px 0;
+        }
+
+        .btn {
+            background-color: #5ee689;
+            padding: 10px 30px;
+            border-radius: 30px;
+            color: white;
+            text-decoration: none;
+            display: inline-block;
+            margin: 15px 0;
+            transition: background-color 0.3s;
+        }
+
+        .btn:hover {
+            background-color: #2d302e;
+        }
+
+        select, input[type="number"] {
+            padding: 10px;
+            margin: 10px 0;
+            font-size: 1rem;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        h3 {
+            font-size: 1.5rem;
+            margin: 20px 0 10px;
+        }
+
+        ul {
+            list-style-type: none;
+            padding-left: 0;
+            margin-bottom: 20px;
+        }
+
+        ul li {
+            margin-bottom: 8px;
+        }
+    </style>
+</head>
+<body>
+     <!-- Header -->
+     <header class="main-header">
+        <div id="myNav" class="overlay">
+            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+            <div class="overlay-content">
+                <a href="index.html" class="back-to-home">Home</a>
+                <a href="About.html">About</a>
+                
+            </div>
+        </div>
+        <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; Forever</span>
+
+        <div class="cart-info">
+            <a href="cart.html">
+                <img src="shopping_bag_cart-512.webp" alt="Cart">
+                <span id="cartCount">0</span>
+            </a>
+        </div>
+    </header>
+
+    <!-- Single Product Section -->
+    <div class="single-product">
+        <div class="row">
+            <div class="col-2">
+                <img src="forever_ultra__chocolate_pd_category_256_X_256_1698656552228.jpg" width="100%" class="small-img">
+                <div class="small-img-col">
+                    <img src="forever_ultra__chocolate_pd_category_256_X_256_1698656552228.jpg" width="50%" class="small-img">
+                </div>
+            </div>
+            <div class="col-2">
+                <h1>Forever Ultra™ Chocolate</h1>
+                <h4>312.79 SEK</h4>
+                
+                <!-- Quantity and Add to Cart -->
+                <input type="number" id="quantity" value="1" min="1">
+                <a href="#" class="btn" onclick="addToCart('Forever Ultra™ Chocolate', 312.79, 'forever_ultra_chocolate.jpg')">Add To Cart</a>
+                
+                <!-- Product Description and Details -->
+                <h3>Product Description</h3>
+                <p>Forever Ultra™ Chocolate is a tasty and calorie-conscious meal replacement shake. With high-value soy protein, essential vitamins, and minerals, this shake offers maximum nutrition with minimum calories. It’s perfect for weight control, a post-exercise protein boost, or simply as a snack when you’re craving something delicious.</p>
+            
+                <h3>Who is it for?</h3>
+                <p>Ideal for adults looking to maintain a healthy lifestyle. Forever Ultra™ is a perfect meal replacement for weight control or as a high-protein snack after exercise. It’s designed to be mixed with milk to provide you with all the necessary nutrition to replace one or two meals per day.</p>
+            
+                <h3>Key Benefits:</h3>
+                <ul>
+                    <li>Contains 21g of high-quality soy protein per serving to maintain muscle mass.</li>
+                    <li>Helps control your calorie intake with only around 200 kcal per serving.</li>
+                    <li>Provides essential vitamins and minerals, including Vitamin C, B vitamins, calcium, magnesium, and iron.</li>
+                    <li>Supports normal muscle function and energy metabolism.</li>
+                </ul>
+            
+                <h3>How it Works:</h3>
+                <p>Forever Ultra™ is not only a great meal replacement, but also a source of high-quality protein that supports muscle maintenance. By mixing it with milk, you get a complete meal with fewer calories, perfect for managing your weight. It's also a great option to keep you full while still providing the nutrients you need.</p>
+            
+                <h3>Usage:</h3>
+                <ul>
+                    <li>Mix 1 level measuring spoon (equivalent to 25g) with 240 ml of semi-skimmed milk (1.5% fat).</li>
+                    <li>Shake well before use and consume immediately.</li>
+                </ul>
+            
+                <h3>Important Information:</h3>
+                <ul>
+                    <li>Store in an airtight container in a cool, dry, dark place.</li>
+                    <li>For adults. This meal replacement should be used as part of a healthy diet and lifestyle.</li>
+                    <li>It is important to drink plenty of fluids throughout the day.</li>
+                    <li>Do not use if the packaging is torn or damaged.</li>
+                </ul>
+            </div>                                                                                              
+        </div>
+    </div>
+    <footer>
+        <div class="footer-content">
+          <ul class="social-links">
+            <li><a href="https://www.tiktok.com/@foreverlin4?_t=ZN-8tZsEnEhD42&_r=1" target="_blank"><i class="fab fa-tiktok"></i> TikTok</a></li>
+            <li><a href="https://www.instagram.com/foreverlivingfa.se" target="_blank"><i class="fab fa-instagram"></i> Instagram</a></li>
+            <li><a href="mailto:Fathiya110@hotmail.com"><i class="fas fa-envelope"></i> Email</a></li>
+            <li><a href="https://www.snapchat.com/add/fathiya4796" target="_blank"><i class="fab fa-snapchat"></i> Snapchat</a></li>
+          </ul>
+          <div class="contact-info">
+            <p>Phone: <a href="tel:+46765653753">0765653753</a></p>
+            <p>Email: <a href="mailto:Fathiya110@hotmail.com">Fathiya110@hotmail.com</a></p>
+          </div>
+        </div>
+      </footer>
+    <script>
+        let cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+        // Open and Close Menu
+        function openNav() {
+            document.getElementById("myNav").style.width = "100%";
+        }
+
+        function closeNav() {
+            document.getElementById("myNav").style.width = "0%";
+        }
+
+        // Add item to cart
+        function addToCart(name, price, image) {
+            const quantity = document.getElementById('quantity').value;
+            const existingProduct = cart.find(item => item.name === name);
+
+            if (existingProduct) {
+                existingProduct.quantity += parseInt(quantity);
+            } else {
+                cart.push({ name, price, image, quantity: parseInt(quantity) });
+            }
+
+            localStorage.setItem('cart', JSON.stringify(cart));
+            updateCartInfo();
+        }
+
+        // Update cart display
+        function updateCartInfo() {
+            const cartCountElement = document.getElementById('cartCount');
+            const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
+            cartCountElement.textContent = totalItems;
+        }
+
+        // Update cart info on page load
+        document.addEventListener('DOMContentLoaded', updateCartInfo);
+    </script>
+</body>
+</html>

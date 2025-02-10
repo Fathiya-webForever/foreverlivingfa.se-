@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aloe Propolis Creme</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #f9f9f9;
+        }
+
+        .main-header {
+            background: #14a99f;
+            padding: 20px;
+        }
+
+        .navbar {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .navbar img {
+            width: 100px;
+        }
+
+        .cart-info {
+            position: relative;
+        }
+
+        .cart-info img {
+            width: 30px;
+            height: 30px;
+        }
+
+        .cart-info span {
+            position: absolute;
+            top: -5px;
+            left: 15px;
+            background-color: #ff523b;
+            color: #fff;
+            font-size: 14px;
+            padding: 0 5px;
+            border-radius: 50%;
+        }
+
+        /* Main Content Area */
+        .single-product {
+            max-width: 1200px;
+            margin: 30px auto;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .row {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+        }
+
+        .col-2 img {
+            max-width: 100%;
+            padding: 20px;
+        }
+
+        .col-2 h1 {
+            font-size: 2rem;
+            margin: 20px 0;
+        }
+
+        .col-2 h4 {
+            color: #ff523b;
+            font-size: 1.8rem;
+            margin: 10px 0;
+        }
+
+        .btn {
+            background-color: #5ee689;
+            padding: 10px 30px;
+            border-radius: 30px;
+            color: white;
+            text-decoration: none;
+            display: inline-block;
+            margin: 15px 0;
+            transition: background-color 0.3s;
+        }
+
+        .btn:hover {
+            background-color: #2d302e;
+        }
+
+        select, input[type="number"] {
+            padding: 10px;
+            margin: 10px 0;
+            font-size: 1rem;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        h3 {
+            font-size: 1.5rem;
+            margin: 20px 0 10px;
+        }
+
+        ul {
+            list-style-type: none;
+            padding-left: 0;
+            margin-bottom: 20px;
+        }
+
+        ul li {
+            margin-bottom: 8px;
+        }
+    </style>
+</head>
+<body>
+     <!-- Header -->
+     <header class="main-header">
+        <div id="myNav" class="overlay">
+            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+            <div class="overlay-content">
+                <a href="index.html" class="back-to-home">Home</a>
+                <a href="About.html">About</a>
+              
+            </div>
+        </div>
+        <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; Forever</span>
+
+        <div class="cart-info">
+            <a href="cart.html">
+                <img src="shopping_bag_cart-512.webp" alt="Cart">
+                <span id="cartCount">0</span>
+            </a>
+        </div>
+    </header>
+
+    <!-- Single Product Section -->
+    <div class="single-product">
+        <div class="row">
+            <div class="col-2">
+                <img src="Forever_Kids___pd_category_256_X_256_1703065641025.jpg" width="100%" class="small-img">
+                <div class="small-img-col">
+                    <img src="forever_calcium__pd_category_256_X_256_1665487856321.jpg" width="50%" class="small-img">
+                </div>
+            </div>
+            <div class="col-2">
+                <h1>Forever Kids™</h1>
+                <h4>156.51 SEK</h4>
+                
+                <!-- Quantity and Add to Cart -->
+                <input type="number" id="quantity" value="1" min="1">
+                <a href="#" class="btn" onclick="addToCart('Forever Kids™', 156.51, 'forever_kids.jpg')">Add To Cart</a>
+                
+                <!-- Product Description and Details -->
+                <h3>Product Description</h3>
+                <p>Forever Kids™ is a multivitamin supplement designed specifically for children. With essential vitamins and minerals in child-friendly chewable tablets, this product helps ensure your child’s diet is balanced, even if they don’t like vegetables. It comes in a tasty grape and peach flavor that kids love!</p>
+            
+                <h3>What’s Inside:</h3>
+                <ul>
+                    <li><strong>Vitamins A, C, D, and E</strong> – Support healthy vision, immune function, skin, and energy levels.</li>
+                    <li><strong>Vitamin B6 and B12</strong> – Promote normal nervous system function and energy metabolism.</li>
+                    <li><strong>Iron and Zinc</strong> – Support cognitive function, reduce fatigue, and help with red blood cell formation.</li>
+                    <li><strong>Fruit and Vegetable Blend</strong> – Includes extracts from a variety of fruits and vegetables like carrots, spinach, apple, blueberry, and more for extra nutrition.</li>
+                </ul>
+            
+                <h3>Product Benefits:</h3>
+                <ul>
+                    <li>Supports normal energy metabolism and cognitive function.</li>
+                    <li>Boosts immune system health with vitamins A, C, and D.</li>
+                    <li>Helps maintain healthy bones and muscles with the help of vitamin D.</li>
+                    <li>Contains a blend of fruits and vegetables for additional nutrition.</li>
+                </ul>
+            
+                <h3>How to Use:</h3>
+                <p>For children over 3 years old: Give 2 tablets daily, chewed before swallowing.</p>
+            
+                <h3>Important Information:</h3>
+                <ul>
+                    <li>Do not exceed the recommended daily dose.</li>
+                    <li>Keep in a cool, dry space and out of reach of children.</li>
+                    <li>Contains sweeteners. Excessive consumption can have a laxative effect.</li>
+                    <li>This product is a dietary supplement and not a substitute for a varied diet and healthy lifestyle.</li>
+                </ul>
+            </div>                      
+        </div>
+    </div>
+    <footer>
+        <div class="footer-content">
+          <ul class="social-links">
+            <li><a href="https://www.tiktok.com/@foreverlin4?_t=ZN-8tZsEnEhD42&_r=1" target="_blank"><i class="fab fa-tiktok"></i> TikTok</a></li>
+            <li><a href="https://www.instagram.com/foreverlivingfa.se" target="_blank"><i class="fab fa-instagram"></i> Instagram</a></li>
+            <li><a href="mailto:Fathiya110@hotmail.com"><i class="fas fa-envelope"></i> Email</a></li>
+            <li><a href="https://www.snapchat.com/add/fathiya4796" target="_blank"><i class="fab fa-snapchat"></i> Snapchat</a></li>
+          </ul>
+          <div class="contact-info">
+            <p>Phone: <a href="tel:+46765653753">0765653753</a></p>
+            <p>Email: <a href="mailto:Fathiya110@hotmail.com">Fathiya110@hotmail.com</a></p>
+          </div>
+        </div>
+      </footer>
+    <script>
+        let cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+        // Open and Close Menu
+        function openNav() {
+            document.getElementById("myNav").style.width = "100%";
+        }
+
+        function closeNav() {
+            document.getElementById("myNav").style.width = "0%";
+        }
+
+        // Add item to cart
+        function addToCart(name, price, image) {
+            const quantity = document.getElementById('quantity').value;
+            const existingProduct = cart.find(item => item.name === name);
+
+            if (existingProduct) {
+                existingProduct.quantity += parseInt(quantity);
+            } else {
+                cart.push({ name, price, image, quantity: parseInt(quantity) });
+            }
+
+            localStorage.setItem('cart', JSON.stringify(cart));
+            updateCartInfo();
+        }
+
+        // Update cart display
+        function updateCartInfo() {
+            const cartCountElement = document.getElementById('cartCount');
+            const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
+            cartCountElement.textContent = totalItems;
+        }
+
+        // Update cart info on page load
+        document.addEventListener('DOMContentLoaded', updateCartInfo);
+    </script>
+</body>
+</html>

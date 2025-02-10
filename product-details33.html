@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aloe Propolis Creme</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #f9f9f9;
+        }
+
+        .main-header {
+            background: #14a99f;
+            padding: 20px;
+        }
+
+        .navbar {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .navbar img {
+            width: 100px;
+        }
+
+        .cart-info {
+            position: relative;
+        }
+
+        .cart-info img {
+            width: 30px;
+            height: 30px;
+        }
+
+        .cart-info span {
+            position: absolute;
+            top: -5px;
+            left: 15px;
+            background-color: #ff523b;
+            color: #fff;
+            font-size: 14px;
+            padding: 0 5px;
+            border-radius: 50%;
+        }
+
+        /* Main Content Area */
+        .single-product {
+            max-width: 1200px;
+            margin: 30px auto;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .row {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+        }
+
+        .col-2 img {
+            max-width: 100%;
+            padding: 20px;
+        }
+
+        .col-2 h1 {
+            font-size: 2rem;
+            margin: 20px 0;
+        }
+
+        .col-2 h4 {
+            color: #ff523b;
+            font-size: 1.8rem;
+            margin: 10px 0;
+        }
+
+        .btn {
+            background-color: #5ee689;
+            padding: 10px 30px;
+            border-radius: 30px;
+            color: white;
+            text-decoration: none;
+            display: inline-block;
+            margin: 15px 0;
+            transition: background-color 0.3s;
+        }
+
+        .btn:hover {
+            background-color: #2d302e;
+        }
+
+        select, input[type="number"] {
+            padding: 10px;
+            margin: 10px 0;
+            font-size: 1rem;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        h3 {
+            font-size: 1.5rem;
+            margin: 20px 0 10px;
+        }
+
+        ul {
+            list-style-type: none;
+            padding-left: 0;
+            margin-bottom: 20px;
+        }
+
+        ul li {
+            margin-bottom: 8px;
+        }
+    </style>
+</head>
+<body>
+     <!-- Header -->
+     <header class="main-header">
+        <div id="myNav" class="overlay">
+            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+            <div class="overlay-content">
+                <a href="index.html" class="back-to-home">Home</a>
+                <a href="About.html">About</a>
+            </div>
+        </div>
+        <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; Forever</span>
+
+        <div class="cart-info">
+            <a href="cart.html">
+                <img src="shopping_bag_cart-512.webp" alt="Cart">
+                <span id="cartCount">0</span>
+            </a>
+        </div>
+    </header>
+
+    <!-- Single Product Section -->
+    <div class="single-product">
+        <div class="row">
+            <div class="col-2">
+                <img src="Forever_AloeTurm__pd_category_256_X_256_1718192565500.png" width="100%" class="small-img">
+                <div class="small-img-col">
+                    <img src="Forever_AloeTurm__pd_category_256_X_256_1718192565500.png" width="50%" class="small-img">
+                </div>
+            </div>
+            <div class="col-2">
+                <h1>Forever Aloe Turm™</h1>
+                <h4>74,94 SEK</h4>
+                
+                <!-- Quantity and Add to Cart -->
+                <input type="number" id="quantity" value="1" min="1">
+                <a href="#" class="btn" onclick="addToCart('Forever Aloe Turm™', 74.94, 'forever_aloe_turm.jpg')">Add To Cart</a>
+                
+                <!-- Product Description and Details -->
+                <h3>Product Description</h3>
+                <p>Forever Aloe Turm™ is a lozenge that combines the powerful benefits of turmeric, Aloe vera, and zinc. Featuring turmeric in a hydrogel form, this lozenge slowly dissolves in your mouth and has a refreshing mint flavor. It’s a delicious, sugar-free way to incorporate turmeric with curcuminoids into your diet, along with the added benefit of zinc.</p>
+            
+                <h3>Who is it for?</h3>
+                <p>This product is perfect for adults who want to include turmeric in their diet in a tasty and convenient form. It also provides zinc, which supports the normal functioning of the immune system. The lozenge is easy to carry, making it a great on-the-go solution.</p>
+            
+                <h3>Key Ingredients:</h3>
+                <ul>
+                    <li>Indian turmeric with curcuminoids</li>
+                    <li>Aloe vera</li>
+                    <li>Zinc, which supports the immune system and has several other benefits</li>
+                    <li>Hydrogel technology for optimal absorption</li>
+                </ul>
+            
+                <h3>Indian Turmeric</h3>
+                <p>Turmeric, derived from the root of a plant in the ginger family, has been used for centuries for its many benefits. Forever Aloe Turm uses the highest quality turmeric sourced from India, bringing you a powerful and natural addition to your wellness routine.</p>
+            
+                <h3>What Does Zinc Do?</h3>
+                <p>Zinc is an essential mineral that plays a vital role in many body functions. It helps maintain a healthy immune system, protects cells from oxidative stress, and supports cognitive function. Zinc also promotes healthy bones, hair, nails, and skin, and is important for normal vision.</p>
+            
+                <h3>Always Ready</h3>
+                <p>Forever Aloe Turm comes in a handy blister pack of 10 lozenges, making it easy to carry around in your bag. Whenever you need it, simply place a lozenge under your tongue or in your cheek and let it slowly dissolve. It's a perfect way to freshen your breath while providing valuable nutrients!</p>
+            
+                <h3>How to Use:</h3>
+                <p>Take up to 3 lozenges a day. Allow each lozenge to slowly dissolve in your mouth (not to be swallowed whole). Store the blister pack in the box. Not suitable for people on blood-thinning medication. Keep in a cool, dry place out of reach of children.</p>
+            
+                <h3>Important Information:</h3>
+                <ul>
+                    <li>Not suitable for individuals on blood-thinning medication.</li>
+                    <li>Do not exceed the recommended daily dose.</li>
+                    <li>Dietary supplements should not be used as a substitute for a varied diet.</li>
+                    <li>Store in a cool, dry place.</li>
+                </ul>
+            </div>                                                          
+        </div>
+    </div>
+    <footer>
+        <div class="footer-content">
+          <ul class="social-links">
+            <li><a href="https://www.tiktok.com/@foreverlin4?_t=ZN-8tZsEnEhD42&_r=1" target="_blank"><i class="fab fa-tiktok"></i> TikTok</a></li>
+            <li><a href="https://www.instagram.com/foreverlivingfa.se" target="_blank"><i class="fab fa-instagram"></i> Instagram</a></li>
+            <li><a href="mailto:Fathiya110@hotmail.com"><i class="fas fa-envelope"></i> Email</a></li>
+            <li><a href="https://www.snapchat.com/add/fathiya4796" target="_blank"><i class="fab fa-snapchat"></i> Snapchat</a></li>
+          </ul>
+          <div class="contact-info">
+            <p>Phone: <a href="tel:+46765653753">0765653753</a></p>
+            <p>Email: <a href="mailto:Fathiya110@hotmail.com">Fathiya110@hotmail.com</a></p>
+          </div>
+        </div>
+      </footer>
+    <script>
+        let cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+        // Open and Close Menu
+        function openNav() {
+            document.getElementById("myNav").style.width = "100%";
+        }
+
+        function closeNav() {
+            document.getElementById("myNav").style.width = "0%";
+        }
+
+        // Add item to cart
+        function addToCart(name, price, image) {
+            const quantity = document.getElementById('quantity').value;
+            const existingProduct = cart.find(item => item.name === name);
+
+            if (existingProduct) {
+                existingProduct.quantity += parseInt(quantity);
+            } else {
+                cart.push({ name, price, image, quantity: parseInt(quantity) });
+            }
+
+            localStorage.setItem('cart', JSON.stringify(cart));
+            updateCartInfo();
+        }
+
+        // Update cart display
+        function updateCartInfo() {
+            const cartCountElement = document.getElementById('cartCount');
+            const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
+            cartCountElement.textContent = totalItems;
+        }
+
+        // Update cart info on page load
+        document.addEventListener('DOMContentLoaded', updateCartInfo);
+    </script>
+</body>
+</html>

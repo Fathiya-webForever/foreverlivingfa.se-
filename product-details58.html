@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aloe Propolis Creme</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #f9f9f9;
+        }
+
+        .main-header {
+            background: #14a99f;
+            padding: 20px;
+        }
+
+        .navbar {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .navbar img {
+            width: 100px;
+        }
+
+        .cart-info {
+            position: relative;
+        }
+
+        .cart-info img {
+            width: 30px;
+            height: 30px;
+        }
+
+        .cart-info span {
+            position: absolute;
+            top: -5px;
+            left: 15px;
+            background-color: #ff523b;
+            color: #fff;
+            font-size: 14px;
+            padding: 0 5px;
+            border-radius: 50%;
+        }
+
+        /* Main Content Area */
+        .single-product {
+            max-width: 1200px;
+            margin: 30px auto;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .row {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+        }
+
+        .col-2 img {
+            max-width: 100%;
+            padding: 20px;
+        }
+
+        .col-2 h1 {
+            font-size: 2rem;
+            margin: 20px 0;
+        }
+
+        .col-2 h4 {
+            color: #ff523b;
+            font-size: 1.8rem;
+            margin: 10px 0;
+        }
+
+        .btn {
+            background-color: #5ee689;
+            padding: 10px 30px;
+            border-radius: 30px;
+            color: white;
+            text-decoration: none;
+            display: inline-block;
+            margin: 15px 0;
+            transition: background-color 0.3s;
+        }
+
+        .btn:hover {
+            background-color: #2d302e;
+        }
+
+        select, input[type="number"] {
+            padding: 10px;
+            margin: 10px 0;
+            font-size: 1rem;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        h3 {
+            font-size: 1.5rem;
+            margin: 20px 0 10px;
+        }
+
+        ul {
+            list-style-type: none;
+            padding-left: 0;
+            margin-bottom: 20px;
+        }
+
+        ul li {
+            margin-bottom: 8px;
+        }
+    </style>
+</head>
+<body>
+     <!-- Header -->
+     <header class="main-header">
+        <div id="myNav" class="overlay">
+            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+            <div class="overlay-content">
+                <a href="index.html" class="back-to-home">Home</a>
+                <a href="About.html">About</a>
+              
+            </div>
+        </div>
+        <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; Forever</span>
+
+        <div class="cart-info">
+            <a href="cart.html">
+                <img src="shopping_bag_cart-512.webp" alt="Cart">
+                <span id="cartCount">0</span>
+            </a>
+        </div>
+    </header>
+
+    <!-- Single Product Section -->
+    <div class="single-product">
+        <div class="row">
+            <div class="col-2">
+                <img src="vital5__pd_category_256_X_256_1698658825278.jpg" width="100%" class="small-img">
+                <div class="small-img-col">
+                    <img src="vital5__pd_category_256_X_256_1698658825278.jpg" width="50%" class="small-img">
+                </div>
+            </div>
+            <div class="col-2">
+                <h1>Vital5™</h1>
+                <h4>3,072.94 SEK</h4>
+                
+                <!-- Quantity and Add to Cart -->
+                <input type="number" id="quantity" value="1" min="1">
+                <a href="#" class="btn" onclick="addToCart('Vital5™', 3072.94, 'vital5.jpg')">Add To Cart</a>
+                
+                <!-- Product Description and Details -->
+                <h3>Product Description</h3>
+                <p>Vital5™ offers an easy solution for those who want a simple, daily supplement routine. It contains five essential dietary supplements to support your overall well-being, helping you feel great from top to toe. With this pack, you get everything you need for a healthy boost of vitamins, minerals, omega-3 fatty acids, and Aloe vera.</p>
+            
+                <h3>Who is it for?</h3>
+                <p>Vital5™ is designed for adults who want to simplify their daily supplement intake. Whether you're a busy parent, a professional, or a senior, this pack offers the essentials to take care of your body every day.</p>
+            
+                <h3>How it Works:</h3>
+                <p>Vital5™ brings together five of Forever's most popular and effective supplements in a single package. It's an easy, no-fuss way to get your daily dose of vitamins, minerals, omega-3 fatty acids, and Aloe vera, all of which are important for maintaining your health and energy levels.</p>
+            
+                <h3>The Pack Contains:</h3>
+                <ul>
+                    <li>4 x 1 litre of Forever Aloe Vera Gel™</li>
+                    <li>1 x 120 capsules of Forever Arctic Sea™</li>
+                    <li>1 x 60 tablets of Forever Daily™</li>
+                    <li>1 x 30 portions of ARGI+™</li>
+                    <li>1 x 30 capsules of Forever Active Pro-B™</li>
+                    <li>An information sheet to guide you through the supplements</li>
+                </ul>
+            
+                <h3>What’s Included in the Pack:</h3>
+                <ul>
+                    <li><strong>Forever Aloe Vera Gel™:</strong> A natural drink made from Aloe vera to start your day right, rich in vitamins and minerals.</li>
+                    <li><strong>Forever Arctic Sea™:</strong> Omega-3 rich supplement for heart and brain health, with DHA and EPA for optimal function.</li>
+                    <li><strong>Forever Daily™:</strong> A multivitamin tablet that includes essential vitamins and minerals to support overall health, energy, and mental function.</li>
+                    <li><strong>ARGI+™:</strong> A supplement with L-arginine and essential vitamins for energy, immune defense, circulation, and muscle support.</li>
+                    <li><strong>Forever Active Pro-B™:</strong> A probiotic supplement with 8 billion live bacteria for digestive health and immunity support.</li>
+                </ul>
+            
+                <h3>How to Use:</h3>
+                <p>For detailed instructions, please refer to the product sheets for each item in the pack. The pack also includes an information sheet to help you get the most out of your Vital5™ routine.</p>
+            
+                <h3>Important Information:</h3>
+                <ul>
+                    <li>Contents may change, so always refer to the packaging for the latest information.</li>
+                    <li>Vital5™ is part of the Forever F.I.T.™ lifestyle programme. Learn more about the other packs in the series on their respective product pages.</li>
+                </ul>
+            </div>                                                                                
+        </div>
+    </div>
+    <footer>
+        <div class="footer-content">
+          <ul class="social-links">
+            <li><a href="https://www.tiktok.com/@foreverlin4?_t=ZN-8tZsEnEhD42&_r=1" target="_blank"><i class="fab fa-tiktok"></i> TikTok</a></li>
+            <li><a href="https://www.instagram.com/foreverlivingfa.se" target="_blank"><i class="fab fa-instagram"></i> Instagram</a></li>
+            <li><a href="mailto:Fathiya110@hotmail.com"><i class="fas fa-envelope"></i> Email</a></li>
+            <li><a href="https://www.snapchat.com/add/fathiya4796" target="_blank"><i class="fab fa-snapchat"></i> Snapchat</a></li>
+          </ul>
+          <div class="contact-info">
+            <p>Phone: <a href="tel:+46765653753">0765653753</a></p>
+            <p>Email: <a href="mailto:Fathiya110@hotmail.com">Fathiya110@hotmail.com</a></p>
+          </div>
+        </div>
+      </footer>
+    <script>
+        let cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+        // Open and Close Menu
+        function openNav() {
+            document.getElementById("myNav").style.width = "100%";
+        }
+
+        function closeNav() {
+            document.getElementById("myNav").style.width = "0%";
+        }
+
+        // Add item to cart
+        function addToCart(name, price, image) {
+            const quantity = document.getElementById('quantity').value;
+            const existingProduct = cart.find(item => item.name === name);
+
+            if (existingProduct) {
+                existingProduct.quantity += parseInt(quantity);
+            } else {
+                cart.push({ name, price, image, quantity: parseInt(quantity) });
+            }
+
+            localStorage.setItem('cart', JSON.stringify(cart));
+            updateCartInfo();
+        }
+
+        // Update cart display
+        function updateCartInfo() {
+            const cartCountElement = document.getElementById('cartCount');
+            const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
+            cartCountElement.textContent = totalItems;
+        }
+
+        // Update cart info on page load
+        document.addEventListener('DOMContentLoaded', updateCartInfo);
+    </script>
+</body>
+</html>
