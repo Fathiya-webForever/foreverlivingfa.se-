@@ -52,14 +52,20 @@
             display: none;
         }
     </style>
+    <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
     <script>
         let paymentApproved = false;
+
+        document.addEventListener("DOMContentLoaded", function() {
+            emailjs.init("kaM-0FsnD3p8f8ZK4");
+            loadCart();
+        });
 
         function handlePayment() {
             const paymentMethod = document.getElementById('paymentMethod').value;
             const paymentDetails = document.getElementById('paymentDetails');
             if (paymentMethod === 'Swish') {
-                paymentDetails.innerText = "Send your payment to Swish number: 123 456 7890 and write the recipient's name in the message.";
+                paymentDetails.innerText = "Send your payment to Swish number: 0765653753 and write the recipient's name in the message.";
                 paymentApproved = true;
             } else if (paymentMethod === 'Bank') {
                 paymentDetails.innerText = "Please send the payment to account: 8103-4, 964 360 930-9.";
@@ -76,9 +82,9 @@
             const city = document.getElementById('city').value.toLowerCase();
             let shippingCost;
             if (city === 'uppsala') {
-                shippingCost = 'Free';
+                shippingCost = '$5,99';
             } else {
-                shippingCost = '$5';
+                shippingCost = '$5,99';
             }
             document.getElementById('shippingCost').innerText = "Shipping Cost: " + shippingCost;
         }
@@ -96,12 +102,26 @@
                 return;
             }
 
-            alert('Your order has been placed successfully!');
-            localStorage.removeItem('cart'); // Optional: Clear cart from localStorage
-            window.location.href = 'index.html'; // Redirect to home page after submission
-        }
+            const formData = {
+                firstName: document.getElementById('firstName').value,
+                lastName: document.getElementById('lastName').value,
+                email: document.getElementById('email').value,
+                phoneNumber: document.getElementById('phoneNumber').value,
+                address: document.getElementById('address').value,
+                city: document.getElementById('city').value,
+                comment: document.getElementById('comment').value,
+            };
 
-        document.addEventListener("DOMContentLoaded", loadCart);
+            emailjs.send("service_24wuls6", "template_d955gz6", formData, "kaM-0FsnD3p8f8ZK4")
+                .then(response => {
+                    alert('Your order has been placed successfully!');
+                    localStorage.removeItem('cart');
+                    window.location.href = 'index.html';
+                })
+                .catch(error => {
+                    alert('Failed to place your order. Please try again.');
+                });
+        }
     </script>
 </head>
 <body>
