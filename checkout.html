@@ -52,12 +52,13 @@
             display: none;
         }
     </style>
-    <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+    <script type="text/javascript" src="https://cdn.emailjs.com/dist/email.min.js"></script>
     <script>
         let paymentApproved = false;
+        let totalPrice = 0;
 
         document.addEventListener("DOMContentLoaded", function() {
-            emailjs.init("kaM-0FsnD3p8f8ZK4");
+            emailjs.init("kaM-0FsnD3p8f8ZK4"); // Initialize EmailJS with your user ID
             loadCart();
         });
 
@@ -65,14 +66,14 @@
             const paymentMethod = document.getElementById('paymentMethod').value;
             const paymentDetails = document.getElementById('paymentDetails');
             if (paymentMethod === 'Swish') {
-                paymentDetails.innerText = "Send your payment to Swish number: 0765653753 and write the recipient's name in the message.";
+                paymentDetails.innerText = "Send the payment to Swish number: 0765653753 and include the recipient's name in the message.";
                 paymentApproved = true;
             } else if (paymentMethod === 'Bank') {
-                paymentDetails.innerText = "Please send the payment to account: 8103-4, 964 360 930-9.";
+                paymentDetails.innerText = "Please send the payment to account number: 8103-4, 964 360 930-9.";
                 paymentApproved = true;
             } else {
                 paymentDetails.innerText = "";
-                alert("Please select a payment method.");
+                alert("Please choose a payment method.");
             }
             document.getElementById('paymentSuccess').style.display = paymentApproved ? 'block' : 'none';
             document.getElementById('submitButton').disabled = !paymentApproved;
@@ -80,28 +81,42 @@
 
         function calculateShipping() {
             const city = document.getElementById('city').value.toLowerCase();
-            let shippingCost;
-            if (city === 'uppsala') {
-                shippingCost = '$5,99';
-            } else {
-                shippingCost = '$5,99';
-            }
-            document.getElementById('shippingCost').innerText = "Shipping Cost: " + shippingCost;
+            let shippingCost = 59.9; // Standard shipping cost in SEK
+            document.getElementById('shippingCost').innerText = "Shipping cost: " + shippingCost + " SEK";
+            updateTotal(shippingCost);
         }
 
         function loadCart() {
             const cart = JSON.parse(localStorage.getItem('cart')) || [];
             const cartContainer = document.getElementById('cartItems');
-            cartContainer.innerHTML = cart.length ? cart.map(item => `<p>${item.name} - ${item.price}</p>`).join('') : '<p>Your cart is empty.</p>';
+            let cartContent = "";
+            totalPrice = 0;
+
+            if (cart.length) {
+                cart.forEach(item => {
+                    cartContent += `<p>${item.name} - ${item.price} SEK</p>`;
+                    totalPrice += parseFloat(item.price);
+                });
+            } else {
+                cartContent = '<p>Your cart is empty.</p>';
+            }
+
+            cartContainer.innerHTML = cartContent;
+        }
+
+        function updateTotal(shippingCost) {
+            const totalAmount = totalPrice + shippingCost;
+            document.getElementById('totalCost').innerText = "Total price: " + totalAmount.toFixed(2) + " SEK";
         }
 
         function submitOrder(event) {
             event.preventDefault();
             if (!paymentApproved) {
-                alert("You must send the payment before completing the order.");
+                alert("You must complete the payment before finishing the order.");
                 return;
             }
 
+            // Collect form data
             const formData = {
                 firstName: document.getElementById('firstName').value,
                 lastName: document.getElementById('lastName').value,
@@ -109,17 +124,19 @@
                 phoneNumber: document.getElementById('phoneNumber').value,
                 address: document.getElementById('address').value,
                 city: document.getElementById('city').value,
-                comment: document.getElementById('comment').value,
+                totalCost: document.getElementById('totalCost').innerText,
+                paymentMethod: document.getElementById('paymentMethod').value
             };
 
+            // Send email using EmailJS
             emailjs.send("service_24wuls6", "template_d955gz6", formData, "kaM-0FsnD3p8f8ZK4")
-                .then(response => {
-                    alert('Your order has been placed successfully!');
+                .then(function(response) {
+                    alert('Your order has been sent!');
                     localStorage.removeItem('cart');
                     window.location.href = 'index.html';
-                })
-                .catch(error => {
-                    alert('Failed to place your order. Please try again.');
+                }, function(error) {
+                    alert('Something went wrong. Please try again later.');
+                    console.error('Error sending email:', error);
                 });
         }
     </script>
@@ -159,10 +176,11 @@
                 <input type="text" id="city" required oninput="calculateShipping()">
             </div>
 
-            <p id="shippingCost">Shipping Cost: -</p>
+            <p id="shippingCost">Shipping cost: -</p>
+            <p id="totalCost">Total price: -</p>
 
             <div class="form-group">
-                <label for="paymentMethod">Select Payment Method:</label>
+                <label for="paymentMethod">Choose Payment Method:</label>
                 <select id="paymentMethod" required onchange="handlePayment()">
                     <option value="">-- Select --</option>
                     <option value="Swish">Swish</option>
@@ -170,11 +188,6 @@
                 </select>
             </div>
             <p id="paymentDetails"></p>
-
-            <div class="form-group">
-                <label for="comment">Additional Comments:</label>
-                <textarea id="comment" rows="3"></textarea>
-            </div>
 
             <p id="paymentSuccess">✅ Payment received!</p>
 
