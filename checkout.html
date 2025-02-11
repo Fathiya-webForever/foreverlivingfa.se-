@@ -52,43 +52,41 @@
             display: none;
         }
     </style>
-    <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
     <script>
         let paymentApproved = false;
 
-        document.addEventListener("DOMContentLoaded", function() {
-            emailjs.init("kaM-0FsnD3p8f8ZK4"); // Replace with your EmailJS Public Key
-        });
-
         function handlePayment() {
             const paymentMethod = document.getElementById('paymentMethod').value;
+            const paymentDetails = document.getElementById('paymentDetails');
             if (paymentMethod === 'Swish') {
-                alert("Redirecting to Swish...");
-
-                // Placeholder URL - replace with real payment URL when integrated
-                let swishUrl = 'swish://paymentrequest?token=example_token';
-
-                // Test if URL is correct or if there's a fallback
-                if (swishUrl) {
-                    window.location.href = swishUrl;
-                } else {
-                    alert("Error: Invalid payment URL.");
-                }
-
-                setTimeout(() => {
-                    // Simulate successful payment after a delay
-                    paymentApproved = true;
-                    document.getElementById('paymentSuccess').style.display = 'block';
-                    document.getElementById('submitButton').disabled = false;
-                }, 3000);
-            } else if (paymentMethod === 'Bank') {
-                alert("Please send the payment to account: 8103-4, 964 360 930-9");
+                paymentDetails.innerText = "Send your payment to Swish number: 123 456 7890 and write the recipient's name in the message.";
                 paymentApproved = true;
-                document.getElementById('paymentSuccess').style.display = 'block';
-                document.getElementById('submitButton').disabled = false;
+            } else if (paymentMethod === 'Bank') {
+                paymentDetails.innerText = "Please send the payment to account: 8103-4, 964 360 930-9.";
+                paymentApproved = true;
             } else {
+                paymentDetails.innerText = "";
                 alert("Please select a payment method.");
             }
+            document.getElementById('paymentSuccess').style.display = paymentApproved ? 'block' : 'none';
+            document.getElementById('submitButton').disabled = !paymentApproved;
+        }
+
+        function calculateShipping() {
+            const city = document.getElementById('city').value.toLowerCase();
+            let shippingCost;
+            if (city === 'uppsala') {
+                shippingCost = 'Free';
+            } else {
+                shippingCost = '$5';
+            }
+            document.getElementById('shippingCost').innerText = "Shipping Cost: " + shippingCost;
+        }
+
+        function loadCart() {
+            const cart = JSON.parse(localStorage.getItem('cart')) || [];
+            const cartContainer = document.getElementById('cartItems');
+            cartContainer.innerHTML = cart.length ? cart.map(item => `<p>${item.name} - ${item.price}</p>`).join('') : '<p>Your cart is empty.</p>';
         }
 
         function submitOrder(event) {
@@ -98,34 +96,18 @@
                 return;
             }
 
-            // Prepare form data
-            const formData = {
-                firstName: document.getElementById('firstName').value,
-                lastName: document.getElementById('lastName').value,
-                email: document.getElementById('email').value,
-                phoneNumber: document.getElementById('phoneNumber').value,
-                address: document.getElementById('address').value,
-                postalCode: document.getElementById('postalCode').value,
-                country: document.getElementById('country').value,
-                comment: document.getElementById('comment').value,
-            };
-
-            // Send order details via EmailJS
-            emailjs.send("service_24wuls6", "template_d955gz6", formData, "kaM-0FsnD3p8f8ZK4")
-                .then(response => {
-                    alert('Your order has been placed successfully!');
-                    localStorage.removeItem('cart'); // Optional: Clear cart from localStorage
-                    window.location.href = 'index.html'; // Redirect to home page after submission
-                })
-                .catch(error => {
-                    alert('Failed to place your order. Please try again.');
-                });
+            alert('Your order has been placed successfully!');
+            localStorage.removeItem('cart'); // Optional: Clear cart from localStorage
+            window.location.href = 'index.html'; // Redirect to home page after submission
         }
+
+        document.addEventListener("DOMContentLoaded", loadCart);
     </script>
 </head>
 <body>
     <div class="container">
         <h1>Checkout</h1>
+        <div id="cartItems"></div>
         <form id="checkoutForm" onsubmit="submitOrder(event)">
             <div class="form-group">
                 <label for="firstName">First Name:</label>
@@ -153,23 +135,21 @@
             </div>
 
             <div class="form-group">
-                <label for="postalCode">Postal Code:</label>
-                <input type="text" id="postalCode" required>
+                <label for="city">City:</label>
+                <input type="text" id="city" required oninput="calculateShipping()">
             </div>
 
-            <div class="form-group">
-                <label for="country">Country:</label>
-                <input type="text" id="country" required>
-            </div>
+            <p id="shippingCost">Shipping Cost: -</p>
 
             <div class="form-group">
                 <label for="paymentMethod">Select Payment Method:</label>
-                <select id="paymentMethod" required>
+                <select id="paymentMethod" required onchange="handlePayment()">
                     <option value="">-- Select --</option>
                     <option value="Swish">Swish</option>
                     <option value="Bank">Bank</option>
                 </select>
             </div>
+            <p id="paymentDetails"></p>
 
             <div class="form-group">
                 <label for="comment">Additional Comments:</label>
@@ -178,7 +158,6 @@
 
             <p id="paymentSuccess">✅ Payment received!</p>
 
-            <button type="button" onclick="handlePayment()">Pay Now</button>
             <button type="submit" id="submitButton" disabled>Complete Order</button>
         </form>
     </div>
