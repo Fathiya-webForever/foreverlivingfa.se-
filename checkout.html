@@ -46,131 +46,15 @@
             cursor: pointer;
             font-size: 16px;
         }
-        #paymentSuccess {
-            color: green;
-            text-align: center;
-            display: none;
+        #shippingCost, #totalCost {
+            margin-top: 10px;
         }
     </style>
-    <script type="text/javascript" src="https://cdn.emailjs.com/dist/email.min.js"></script>
-    <script>
-        let paymentApproved = false;
-        let totalPrice = 0;
-
-        document.addEventListener("DOMContentLoaded", function() {
-            if (typeof emailjs !== "undefined") {
-                emailjs.init("YOUR_USER_ID"); // Initialize EmailJS with your API key
-            } else {
-                console.error("EmailJS failed to load.");
-            }
-            loadCart();
-        });
-
-        function handlePayment() {
-            const paymentMethod = document.getElementById('paymentMethod').value;
-            const paymentDetails = document.getElementById('paymentDetails');
-            const submitButton = document.getElementById('submitButton');
-
-            if (paymentMethod === 'Swish') {
-                paymentDetails.innerText = "Send the payment to Swish number: 0765653753 and include the recipient's name in the message.";
-                paymentApproved = true;
-            } else if (paymentMethod === 'Bank') {
-                paymentDetails.innerText = "Please send the payment to account number: 8103-4, 964 360 930-9.";
-                paymentApproved = true;
-            } else {
-                paymentDetails.innerText = "";
-                paymentApproved = false;
-            }
-
-            document.getElementById('paymentSuccess').style.display = paymentApproved ? 'block' : 'none';
-            submitButton.disabled = !paymentApproved;
-        }
-
-        function calculateShipping() {
-            const shippingCost = 59.9;
-            document.getElementById('shippingCost').innerText = "Shipping cost: " + shippingCost.toFixed(2) + " SEK";
-            updateTotal(shippingCost);
-        }
-
-        function loadCart() {
-            let cart = [];
-            try {
-                cart = JSON.parse(localStorage.getItem('cart')) || [];
-                if (!Array.isArray(cart)) cart = []; // Ensure it's an array
-            } catch (error) {
-                console.error("Error parsing cart:", error);
-                cart = [];
-            }
-
-            const cartContainer = document.getElementById('cartItems');
-            let cartContent = "";
-            totalPrice = 0;
-
-            if (cart.length) {
-                cart.forEach(item => {
-                    cartContent += `<p>${item.name} - ${item.quantity} x ${parseFloat(item.price).toFixed(2)} SEK</p>`;
-                    totalPrice += parseFloat(item.price) * item.quantity;
-                });
-            } else {
-                cartContent = '<p>Your cart is empty.</p>';
-            }
-
-            cartContainer.innerHTML = cartContent;
-            calculateShipping(); 
-        }
-
-        function updateTotal(shippingCost) {
-            const totalAmount = totalPrice + shippingCost;
-            document.getElementById('totalCost').innerText = "Total price: " + totalAmount.toFixed(2) + " SEK";
-        }
-
-        function submitOrder(event) {
-            event.preventDefault();
-            if (!paymentApproved) {
-                alert("You must complete the payment before finishing the order.");
-                return;
-            }
-
-            const formData = {
-                firstName: document.getElementById('firstName').value,
-                lastName: document.getElementById('lastName').value,
-                email: document.getElementById('email').value,
-                phoneNumber: document.getElementById('phoneNumber').value,
-                address: document.getElementById('address').value,
-                city: document.getElementById('city').value,
-                totalCost: document.getElementById('totalCost').innerText,
-                paymentMethod: document.getElementById('paymentMethod').value
-            };
-
-            emailjs.send("service_24wuls6", "template_d955gz6", {
-                firstName: formData.firstName,
-                lastName: formData.lastName,
-                email: formData.email,
-                phoneNumber: formData.phoneNumber,
-                address: formData.address,
-                city: formData.city,
-                totalCost: formData.totalCost,
-                paymentMethod: formData.paymentMethod
-            })
-                .then(function(response) {
-                    console.log("Email Sent Successfully:", response);
-                    alert('Your order has been sent!');
-                    localStorage.removeItem('cart');
-                    setTimeout(() => {
-                        window.location.href = 'index.html'; // Redirect after successful order
-                    }, 1000); // Delay the redirection
-                }, function(error) {
-                    console.error("Email Send Error:", error);
-                    alert('Something went wrong. Please try again later. Error details: ' + error.text);
-                });
-        }
-    </script>
 </head>
 <body>
     <div class="container">
         <h1>Checkout</h1>
-        <div id="cartItems"></div>
-        <form id="checkoutForm" onsubmit="submitOrder(event)">
+        <form action="https://formspree.io/f/yourFormID" method="POST">
             <div class="form-group">
                 <label for="firstName">First Name:</label>
                 <input type="text" id="firstName" name="firstName" required>
@@ -202,21 +86,18 @@
             </div>
 
             <p id="shippingCost">Shipping cost: 59.90 SEK</p>
-            <p id="totalCost">Total price: -</p>
+            <p id="totalCost">Total price: 159.90 SEK</p>
 
             <div class="form-group">
                 <label for="paymentMethod">Choose Payment Method:</label>
-                <select id="paymentMethod" required onchange="handlePayment()">
+                <select id="paymentMethod" name="paymentMethod" required>
                     <option value="">-- Select --</option>
                     <option value="Swish">Swish</option>
                     <option value="Bank">Bank</option>
                 </select>
             </div>
-            <p id="paymentDetails"></p>
 
-            <p id="paymentSuccess">✅ Payment received!</p>
-
-            <button type="submit" id="submitButton" disabled>Complete Order</button>
+            <button type="submit">Complete Order</button>
         </form>
     </div>
 </body>
