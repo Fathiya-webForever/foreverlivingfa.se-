@@ -59,7 +59,7 @@
 
         document.addEventListener("DOMContentLoaded", function() {
             if (typeof emailjs !== "undefined") {
-                emailjs.init("bmTsjP-VU71CxDmOi"); // Initialize EmailJS with your API key
+                emailjs.init("YOUR_USER_ID"); // Initialize EmailJS with your API key
             } else {
                 console.error("EmailJS failed to load.");
             }
@@ -70,8 +70,6 @@
             const paymentMethod = document.getElementById('paymentMethod').value;
             const paymentDetails = document.getElementById('paymentDetails');
             const submitButton = document.getElementById('submitButton');
-
-            console.log("Payment Method Selected:", paymentMethod); // Debugging
 
             if (paymentMethod === 'Swish') {
                 paymentDetails.innerText = "Send the payment to Swish number: 0765653753 and include the recipient's name in the message.";
@@ -86,9 +84,6 @@
 
             document.getElementById('paymentSuccess').style.display = paymentApproved ? 'block' : 'none';
             submitButton.disabled = !paymentApproved;
-
-            console.log("Payment Approved:", paymentApproved); // Debugging
-            console.log("Submit Button Disabled:", submitButton.disabled); // Debugging
         }
 
         function calculateShipping() {
@@ -111,8 +106,6 @@
             let cartContent = "";
             totalPrice = 0;
 
-            console.log("Loaded Cart Items:", cart); // Debugging
-
             if (cart.length) {
                 cart.forEach(item => {
                     cartContent += `<p>${item.name} - ${item.quantity} x ${parseFloat(item.price).toFixed(2)} SEK</p>`;
@@ -123,7 +116,7 @@
             }
 
             cartContainer.innerHTML = cartContent;
-            calculateShipping(); // Only call calculateShipping here to avoid unnecessary recalculation
+            calculateShipping(); 
         }
 
         function updateTotal(shippingCost) {
@@ -149,8 +142,6 @@
                 paymentMethod: document.getElementById('paymentMethod').value
             };
 
-            console.log("Submitting Order Data:", formData); // Debugging
-
             emailjs.send("service_24wuls6", "template_d955gz6", {
                 firstName: formData.firstName,
                 lastName: formData.lastName,
@@ -166,11 +157,10 @@
                     alert('Your order has been sent!');
                     localStorage.removeItem('cart');
                     setTimeout(() => {
-                        window.location.href = 'index.html';
+                        window.location.href = 'index.html'; // Redirect after successful order
                     }, 1000); // Delay the redirection
                 }, function(error) {
                     console.error("Email Send Error:", error);
-                    // Log the exact error for better debugging
                     alert('Something went wrong. Please try again later. Error details: ' + error.text);
                 });
         }
