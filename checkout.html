@@ -4,6 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Checkout</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            emailjs.init("kaM-0FsnD3p8f8ZK4"); // Replace with your EmailJS Public Key
+        });
+    </script>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -11,8 +18,12 @@
             margin: 0;
             padding: 20px;
             display: flex;
-            flex-direction: column;
+            flex-direction: column; /* Changed to column layout */
             align-items: center;
+        }
+        .header-container {
+            text-align: center;
+            margin-bottom: 20px;
         }
         .container {
             background: white;
@@ -21,12 +32,21 @@
             box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
             width: 100%;
             max-width: 600px;
+            height: 600px;
+        }
+        h1, h2 {
+            margin-bottom: 10px;
+        }
+        .cart-container {
+            margin-bottom: 30px;
         }
         .form-group {
-            margin-top: 15px;
+            margin-top: 20px;
         }
         label {
             font-weight: bold;
+            display: block;
+            margin-bottom: 5px;
         }
         input, select {
             width: 100%;
@@ -46,59 +66,199 @@
             cursor: pointer;
             font-size: 16px;
         }
-        #shippingCost, #totalCost {
+        button:disabled {
+            background-color: #ccc;
+            cursor: not-allowed;
+        }
+        #bankDetails, #swishDetails {
+            display: none;
+        }
+        #paymentSuccess, #paymentStatus {
+            text-align: center;
             margin-top: 10px;
+            font-size: 16px;
+            display: none;
+        }
+        #paymentSuccess {
+            color: green;
+        }
+        #paymentStatus {
+            color: red;
+        }
+        #cartItemsList {
+            list-style-type: none;
+            padding-left: 0;
+        }
+        #cartItemsList li {
+            margin-bottom: 10px;
         }
     </style>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js"></script>
 </head>
 <body>
-    <div class="container">
+    <div class="header-container">
         <h1>Checkout</h1>
-        <form action="https://formspree.io/f/yourFormID" method="POST">
+        <h2>Your Cart</h2>
+    </div>
+    <div class="container">
+        <!-- Cart section -->
+        <div class="cart-container">
+            <ul id="cartItemsList"></ul>
+        </div>
+
+        <form id="checkoutForm">
             <div class="form-group">
                 <label for="firstName">First Name:</label>
-                <input type="text" id="firstName" name="firstName" required>
+                <input type="text" id="firstName" required>
             </div>
 
             <div class="form-group">
                 <label for="lastName">Last Name:</label>
-                <input type="text" id="lastName" name="lastName" required>
+                <input type="text" id="lastName" required>
             </div>
 
             <div class="form-group">
                 <label for="email">Email:</label>
-                <input type="email" id="email" name="email" required>
+                <input type="email" id="email" required>
             </div>
 
             <div class="form-group">
                 <label for="phoneNumber">Phone Number:</label>
-                <input type="tel" id="phoneNumber" name="phoneNumber" required>
+                <input type="tel" id="phoneNumber" required>
             </div>
 
             <div class="form-group">
                 <label for="address">Address:</label>
-                <input type="text" id="address" name="address" required>
+                <input type="text" id="address" required>
             </div>
 
             <div class="form-group">
-                <label for="city">City:</label>
-                <input type="text" id="city" name="city" required>
+                <label for="postalCode">Postal Code:</label>
+                <input type="text" id="postalCode" required>
             </div>
 
-            <p id="shippingCost">Shipping cost: 59.90 SEK</p>
-            <p id="totalCost">Total price: 159.90 SEK</p>
+            <div class="form-group">
+                <label for="country">Country:</label>
+                <input type="text" id="country" required>
+            </div>
 
             <div class="form-group">
-                <label for="paymentMethod">Choose Payment Method:</label>
-                <select id="paymentMethod" name="paymentMethod" required>
-                    <option value="">-- Select --</option>
+                <label for="paymentMethod">Select Payment Method:</label>
+                <select id="paymentMethod" required>
+                    <option value="">-- Select Payment Method --</option>
                     <option value="Swish">Swish</option>
                     <option value="Bank">Bank</option>
                 </select>
             </div>
 
-            <button type="submit">Complete Order</button>
+            <div id="swishDetails" class="form-group">
+                <label for="swishNumber">Swish Number:</label>
+                <input type="text" id="swishNumber" required>
+                <p>Send the payment to Swish number: +46765653753</p>
+                <button type="button" id="swishPayButton">Confirm Payment</button>
+            </div>
+
+            <div id="bankDetails" class="form-group">
+                <label for="bank">Select Bank:</label>
+                <select id="bank" required>
+                    <option value="">-- Select Bank --</option>
+                    <option value="PayPal">PayPal</option>
+                    <option value="Nordea">Nordea</option>
+                    <option value="Swedbank">Swedbank</option>
+                    <option value="SEB">SEB</option>
+                    <option value="Handelsbanken">Handelsbanken</option>
+                </select>
+                <label for="bankAccount">Bank Account Number:</label>
+                <input type="text" id="bankAccount" required>
+                <p>Send the payment to account: 8103-4, 964 360 930-9</p>
+                <button type="button" id="bankPayButton">Send Payment</button>
+            </div>
+
+            <p id="paymentStatus">⚠️ Payment failed!</p>
+            <p id="paymentSuccess">✅ Payment received!</p>
+
+            <button type="submit" id="orderButton" disabled>Complete Order</button>
         </form>
     </div>
+
+    <script>
+        let paymentApproved = false;
+
+        document.addEventListener('DOMContentLoaded', function() {
+            const cart = JSON.parse(localStorage.getItem('cart')) || [];
+            const cartItemsList = document.getElementById('cartItemsList');
+            
+            // Show cart items if available
+            if (cart.length > 0) {
+                cart.forEach(item => {
+                    const listItem = document.createElement('li');
+                    listItem.textContent = `${item.name} - ${item.price} SEK x ${item.quantity}`;
+                    cartItemsList.appendChild(listItem);
+                });
+            }
+        });
+
+        document.getElementById('paymentMethod').addEventListener('change', function() {
+            const paymentMethod = this.value;
+            document.getElementById('swishDetails').style.display = paymentMethod === 'Swish' ? 'block' : 'none';
+            document.getElementById('bankDetails').style.display = paymentMethod === 'Bank' ? 'block' : 'none';
+        });
+
+        document.getElementById('swishPayButton').addEventListener('click', function() {
+            // Simulate Swish payment process
+            alert("Please send the payment to Swish number: +46765653753");
+            paymentApproved = true;
+            document.getElementById('paymentSuccess').style.display = 'block';
+            document.getElementById('paymentStatus').style.display = 'none';
+            document.getElementById('orderButton').disabled = false;
+        });
+
+        document.getElementById('bankPayButton').addEventListener('click', function() {
+            // Simulate bank payment process
+            alert("Please send the payment to account: 8103-4, 964 360 930-9");
+            paymentApproved = true;
+            document.getElementById('paymentSuccess').style.display = 'block';
+            document.getElementById('paymentStatus').style.display = 'none';
+            document.getElementById('orderButton').disabled = false;
+        });
+
+        document.getElementById('checkoutForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            if (!paymentApproved) {
+                alert("You must send the payment before completing the order.");
+                return;
+            }
+
+            const formData = {
+                first_name: document.getElementById('firstName').value,
+                last_name: document.getElementById('lastName').value,
+                email: document.getElementById('email').value,
+                phone_number: document.getElementById('phoneNumber').value,
+                address: document.getElementById('address').value,
+                postal_code: document.getElementById('postalCode').value,
+                country: document.getElementById('country').value,
+                payment_method: document.getElementById('paymentMethod').value,
+                swish_number: document.getElementById('swishNumber').value,
+                bank: document.getElementById('bank').value,
+                bank_account: document.getElementById('bankAccount').value,
+                cart_items: JSON.parse(localStorage.getItem('cart'))?.map(item => `${item.name} (${item.price} SEK x ${item.quantity})`).join(", ") || ''
+            };
+
+            emailjs.send("service_24wuls6", "template_d955gz6", formData, "kaM-0FsnD3p8f8ZK4")
+                .then(response => {
+                    alert('Your order has been placed successfully!');
+                    localStorage.removeItem('cart');
+                    window.location.href = 'index.html';
+                })
+                .catch(error => {
+                    alert('Failed to place your order. Please try again.');
+                });
+        });
+
+        function calculateTotalAmount() {
+            const cart = JSON.parse(localStorage.getItem('cart')) || [];
+            return cart.reduce((total, item) => total + (item.price * item.quantity), 0);
+        }
+    </script>
 </body>
 </html>
