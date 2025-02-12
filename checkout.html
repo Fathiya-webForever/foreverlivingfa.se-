@@ -59,7 +59,7 @@
 
         document.addEventListener("DOMContentLoaded", function() {
             if (typeof emailjs !== "undefined") {
-                emailjs.init("kaM-0FsnD3p8f8ZK4"); // Initialize EmailJS
+                emailjs.init("bmTsjP-VU71CxDmOi"); // Initialize EmailJS with your API key
             } else {
                 console.error("EmailJS failed to load.");
             }
@@ -160,7 +160,7 @@
                 city: formData.city,
                 totalCost: formData.totalCost,
                 paymentMethod: formData.paymentMethod
-            }, "kaM-0FsnD3p8f8ZK4")
+            })
                 .then(function(response) {
                     console.log("Email Sent Successfully:", response);
                     alert('Your order has been sent!');
@@ -170,7 +170,8 @@
                     }, 1000); // Delay the redirection
                 }, function(error) {
                     console.error("Email Send Error:", error);
-                    alert('Something went wrong. Please try again later.');
+                    // Log the exact error for better debugging
+                    alert('Something went wrong. Please try again later. Error details: ' + error.text);
                 });
         }
     </script>
