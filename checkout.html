@@ -65,6 +65,8 @@
         function handlePayment() {
             const paymentMethod = document.getElementById('paymentMethod').value;
             const paymentDetails = document.getElementById('paymentDetails');
+            const submitButton = document.getElementById('submitButton');
+
             if (paymentMethod === 'Swish') {
                 paymentDetails.innerText = "Send the payment to Swish number: 0765653753 and include the recipient's name in the message.";
                 paymentApproved = true;
@@ -73,10 +75,11 @@
                 paymentApproved = true;
             } else {
                 paymentDetails.innerText = "";
-                alert("Please choose a payment method.");
+                paymentApproved = false;
             }
+
             document.getElementById('paymentSuccess').style.display = paymentApproved ? 'block' : 'none';
-            document.getElementById('submitButton').disabled = !paymentApproved;
+            submitButton.disabled = !paymentApproved;
         }
 
         function calculateShipping() {
