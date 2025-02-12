@@ -44,13 +44,13 @@
             </tbody>
         </table>
         <div class="cart-total">
-            <p><strong>Total:</strong> <span id="total">0.00</span> SEK</p>
+            <p><strong>Total:</strong> <span id="total">0.00</span> kr</p>
         </div>
         <button class="checkout-btn" onclick="checkout()">Checkout</button>
     </div>
 
     <script>
-        // Initialize cart from localStorage or set to empty array if not available
+        // Initialize cart from localStorage or set to an empty array if not available
         let cart = JSON.parse(localStorage.getItem('cart')) || [];
 
         // Function to update the cart display
@@ -68,21 +68,31 @@
                 const itemTotal = item.price * item.quantity;
                 total += itemTotal;
 
+                const formattedPrice = new Intl.NumberFormat('sv-SE', {
+                    style: 'currency',
+                    currency: 'SEK'
+                }).format(item.price);
+
+                const formattedTotal = new Intl.NumberFormat('sv-SE', {
+                    style: 'currency',
+                    currency: 'SEK'
+                }).format(itemTotal);
+
                 const row = document.createElement('tr');
                 row.innerHTML = `
-                    <td>SEK{item.name}</td>
-                    <td><img src="SEK{item.image}" alt="SEK{item.name}" width="50"></td>
+                    <td>${item.name}</td>
+                    <td><img src="${item.image}" alt="${item.name}" width="50"></td>
                     <td>
-                        <input type="number" value="SEK{item.quantity}" min="1" onchange="changeQuantity(SEK{index}, this.value)">
+                        <input type="number" value="${item.quantity}" min="1" onchange="changeQuantity(${index}, this.value)">
                     </td>
-                    <td>SEK{item.price.toFixed(2)} SEK</td>
-                    <td><button onclick="removeItem(SEK{index})">Remove</button></td>
+                    <td>${formattedPrice}</td>
+                    <td><button onclick="removeItem(${index})">Remove</button></td>
                 `;
                 tableBody.appendChild(row);
             });
 
             // Update total
-            totalElem.textContent = total.toFixed(2);
+            totalElem.textContent = total.toFixed(2) + ' kr';
 
             // Update cart count
             const cartCountElem = document.getElementById('cartCount');
